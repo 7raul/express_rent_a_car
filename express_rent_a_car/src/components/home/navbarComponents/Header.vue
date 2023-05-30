@@ -1,0 +1,233 @@
+<template>
+    <div>
+        <header>
+            <div class="navbar">
+                <router-link to="#" class="logo">
+                    <i class="ri-roadster-fill"></i><span>Express Rent a Car</span>
+                </router-link>
+
+                <ul class="links" v-show="!isMobile">
+                    <li><router-link to="/">Inicio</router-link></li>
+                    <li><router-link to="#">Carros</router-link></li>
+                    <li><router-link to="/about">Sobre</router-link></li>
+                    <li><router-link to="/reclamacao">Reclamação</router-link></li>
+                    <li><router-link to="feedback">Feedback</router-link></li>
+                </ul>
+
+                <a href="#" class="action_btn"><i class="ri-user-fill"></i>Entrar</a>
+
+                <div class="toggle_btn" @click="toggleMenu">
+                    <i :class="toggleIcon"></i>
+                </div>
+            </div>
+
+            <!--Reservado para o main-->
+            <div>
+                <Main />
+            </div>
+            
+            <div class="dropdown_menu" :class="{ open: isMobileMenuOpen }">
+                <li><router-link to="/">Inicio</router-link></li>
+                <li><router-link to="#">Carros</router-link></li>
+                <li><router-link to="/about">Sobre</router-link></li>
+                <li><router-link to="/reclamacao">Reclamação</router-link></li>
+                <li><router-link to="feedback">Feedback</router-link></li>
+                <a href="#" class="action_btn"><i class="ri-user-fill"></i>Entrar</a>
+            </div>
+        </header>
+    </div>
+</template>
+
+<script>
+    import Main from './Main.vue'
+    export default {
+        name: 'Header',
+        components: {
+            Main
+        },
+
+        data() {
+            return {
+                isMobile: false,
+                isMobileMenuOpen: false,
+            };
+        },
+
+        computed: {
+            toggleIcon () {
+                return this.isMobileMenuOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+            }
+        },
+
+        methods: {
+            toggleMenu() {
+                this.isMobileMenuOpen = !this.isMobileMenuOpen;
+            }
+        },
+
+        mounted() {
+            this.isMobile = window.innerWidth <= 992; 
+            // Define a largura em que a exibição móvel deve ser ativada (992px no exemplo original)
+        }
+    }
+</script>
+
+<style scoped>
+/* Logo */
+    .logo{
+        display: flex;
+    }
+
+    .logo i{
+        color: #5977b1;;
+        font-size: 2rem;
+        margin-right: 5px;
+    }
+
+    .logo span{
+        color: #e4e4e4;
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    .logo span:hover{
+        color: #5977b1;
+    }
+
+    /* Header */
+    li{
+        list-style: none;
+    }
+
+    a{
+        text-decoration: none;
+        color: #e4e4e4;
+        font-size: 1rem;
+    }
+
+    a:hover{
+        color: #5977b1;
+    }
+
+    /* Header */
+    header{
+        position: relative;
+        padding: 0 2rem;
+    }
+
+    .navbar {
+        width: 100%;
+        height: 60px;
+        max-width: 1450px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .navbar .links{
+        display: flex;
+        gap: 2rem;
+    }
+
+    .navbar .toggle_btn {
+        color: #e4e4e4;
+        font-size: 1.5rem;
+        cursor: pointer;
+        display: none;
+    }
+
+    .action_btn{
+        background-color: #5977b1;
+        color: #e4e4e4;
+        padding: 0.5rem 1rem;
+        border: none;
+        outline: none;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: scale 0.2 ease;
+    }
+    .action_btn:hover{
+        scale: 1.05;
+        color: #e4e4e4;
+    }
+    .action_btn:active{
+        scale: 0.95;
+    }
+
+    /* Hero */
+    section#hero{
+        height: calc(100vh - 60px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #e4e4e4;
+    }
+
+    #hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Dropdown menu */
+    .dropdown_menu{
+        display: none;
+        position: absolute;
+        right: 2rem;
+        top: 60px;
+        height: 0;
+        width: 300px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(15px);
+        border-radius: 10px;
+        overflow: hidden;
+        transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .dropdown_menu.open{
+        height: 290px;
+        padding: 1rem;
+    }
+
+    .dropdown_menu li {
+        padding: 0.7rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dropdown_menu .action_btn {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* Responsive dedign */
+
+    @media(max-width: 992px){
+        .navbar .links,
+        .navbar .action_btn {
+            display: none;
+        }
+
+        .navbar .toggle_btn{
+            display: block;
+        }
+
+        .dropdown_menu{
+            display: block;
+        }
+    }
+
+    @media(max-width: 576px){
+        .dropdown_menu {
+            left: 2rem;
+            width: unset;
+        }
+    }
+</style>
