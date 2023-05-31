@@ -2,6 +2,6 @@ import { http } from "./api";
 
 export default {
     Listar: () => {
-        return http.get('carro')
+        return http.get('/cliente')
     }
 }
