@@ -14,15 +14,15 @@
             </div>
 
             <div class="servico">
-                <i class="ri-building-4-fill"></i>
-                <h2>Empresas Licenciadas</h2>
-                <p>Garantimos que as empresas tenham licença de actividade no mercado nacional</p>
-            </div>
-
-            <div class="servico">
                 <i class="ri-price-tag-fill"></i>
                 <h2>Preços</h2>
                 <p>Compare preços e carros, e alugue aquele que satisfaz a ti e ao teu bolço</p>
+            </div>
+
+            <div class="servico">
+                <i class="ri-building-4-fill"></i>
+                <h2>Empresas Licenciadas</h2>
+                <p>Garantimos que as empresas tenham licença de actividade no mercado nacional</p>
             </div>
         </div>
     </div>
