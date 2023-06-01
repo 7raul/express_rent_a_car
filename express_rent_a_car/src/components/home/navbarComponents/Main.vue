@@ -20,23 +20,5 @@
 </script>
 
 <style scoped>
-    .hero{
-        margin-top: 12rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: #e4e4e4;
-    }
-
-    .hero h1 {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-    }
-
-    .hero p {
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
-    }
+    @import '@/Styles/Home/NavbarComponents/Main.sass'
 </style>
