@@ -6,6 +6,7 @@
         <Servicos />
         <Nota />
         <Texto />
+        <Mensagem />
       </div>
     <Footer />
   </div>
@@ -18,6 +19,7 @@
   import Servicos from '@/components/home/Servicos.vue'
   import Nota from '@/components/home/Nota.vue'
   import Texto from '@/components/home/Texto.vue'
+  import Mensagem from '@/components/home/Mensagem.vue'
 
   export default {
     name: 'HomeView',
@@ -28,6 +30,7 @@
       Servicos,
       Nota,
       Texto,
+      Mensagem,
       Footer
     }
   }
