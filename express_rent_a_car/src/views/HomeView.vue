@@ -2,13 +2,11 @@
   <div>
     <NavBar />
       <div class="container">
-        <div class="produtos-container">
-          <HeaderHome />
-          <ProdutoShow />
-          <Servicos />
-          <Nota />
-          <Mensagem />
-        </div>
+        <Carros />
+        <Servicos />
+        <Nota />
+        <Texto />
+        <Mensagem />
       </div>
     <Footer />
   </div>
@@ -16,11 +14,11 @@
 
 <script>
   import NavBar from '@/components/home/NavBar.vue'
-  import HeaderHome from '@/components/home/HeaderHome.vue'
-  import ProdutoShow from '@/components/home/ProdutoShow.vue'
+  import Carros from '@/components/home/Carros.vue'
   import Footer from '@/components/home/Footer.vue'
   import Servicos from '@/components/home/Servicos.vue'
   import Nota from '@/components/home/Nota.vue'
+  import Texto from '@/components/home/Texto.vue'
   import Mensagem from '@/components/home/Mensagem.vue'
 
   export default {
@@ -28,10 +26,10 @@
 
     components: {
       NavBar,
-      HeaderHome,
-      ProdutoShow,
+      Carros,
       Servicos,
       Nota,
+      Texto,
       Mensagem,
       Footer
     }
@@ -40,8 +38,8 @@
 
 <style scoped>
   .container{
-    background-color: #ecf7fa;
-    color: #232f33;
+    background-color: #222327;
+    color: #e4e4e4;
   }
 
   .produtos-container{
