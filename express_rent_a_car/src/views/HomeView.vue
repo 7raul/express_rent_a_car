@@ -5,6 +5,7 @@
         <Carros />
         <Servicos />
         <Nota />
+        <Texto />
       </div>
     <Footer />
   </div>
@@ -16,6 +17,7 @@
   import Footer from '@/components/home/Footer.vue'
   import Servicos from '@/components/home/Servicos.vue'
   import Nota from '@/components/home/Nota.vue'
+  import Texto from '@/components/home/Texto.vue'
 
   export default {
     name: 'HomeView',
@@ -25,6 +27,7 @@
       Carros,
       Servicos,
       Nota,
+      Texto,
       Footer
     }
   }
