@@ -15,6 +15,12 @@
 
             <div class="servico">
                 <i class="ri-price-tag-fill"></i>
+                <h2>Empresas Licenciadas</h2>
+                <p>Encontre aqui as melhores ofertas e liberdade de escolher a que lhe convém</p>
+            </div>
+
+            <div class="servico">
+                <i class="ri-price-tag-fill"></i>
                 <h2>Garantia do melhor preço</h2>
                 <p>Encontre aqui as melhores ofertas e liberdade de escolher a que lhe convém</p>
             </div>
@@ -29,5 +35,5 @@
 </script>
 
 <style scoped>
-    @import '@/Styles/Servicos.sass';
+    @import '@/Styles/Home/Servicos.sass';
 </style>
