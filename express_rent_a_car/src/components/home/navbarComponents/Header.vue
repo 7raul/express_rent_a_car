@@ -14,7 +14,7 @@
                     <li><router-link to="feedback">Feedback</router-link></li>
                 </ul>
 
-                <router-link to="/login"><i class="ri-user-fill"></i>Entrar</router-link>
+                <a href="/login" class="action_btn"><i class="ri-user-fill"></i>Entrar</a>
 
                 <div class="toggle_btn" @click="toggleMenu">
                     <i :class="toggleIcon"></i>
