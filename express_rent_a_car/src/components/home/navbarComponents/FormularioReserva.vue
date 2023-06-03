@@ -32,7 +32,7 @@
                                 <input type="time">
                             </div>
                             <div class="time-date">
-                                <label for="data time">Data e hora de levantamento</label>
+                                <label for="data time">Data e hora de devoluão   </label>
                                 <input type="date">
                                 <input type="time">
                             </div>
