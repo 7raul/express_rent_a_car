@@ -32,7 +32,7 @@
                         <p>Local de entrega: Hoteis e Aeroportos</p>
                     </div>
                 </div>
-                
+
                 <div class="detalhes-carro">
                     <div class="detalhe-img">
                         <img :src="imgCar" :alt="nameCar">
@@ -104,183 +104,191 @@
 </template>
 
 <script>
-    export default{
-        name: 'Body',
+import GetByElement from "../../services/getBy"
+export default {
 
-        data() {
-            return {
-                caminhoDaImagem: require("@/assets/img/empresa.png"),
-                alt: "Empresa",
-                imgCar: require("@/assets/img/fiat.jpg"),
-                nameCar: "Fiat"
-            }
-        }
-    }
+    mounted() {
+
+    },
+    // name: 'Body',
+
+    // data() {
+    //     return {
+    //         caminhoDaImagem: require("@/assets/img/empresa.png"),
+    //         alt: "Empresa",
+    //         imgCar: require("@/assets/img/fiat.jpg"),
+    //         nameCar: "Fiat"
+    //     }
+    // }
+}
 </script>
 
 <style scoped>
-    .heading{
-        letter-spacing: 1px;
-        margin: 3.1rem 0;
-        padding: 10px 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+.heading {
+    letter-spacing: 1px;
+    margin: 3.1rem 0;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-    .heading h1{
-        font-size: 1.5rem;
-        font-weight: 500;
-        background-color: #232f33;
-        color: #fff;
-        padding: 10px 20px;
-        text-transform: uppercase;
-    }
+.heading h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    background-color: #232f33;
+    color: #fff;
+    padding: 10px 20px;
+    text-transform: uppercase;
+}
 
-    .heading span{
-        font-size: 1rem;
-        color: #222;
-        margin-bottom: 10px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-    }
-    .detalhes-container{
-        width: 90%;
-        margin: 0 auto;
-        margin-bottom: 5rem;
-        border: 1px solid #ccc7c7;
-        background-color: white;
-    }
+.heading span {
+    font-size: 1rem;
+    color: #222;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
 
-    .header-detalhes{
-        background-color: #b8b8b8;
-        padding: 1rem;
-    }
-    .sub-header{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1rem;
-        border-bottom: 1px solid #ccc7c7;
-    }
+.detalhes-container {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 5rem;
+    border: 1px solid #ccc7c7;
+    background-color: white;
+}
 
-    .empresa{
-        display: flex;
-        align-items: center;
-        margin-right: 1rem;
-    }
-    
+.header-detalhes {
+    background-color: #b8b8b8;
+    padding: 1rem;
+}
 
-    .sub-header p{
-        font-weight: bold;
-        font-size: 20px;
-    }
+.sub-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #ccc7c7;
+}
 
-    .empresa p{
-        margin-right: 1rem;
-    }  
-    
-    .profile img{
-        border: 1px solid #ccc7c7;
-        margin-right: 1rem;
-        margin-top: 10px;
-        max-width: 150px;
-        max-height: 50px;
-    }
+.empresa {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+}
 
-    .reviews{
-        color: #f9d71c;
-    }
 
-    .detalhes-carro{
-        display: flex;
-        justify-content: space-between;
-        padding: 1rem;
-        padding-bottom: 0.6rem;
-    }
+.sub-header p {
+    font-weight: bold;
+    font-size: 20px;
+}
 
-    .detalhe-img{
-        width: 500px;
-    }
+.empresa p {
+    margin-right: 1rem;
+}
 
-    .detalhe-img img{
-        width: 100%;
-        height: 300px;
-    }
+.profile img {
+    border: 1px solid #ccc7c7;
+    margin-right: 1rem;
+    margin-top: 10px;
+    max-width: 150px;
+    max-height: 50px;
+}
 
-    .detales-1,
-    .detales-2{
-        width: 300px;
-        display: flex;
-        justify-content: space-between;
-    }
+.reviews {
+    color: #f9d71c;
+}
 
-    .detales-1 p,
-    .detales-2 p{
-        line-height: 3rem;
-        font-size: 16px;
-    }
+.detalhes-carro {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    padding-bottom: 0.6rem;
+}
 
-    .definicao p{
-        text-align: end;
-    }
+.detalhe-img {
+    width: 500px;
+}
 
-    .color{
-        background-color: #383318;
-        color: #fff;
-        padding: 0 5px;
-    }
+.detalhe-img img {
+    width: 100%;
+    height: 300px;
+}
 
-    .pagamento{
-        text-align: end;
-        margin: 0;
-        line-height: 2rem;
-    }
+.detales-1,
+.detales-2 {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+}
 
-    .att{
-        background-color: #232f33;
-        padding: 5px;
-        color: #fff;
-        margin-bottom: 5px;
-    }
-    .preco p{
-        font-size: 16px;
-    }
+.detales-1 p,
+.detales-2 p {
+    line-height: 3rem;
+    font-size: 16px;
+}
 
-    .preco h3{
-        font-size: 25px;
-    }
+.definicao p {
+    text-align: end;
+}
 
-    .btn-container button{
-        width: 10rem;
-        padding: 10px;
-        border: none;
-        background-color: #6b6851;
-        margin-bottom: 5px;
-    }
+.color {
+    background-color: #383318;
+    color: #fff;
+    padding: 0 5px;
+}
 
-    .btn-container a{
-        color: #fff;
-        font-size: 1rem;
-    }
+.pagamento {
+    text-align: end;
+    margin: 0;
+    line-height: 2rem;
+}
 
-    .btn-container a:hover{
-        text-decoration: underline;
-    }
+.att {
+    background-color: #232f33;
+    padding: 5px;
+    color: #fff;
+    margin-bottom: 5px;
+}
 
-    .pagamento{
-        padding: 5px;
-        padding-right: 0;
-    }
+.preco p {
+    font-size: 16px;
+}
 
-    .pagamento i{
-        color: rgb(230, 95, 95);
-    }
+.preco h3 {
+    font-size: 25px;
+}
 
-    .confirm{
-        border-top: 1px dashed #b8b8b8;
-        padding: 5px;
-        padding-right: 0;
-    }
+.btn-container button {
+    width: 10rem;
+    padding: 10px;
+    border: none;
+    background-color: #6b6851;
+    margin-bottom: 5px;
+}
+
+.btn-container a {
+    color: #fff;
+    font-size: 1rem;
+}
+
+.btn-container a:hover {
+    text-decoration: underline;
+}
+
+.pagamento {
+    padding: 5px;
+    padding-right: 0;
+}
+
+.pagamento i {
+    color: rgb(230, 95, 95);
+}
+
+.confirm {
+    border-top: 1px dashed #b8b8b8;
+    padding: 5px;
+    padding-right: 0;
+}
 </style>
