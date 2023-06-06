@@ -1,6 +1,7 @@
 import axios from "axios";
 
 
-export const http = axios.create({
+const http = axios.create({
     baseURL: 'https://express-rent-a-car-backend.vercel.app/',
 });
+export default http

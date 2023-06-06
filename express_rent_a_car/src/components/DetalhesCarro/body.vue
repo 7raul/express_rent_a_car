@@ -108,20 +108,18 @@ import GetByElement from "../../services/getBy"
 export default {
 
     mounted() {
-        GetByElement.Listar().then(res => {
-            console.log(res);
-        }).catch(err => console.log(err))
-    },
-    name: 'Body',
 
-    data() {
-        return {
-            caminhoDaImagem: require("@/assets/img/empresa.png"),
-            alt: "Empresa",
-            imgCar: require("@/assets/img/fiat.jpg"),
-            nameCar: "Fiat"
-        }
-    }
+    },
+    // name: 'Body',
+
+    // data() {
+    //     return {
+    //         caminhoDaImagem: require("@/assets/img/empresa.png"),
+    //         alt: "Empresa",
+    //         imgCar: require("@/assets/img/fiat.jpg"),
+    //         nameCar: "Fiat"
+    //     }
+    // }
 }
 </script>
 
@@ -292,4 +290,5 @@ export default {
     border-top: 1px dashed #b8b8b8;
     padding: 5px;
     padding-right: 0;
-}</style>
+}
+</style>

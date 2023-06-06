@@ -44,7 +44,7 @@
                             <label for="number">Telefone</label>
                         </div>
 
-                        <button type="submit" class="btn" @click="activateContinue" >Continuar</button>
+                        <button type="submit" class="btn" @click="activateContinue">Continuar</button>
 
                         <div class="register">
                             <p>Já tem uma conta? <a href="#" @click="redirectToLogin">Entrar</a></p>
@@ -72,7 +72,7 @@
                             <button type="submit" class="btn-cad">Cadastrar</button>
                             <button type="submit" class="btn" @click="deactivateContinue">Voltar</button>
                         </div>
-                        
+
 
                         <div class="register">
                             <p>Já tem uma conta? <a href="#" @click="redirectToLogin">Entrar</a></p>
@@ -85,28 +85,42 @@
 </template>
 
 <script>
-    export default {
-        name: 'Cliente',
-        data () {
-            return {
-                isRegisterActive: false
-            }
+import http from "@/services/api";
+
+export default ({
+
+
+
+    name: 'Cliente',
+
+    mounted() {
+        http.get("/cliente").then(response => {
+            console.log(response.data)
+        }).catch(error => {
+            console.log("some problem of the getting", error)
+        })
+    },
+
+    data() {
+        return {
+            isRegisterActive: false
+        }
+    },
+    methods: {
+        activateContinue() {
+            this.isRegisterActive = true;
         },
-        methods: {
-            activateContinue() {
-                this.isRegisterActive = true;
-            },
-            deactivateContinue() {
-                this.isRegisterActive = false;
-            },
-            redirectToLogin() {
-                // Redirecionar para a view da Empresa
-                this.$router.push('/login');
-            }
+        deactivateContinue() {
+            this.isRegisterActive = false;
+        },
+        redirectToLogin() {
+            // Redirecionar para a view da Empresa
+            this.$router.push('/login');
         }
     }
+})
 </script>
 
 <style scoped>
-    @import '@/Styles/RegisterCliente/Cliente.sass'
+@import '@/Styles/RegisterCliente/Cliente.sass'
 </style>
