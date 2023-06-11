@@ -85,26 +85,27 @@
 </template>
 
 <script>
-import http from "@/services/api";
-
+import dados from "@/services/getBy"
 export default ({
 
 
 
     name: 'Cliente',
 
-    mounted() {
-        http.get("/cliente").then(response => {
-            console.log(response.data)
-        }).catch(error => {
-            console.log("some problem of the getting", error)
-        })
-    },
+
 
     data() {
         return {
-            isRegisterActive: false
+            isRegisterActive: false,
         }
+    },
+
+    mounted() {
+        dados.Listar().then(res => {
+            console.log(res.data)
+        }).catch(error => {
+            console.log("Exist Some Problem", error)
+        })
     },
     methods: {
         activateContinue() {
