@@ -63,7 +63,7 @@ header{
     display: none;
 }
 
-.action_btn{
+.action_btn, .action_perfil{
     background-color: #5977b1;
     color: #e4e4e4;
     padding: 0.5rem 1rem;
@@ -75,12 +75,33 @@ header{
     cursor: pointer;
     transition: scale 0.2 ease;
 }
+
+.dropdown_perfil{
+    position: absolute;
+    right: 4rem;
+    padding: 1rem 1rem;
+    top: 60px;
+    width: 200px;
+    line-height: 2rem;
+    text-align: start;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
 .action_btn:hover{
     scale: 1.05;
     color: #e4e4e4;
 }
 .action_btn:active{
     scale: 0.95;
+}
+
+.action_btn select{
+    border: none; 
+    background-color: transparent;   
 }
 
 /* Hero */

@@ -14,7 +14,23 @@
                     <li><router-link to="feedback">Feedback</router-link></li>
                 </ul>
 
-                <a href="/login" class="action_btn"><i class="ri-user-fill"></i>Entrar</a>
+                <div>
+                    <a v-if="!usuarioLogado" href="/login" class="action_btn">
+                        <i class="ri-user-fill"></i>Entrar
+                    </a>
+
+                    <div v-else class="perfil">
+                        <div class="action_perfil" @click="toggleDropdown">
+                            <i class="ri-user-fill"></i><i class="ri-arrow-down-s-line"></i>
+                            <div class="dropdown_perfil" v-show="dropdownAtivo">
+                                <li><router-link to="#">Minhas reservas</router-link></li>
+                                <li><router-link to="#">Suporte</router-link></li>
+                                <li><router-link to="#">Termos</router-link></li>
+                                <li><router-link to="/login">Sair</router-link></li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="toggle_btn" @click="toggleMenu">
                     <i :class="toggleIcon"></i>
@@ -50,6 +66,8 @@
             return {
                 isMobile: false,
                 isMobileMenuOpen: false,
+                dropdownAtivo: false,
+                usuarioLogado: false
             };
         },
 
@@ -66,12 +84,14 @@
             redirectToLogin() {
                 // Redirecionar para a view do Cliente
                 this.$router.push('/login');
+            },
+            toggleDropdown() {
+                this.dropdownAtivo = !this.dropdownAtivo;
             }
         },
 
         mounted() {
             this.isMobile = window.innerWidth <= 992; 
-            // Define a largura em que a exibição móvel deve ser ativada (992px no exemplo original)
         }
     }
 </script>
