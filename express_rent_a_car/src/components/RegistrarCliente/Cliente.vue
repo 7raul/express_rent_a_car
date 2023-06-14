@@ -25,24 +25,12 @@
                 <div class="form-box register">
                     <form action="#">
                         <h2>Cliente</h2>
-
-                        <div class="input-box">
-                            <span class="icon"><i class="bx bxs-user"></i></span>
-                            <input type="text" required>
-                            <label for="name">Nome</label>
-                        </div>
-
-                        <div class="input-box">
-                            <span class="icon"><i class="bx bxs-envelope"></i></span>
-                            <input type="email" required>
-                            <label for="email">E-mail</label>
-                        </div>
-
-                        <div class="input-box">
-                            <span class="icon"><i class="bx bxs-phone"></i></span>
-                            <input type="number" required>
-                            <label for="number">Telefone</label>
-                        </div>
+                     
+                        <input type="text" placeholder="Nome" required>
+                        
+                        <input type="email" placeholder="E-mail" required>
+                        
+                        <input type="number" placeholder="Telefone" required>
 
                         <button type="submit" class="btn" @click="activateContinue">Continuar</button>
 
@@ -56,23 +44,14 @@
                     <form action="#">
                         <h2>Cliente</h2>
 
-                        <div class="input-box">
-                            <span class="icon"><i class="bx bxs-lock-alt"></i></span>
-                            <input type="password" required>
-                            <label for="password">Senha</label>
-                        </div>
-
-                        <div class="input-box">
-                            <span class="icon"><i class="bx bxs-lock-alt"></i></span>
-                            <input type="password" required>
-                            <label for="password">Confirmar senha</label>
-                        </div>
+                        <input type="password" placeholder="Senha" required>
+                        
+                        <input type="password" placeholder="Confirmar senha" required>
 
                         <div class="btn-option">
                             <button type="submit" class="btn-cad">Cadastrar</button>
                             <button type="submit" class="btn" @click="deactivateContinue">Voltar</button>
                         </div>
-
 
                         <div class="register">
                             <p>Já tem uma conta? <a href="#" @click="redirectToLogin">Entrar</a></p>
