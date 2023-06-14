@@ -42,8 +42,6 @@
 
                 <div class="form-box another"  :class="{ active: activeForm === 'another' }">
                     <form action="#">
-                        <h2>Empresa</h2>
-
                         <FileEmpresa />
 
                         <div class="btn-option">
@@ -55,8 +53,6 @@
 
                 <div class="form-box the-end" :class="{ active: activeForm === 'the-end' }">
                     <form action="#">
-                        <h2>Empresa</h2>
-
                         <PassWord />
 
                         <div class="btn-option">

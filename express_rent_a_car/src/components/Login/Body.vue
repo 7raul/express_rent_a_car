@@ -31,16 +31,10 @@
                 <form action="#">
                     <h2>Entrar</h2>
 
-                    <div class="input-box">
-                    <span class="icone"><i class="bx bxs-envelope"></i></span>
-                    <input type="email" required>
-                    <label for="email">E-mail</label>
-                    </div>
+                    <div class="inputs">
+                        <input type="email" id="email" placeholder="E-mail" required>
 
-                    <div class="input-box">
-                    <span class="icone"><i class="bx bxs-lock-alt"></i></span>
-                    <input type="password" required>
-                    <label for="password">Senha</label>
+                        <input type="password" id="passoword" placeholder="Password" required>
                     </div>
 
                     <div class="remember-forgot">

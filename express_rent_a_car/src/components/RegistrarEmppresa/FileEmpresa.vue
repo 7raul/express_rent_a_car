@@ -1,28 +1,14 @@
 <template>
     <div>
-        <buttom class="conteneder-btn-file">  
-            <label for="btn-file">Alvará Comercial</label>
-            <input type="file" id="btn-file" required>
-            <i class="fa-solid fa-file"></i> 
-        </buttom>
+        <label for="file-register" class="file-label">Registro da empresa</label>
+        <input type="file" id="file-register" required>
 
-        <buttom class="conteneder-btn-file">  
-            <label for="btn-file">Alvará Comercial</label>
-            <input type="file" id="btn-file" required>
-            <i class="fa-solid fa-file"></i> 
-        </buttom>
 
-        <buttom class="conteneder-btn-file">  
-            <label for="btn-file">Alvará Comercial</label>
-            <input type="file" id="btn-file" required>
-            <i class="fa-solid fa-file"></i> 
-        </buttom>
+        <label for="file-register" class="file-label">Licença de actividade</label>
+        <input type="file" id="file-register" required>
 
-        <buttom class="conteneder-btn-file">  
-            <label for="btn-file">Alvará Comercial</label>
-            <input type="file" id="btn-file" required>
-            <i class="fa-solid fa-file"></i> 
-        </buttom>
+        <label for="file-register" class="file-label">Alvará comercial</label>
+        <input type="file" id="file-register" required>
     </div>
 </template>
 

@@ -1,16 +1,8 @@
 <template>
     <div>
-        <div class="input-box">
-            <span class="icon"><i class="bx bxs-lock-alt"></i></span>
-            <input type="password" required>
-            <label for="password">Senha</label>
-        </div>
+        <input type="password" placeholder="Senha" required>
 
-        <div class="input-box">
-            <span class="icon"><i class="bx bxs-lock-alt"></i></span>
-            <input type="password" required>
-            <label for="password">Confirmar senha</label>
-        </div>
+        <input type="password" placeholder="Confirmar Senha" required>
     </div>
 </template>
 
