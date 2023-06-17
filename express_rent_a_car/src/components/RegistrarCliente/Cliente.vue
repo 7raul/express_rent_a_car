@@ -23,24 +23,24 @@
 
             <div class="registro-box" :class="{ active: isRegisterActive }">
                 <div class="form-box register">
-                    <form action="#">
+                    <form action="#" @submit.prevent="matuta">
                         <h2>Cliente</h2>
 
                         <div class="input-box">
                             <span class="icon"><i class="bx bxs-user"></i></span>
-                            <input type="text" required>
+                            <input type="text" required v-model="cliente.nome">
                             <label for="name">Nome</label>
                         </div>
 
                         <div class="input-box">
                             <span class="icon"><i class="bx bxs-envelope"></i></span>
-                            <input type="email" required>
+                            <input type="email" required v-model="cliente.email">
                             <label for="email">E-mail</label>
                         </div>
 
                         <div class="input-box">
                             <span class="icon"><i class="bx bxs-phone"></i></span>
-                            <input type="number" required>
+                            <input type="number" required v-model="cliente.telefone">
                             <label for="number">Telefone</label>
                         </div>
 
@@ -58,7 +58,7 @@
 
                         <div class="input-box">
                             <span class="icon"><i class="bx bxs-lock-alt"></i></span>
-                            <input type="password" required>
+                            <input type="password" required v-model="cliente.password">
                             <label for="password">Senha</label>
                         </div>
 
@@ -97,27 +97,37 @@ export default ({
     data() {
         return {
             isRegisterActive: false,
+            cliente: {
+                nome: "",
+                email: "",
+                password: "",
+                telefone: "",
+            }
         }
     },
 
     mounted() {
-        dados.Listar().then(res => {
-            console.log(res.data)
-        }).catch(error => {
-            console.log("Exist Some Problem", error)
-        })
+
+
     },
     methods: {
+        matuta() {
+            alert("Salvo")
+            if (dados.CriarCliente(this.cliente.nome, "jkdshlje897ew78t") && dados.CriarSenha(this.cliente.password)) {
+            }
+        },
         activateContinue() {
             this.isRegisterActive = true;
         },
+
         deactivateContinue() {
             this.isRegisterActive = false;
         },
         redirectToLogin() {
             // Redirecionar para a view da Empresa
             this.$router.push('/login');
-        }
+        },
+
     }
 })
 </script>

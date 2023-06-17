@@ -4,7 +4,10 @@ export default {
     Listar: () => {
         return http.get('/cliente');
     },
-    Create: () => {
-        return http.post("/cliente")
+    CriarCliente: (nome, BI) => {
+        return http.post("/cliente", { nome, BI })
+    },
+    CreateSenha: (senha,) => {
+        return http.post("/login", { senha })
     }
 }
