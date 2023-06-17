@@ -17,9 +17,103 @@
                         <small class="text-muted">Admin</small>
                     </div>
                     <div class="profile-photo">
-                        <img src="images/profile-1.jpg">
+                        <img :src="img" alt="icone" >
                     </div>
                 </div>
+            </div>
+
+            <!--END OF TOP-->
+
+            <div class="recent-updates">
+                <h2>Recent Updates</h2>
+
+                <div class="updates">
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img :src="img">
+                        </div>
+                        <div class="message">
+                            <p><b>Mike Tyson</b> received his order of Night lion tech 
+                            GPS drone</p>
+                            <small class="text-muted">2 Minutes Ago</small>
+                        </div>
+                    </div>
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img :src="img">
+                        </div>
+                        <div class="message">
+                            <p><b>Mike Tyson</b> received his order of Night lion tech 
+                            GPS drone</p>
+                            <small class="text-muted">2 Minutes Ago</small>
+                        </div>
+                    </div>
+                    <div class="update">
+                        <div class="profile-photo">
+                            <img :src="img">
+                        </div>
+                        <div class="message">
+                            <p><b>Mike Tyson</b> received his order of Night lion tech 
+                            GPS drone</p>
+                            <small class="text-muted">2 Minutes Ago</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--END OF RECENT UPDATES-->
+            <div class="sales-analytics">
+                <h2>Sales Analytics</h2>
+
+                <div class="item online">
+                    <div class="icon">
+                        <span class="material-icons-sharp">shopping_cart</span>
+                    </div>
+
+                    <div class="right">
+                        <div class="info">
+                            <h3>ONLINE ORDERS</h3>
+                            <small class="text-muted">Last 24 Hours</small>
+                        </div>
+                        <h5 class="sucess">+35%</h5>
+                        <h3>3849</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item offline">
+                <div class="icon">
+                    <span class="material-icons-sharp">local_mall</span>
+                </div>
+
+                <div class="right">
+                    <div class="info">
+                        <h3>OFFLINE ORDERS</h3>
+                        <small class="text-muted">Last 24 Hours</small>
+                    </div>
+                    <h5 class="danger">-17%</h5>
+                    <h3>1100</h3>
+                </div>
+            </div>
+
+            <div class="item customers">
+                <div class="icon">
+                    <span class="material-icons-sharp">person</span>
+                </div>
+
+                <div class="right">
+                    <div class="info">
+                        <h3>NEW CUSTOMERS</h3>
+                        <small class="text-muted">Last 24 Hours</small>
+                    </div>
+                    <h5 class="sucess">+25%</h5>
+                    <h3>849</h3>
+                </div>
+            </div>
+
+            <div class="item add-product">
+                <span class="material-icons-sharp">add</span>
+                <h3>Add Product</h3>
             </div>
         </div>
     </div>
@@ -30,8 +124,12 @@
         name: 'Right',
         data() {
             return {
-                img: require("")
+                img: require("@/assets/img/cover.jpg")
             }
         }
     }
 </script>
+
+<style scoped>
+
+</style>
