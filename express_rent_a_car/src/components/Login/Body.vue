@@ -53,18 +53,18 @@
                 </div>
 
                 <div class="form-box register">
-                <form action="#">
-                    <h2>Registrar como</h2>
+                    <form action="#">
+                        <h2>Registrar como</h2>
 
-                    <div class="btn-option">
-                        <button type="submit" class="btn-empresa" @click="redirectToEmpresa">Empresa</button>
-                        <button type="submit" class="btn-cliente" @click="redirectToCliente">Cliente</button>
-                    </div>
+                        <div class="btn-option">
+                            <button type="submit" class="btn-empresa" @click="redirectToEmpresa">Empresa</button>
+                            <button type="submit" class="btn-cliente" @click="redirectToCliente">Cliente</button>
+                        </div>
 
-                    <div class="login-register">
-                    <p>Já tem uma conta? <a href="#" class="login-link" @click="deactivateRegister">Entrar</a></p>
-                    </div>
-                </form>
+                        <div class="login-register">
+                        <p>Já tem uma conta? <a href="#" class="login-link" @click="deactivateRegister">Entrar</a></p>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
