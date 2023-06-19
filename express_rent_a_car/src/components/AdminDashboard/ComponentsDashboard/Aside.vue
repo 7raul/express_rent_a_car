@@ -3,7 +3,7 @@
         <aside>
             <div class="top-admin">
                 <div class="logo-admin">
-                    <h2><i class="ri-roadster-fill"></i>Express<span class="danger">Rent a Car</span></h2>
+                    <i class="ri-roadster-fill"></i><h2>Express<span class="danger">Rent a Car</span></h2>
                 </div>
 
                 <div class="close-admin" id="close-btn">
@@ -59,7 +59,7 @@
 </template>
 <script>
     export default {
-        name: 'Aside',
+        name: 'Aside'
     }
 </script>
 

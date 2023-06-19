@@ -137,6 +137,18 @@ b{
     color: var(--color-warning);
 }
 
-aside{
-    height: 100vh;
+/* MEDIA QUERIES FOR TABLETS AND SMALL LAPTOP*/
+@media(max-width: 1200px){
+    .container-admin{
+        width: 94%;
+        grid-template-columns: 7rem auto 23rem;
+    }
+}
+
+/* MEDIA QUERIES */
+@media(max-width: 768px){
+    .container-admin{
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
 }
