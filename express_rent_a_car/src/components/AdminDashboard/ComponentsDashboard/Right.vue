@@ -6,9 +6,9 @@
                     <span class="material-icons-sharp">menu</span>
                 </button>
 
-                <div class="theme-toggler">
-                    <span class="material-icons-sharp active">light_mode</span>
-                    <span class="material-icons-sharp">dark_mode</span>
+                <div class="theme-toggler" @click="toggleTheme">
+                    <span class="material-icons-sharp" :class="{'active': isDarkTheme}">light_mode</span>
+                    <span class="material-icons-sharp" :class="{'active': !isDarkTheme}">dark_mode</span>
                 </div>
 
                 <div class="profile">
@@ -125,7 +125,14 @@
         name: 'Right',
         data() {
             return {
-                img: require("@/assets/img/cover.jpg")
+                img: require("@/assets/img/cover.jpg"),
+                isDarkTheme: false
+            }
+        },
+        methods: {
+            toggleTheme() {
+                this.isDarkTheme = !this.isDarkTheme;
+                document.body.classList.toggle('dark-theme-variables');
             }
         }
     }
