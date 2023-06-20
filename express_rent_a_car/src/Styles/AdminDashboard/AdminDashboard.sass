@@ -1,0 +1,48 @@
+/* Root variable for theme toggle */
+:root:not(.light) {
+    --bg-color-1: #3a444e;
+    --bg-color-2: #343a40;
+    --color1: #eaeaec;
+    --color2: #000;
+}
+
+:root.light{
+    --bg-color-1: #fff;
+    --bg-color-2: #f2f2f2;
+    --color1: #495057;
+    --color2: #000;
+}
+
+/* Setting initials */
+
+*,
+::after,
+::before{
+    box-sizing: border-box;
+}
+
+img{
+    vertical-align: middle;
+    max-width: 100%;
+}
+
+body{
+    font-family: 'Martel sans', sans-serif;
+    font-size: 0.875rem;
+    overflow-y: scroll;
+    margin: 0;
+}
+
+h4{
+    font-size: 1.2375rem;
+    color: var(--color1);
+}
+
+a{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
