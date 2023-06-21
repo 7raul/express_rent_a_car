@@ -51,11 +51,10 @@ const routes = [
     component: () => import('../views/Portfolio.vue')
   },
   {
-    path: '/adminDashboard',
-    name: 'adminDashboard',
-    component: () => import('../views/AdminDashboard.vue')
-  }
-
+    path: '/inicio',
+    name: 'inicio',
+    component: () => import('../views/InicioView.vue')
+  },
 
 ]
 
