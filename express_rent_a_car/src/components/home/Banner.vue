@@ -1,22 +1,19 @@
 <template>
     <div>   
         <div class="slideshow-container">
-            <div v-for="(slide, index) in slides" :key="index" class="mySlides fade" v-show="index === currentSlide">
-                <div class="numbertext">{{ index + 1 }} / {{ slides.length }}</div>
-                <img :src="slide.image">
-                <div class="text">{{ slide.caption }}</div>
+        <div v-for="(slide, index) in slides" :key="index" class="mySlides fade" v-show="index === currentSlide">
+            <div class="numbertext">{{ index + 1 }} / {{ slides.length }}</div>
+            <img :src="slide.image" :style="{ height: slide.height }">
+            <div class="caption">
+                <div class="caption-text">{{ slide.caption }}</div>
+                <a class="button" href="#">Sobre nós</a>
             </div>
+            <div class="dot-container">
+                <span class="dot" v-for="(_, dotIndex) in slides" :key="dotIndex" :class="{ active: dotIndex === currentSlide }" @click="currentSlide(dotIndex)"></span>
+            </div>
+        </div>
             <a class="prev" @click="changeSlide(-1)">&#10094;</a>
             <a class="next" @click="changeSlide(1)">&#10095;</a>
-        </div>
-        <div style="text-align: center;">
-            <span
-                v-for="(slide, index) in slides"
-                :key="index"
-                class="dot"
-                :class="{ active: index === currentSlide }"
-                @click="() => setCurrentSlide(index)"
-            ></span>
         </div>
     </div>
 </template>
@@ -28,9 +25,9 @@
         data() {
             return {
                 slides: [
-                    { image: require('@/assets/img/img1.jpg'), caption: 'Caption Text 1' },
-                    { image: require('@/assets/img/img2.jpg'), caption: 'Caption Text 2' },
-                    { image: require('@/assets/img/img3.jpg'), caption: 'Caption Text 3' },
+                    { image: require('@/assets/img/img1.jpg'), caption: 'Descubra a melhor opção de aluguel de carros. Pesquise, compare e alugue com facilidade na Express Rent a Car.' },
+                    { image: require('@/assets/img/img2.jpg'), caption: 'Encontre as melhores ofertas de aluguel de carros em um só lugar. Economize tempo e dinheiro com a Express Rent a Car.' },
+                    { image: require('@/assets/img/img3.jpg'), caption: 'Alugue um carro de forma rápida e descomplicada. Experimente a praticidade da Express Rent a Car.' },
                 ],
                 currentSlide: 0
             }
