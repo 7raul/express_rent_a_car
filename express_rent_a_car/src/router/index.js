@@ -50,11 +50,6 @@ const routes = [
     name: 'portfolio',
     component: () => import('../views/Portfolio.vue')
   },
-  {
-    path: '/inicio',
-    name: 'inicio',
-    component: () => import('../views/InicioView.vue')
-  },
 
 ]
 

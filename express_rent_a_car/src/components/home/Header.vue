@@ -1,16 +1,16 @@
 <template>
     <div>
         <header>
-            <nav class="br-nav">
-                <div class="br-nav-left">
-                    <div class="br-nav-logo">
+            <nav class="header-navbar">
+                <div class="navbar-left">
+                    <div class="navbar-logo">
                         <router-link to="#">
                             <i class="ri-roadster-fill"></i><span>Express<span class="color">RentaCar</span></span>
                         </router-link>
                     </div>
 
                     <form action="#">
-                        <div class="br-nav-search">
+                        <div class="navbar-search">
                             <input type="text" class="search-query" placeholder="Pesquisar...">
                             <span class="search-icon">
                                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -20,8 +20,8 @@
                     </form>
                 </div>
 
-                <div class="br-nav-center">
-                    <ul class="br-nav-links">
+                <div class="navbar-center">
+                    <ul class="navbar-links">
                         <li><router-link to="/">Inicio</router-link></li>
                         <li><router-link to="#">Carros</router-link></li>
                         <li><router-link to="/about">Sobre</router-link></li>
@@ -30,12 +30,12 @@
                     </ul>
                 </div>
 
-                <div class="br-nav-right">
+                <div class="navbar-right">
                     <div class="login-logout">
                         <a v-if="!loggedIn" href="/login" class="action_btn">
                             <i class="ri-user-fill"></i>Entrar
                         </a>
-                        
+
                         <div v-if="loggedIn" class="user">
                             <a href="#" class="user-profile" @click="showDropdown = !showDropdown">
                                 <img :src="userProfile" alt="Profile" class="avatar">
@@ -56,7 +56,7 @@
             </nav>
 
             <div class="toggle_dropdown" v-show="menuOpen && screenWidth <= 1300">
-                <ul class="br-nav-links">
+                <ul class="navbar-links">
                     <li>
                         <div class="login-logout">
                             <a v-if="!loggedIn" href="/login" class="action_btn">
@@ -82,13 +82,22 @@
                     <li><router-link to="feedback">Feedback</router-link></li>
                 </ul>
             </div>
+
+            <!--REZERVADO PARA O BANNER-->
+            <Banner />
         </header>
+        
     </div>
 </template>
 
 <script>
+    import Banner from '@/components/home/Banner.vue'
     export default {
-        name: 'BarraDeNavegacao',
+        name: 'Header',
+        components: {
+            Banner
+        },
+
         data() {
             return{
                 userProfile: require("@/assets/img/userPerfil.png"),
@@ -123,6 +132,5 @@
 </script>
 
 <style scoped>
-    @import '@/Styles/Inicio/InicioView.sass';
-    @import '@/Styles/Inicio/BarraDeNavegacao.sass';
+    @import '@/Styles/Home/Header.sass';
 </style>
