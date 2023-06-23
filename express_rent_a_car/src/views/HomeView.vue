@@ -3,7 +3,7 @@
     <Header />
     <ShowCars />
     <Servicos />
-    <Mensagem />
+    <Atention />
     <Footer />
   </div>
 </template>
@@ -11,9 +11,9 @@
 <script>
   import Header from '@/components/home/Header.vue'
   import ShowCars from '@/components/home/ShowCars.vue'
-  import Footer from '@/components/home/Footer.vue'
   import Servicos from '@/components/home/Servicos.vue'
-  import Mensagem from '@/components/home/Mensagem.vue'
+  import Atention from '@/components/home/Atention.vue'
+  import Footer from '@/components/home/Footer.vue'
 
   export default {
     name: 'HomeView',
@@ -22,7 +22,7 @@
       Header,
       ShowCars,
       Servicos,
-      Mensagem,
+      Atention,
       Footer
     }
   }
