@@ -3,7 +3,6 @@
     <Header />
     <ShowCars />
     <Servicos />
-    <Nota />
     <Mensagem />
     <Footer />
   </div>
@@ -14,7 +13,6 @@
   import ShowCars from '@/components/home/ShowCars.vue'
   import Footer from '@/components/home/Footer.vue'
   import Servicos from '@/components/home/Servicos.vue'
-  import Nota from '@/components/home/Nota.vue'
   import Mensagem from '@/components/home/Mensagem.vue'
 
   export default {
@@ -24,7 +22,6 @@
       Header,
       ShowCars,
       Servicos,
-      Nota,
       Mensagem,
       Footer
     }
