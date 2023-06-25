@@ -11,7 +11,8 @@
 }
 
 .destaques{
-    display: flex;  
+    display: flex; 
+    flex-wrap: wrap; 
     gap: 1rem;
     align-items: center;
     justify-content: center;  
@@ -120,4 +121,14 @@
 
 .view a:hover{
     text-decoration: underline;    
+}
+
+@media(max-width: 920px){
+    .destaque_container{
+        background: var(--bg-color-2);
+    }
+
+    .card{
+        background: var(--bg-color-1)    
+    }
 }

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="DicasDeclientes-_container">
+        <div class="DicasDeclientes_container">
             <h3>Clientes falam</h3>
 
             <div class="dicas">
