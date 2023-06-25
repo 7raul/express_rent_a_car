@@ -184,11 +184,8 @@
                     </div>
                 </div>
             </div> 
-
-            <div class="left_right">
-                <a class="left"><i class="fa-solid fa-arrow-left"></i></a>
-                <a class="right"><i class="fa-solid fa-arrow-right"></i></a>
-            </div>
+            <a class="left"><i class="fa-solid fa-arrow-left"></i></a>
+            <a class="right"><i class="fa-solid fa-arrow-right"></i></a>
         </div>
     </div>
 </template>
