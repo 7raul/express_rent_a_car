@@ -173,7 +173,9 @@
                 
             </div>
 
-            <p>Ver todos</p>
+            <div class="view">
+                <a href="#">Ver todos</a>
+            </div>
         </div>
     </div>
 </template>

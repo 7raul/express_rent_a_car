@@ -186,6 +186,10 @@
             </div> 
             <a class="left"><i class="fa-solid fa-arrow-left"></i></a>
             <a class="right"><i class="fa-solid fa-arrow-right"></i></a>
+
+            <div class="view">
+                <a href="#">Ver todos</a>
+            </div>
         </div>
     </div>
 </template>
