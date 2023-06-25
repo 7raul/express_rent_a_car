@@ -1,17 +1,17 @@
 <template>
     <div>   
         <div class="slideshow-container">
-        <div v-for="(slide, index) in slides" :key="index" class="mySlides fade" v-show="index === currentSlide">
-            <div class="numbertext">{{ index + 1 }} / {{ slides.length }}</div>
-            <img :src="slide.image" :style="{ height: slide.height }">
-            <div class="caption">
-                <div class="caption-text">{{ slide.caption }}</div>
-                <a class="button" href="#">Sobre nós</a>
+            <div v-for="(slide, index) in slides" :key="index" class="mySlides fade" v-show="index === currentSlide">
+                <div class="numbertext">{{ index + 1 }} / {{ slides.length }}</div>
+                <img :src="slide.image" :style="{ height: slide.height }">
+                <div class="caption">
+                    <div class="caption-text">{{ slide.caption }}</div>
+                    <a class="button" href="#">Sobre nós</a>
+                </div>
+                <div class="dot-container">
+                    <span class="dot" v-for="(_, dotIndex) in slides" :key="dotIndex" :class="{ active: dotIndex === currentSlide }" @click="currentSlide(dotIndex)"></span>
+                </div>
             </div>
-            <div class="dot-container">
-                <span class="dot" v-for="(_, dotIndex) in slides" :key="dotIndex" :class="{ active: dotIndex === currentSlide }" @click="currentSlide(dotIndex)"></span>
-            </div>
-        </div>
             <a class="prev" @click="changeSlide(-1)">&#10094;</a>
             <a class="next" @click="changeSlide(1)">&#10095;</a>
         </div>

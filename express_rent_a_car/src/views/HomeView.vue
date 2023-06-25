@@ -4,6 +4,7 @@
     <ShowCars />
     <Servicos />
     <Atention />
+    <DicasDeClientes />
     <Footer />
   </div>
 </template>
@@ -13,6 +14,7 @@
   import ShowCars from '@/components/home/ShowCars.vue'
   import Servicos from '@/components/home/Servicos.vue'
   import Atention from '@/components/home/Atention.vue'
+  import DicasDeClientes from '@/components/home/DicasDeClientes.vue'
   import Footer from '@/components/home/Footer.vue'
 
   export default {
@@ -23,6 +25,7 @@
       ShowCars,
       Servicos,
       Atention,
+      DicasDeClientes,
       Footer
     }
   }
