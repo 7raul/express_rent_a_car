@@ -44,6 +44,16 @@ const routes = [
     path: '/cliente',
     name: 'cliente',
     component: () => import(/* webpackChunkName: "about" */ '../views/RegistrarCliente.vue')
+  },
+  {
+    path: '/portfolio',
+    name: 'portfolio',
+    component: () => import('../views/Portfolio.vue')
+  },
+  {
+    path: '/adminDashboard',
+    name: 'adminDashboard',
+    component: () => import('../views/AdminDashboard.vue')
   }
 
 

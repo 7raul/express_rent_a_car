@@ -1,18 +1,15 @@
 <template>
     <div>
-        <Header />
         <div class="backgound"></div>
         <Body />
     </div>
 </template>
 
 <script>
-    import Header from '@/components/Login/Header.vue'
     import Body from '@/components/Login/Body.vue'
     export default {
         name: 'LoginView',
         components: {
-            Header,
             Body
         }
     }

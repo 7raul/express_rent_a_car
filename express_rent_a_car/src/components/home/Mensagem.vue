@@ -41,5 +41,5 @@
 </script>
 
 <style scoped>
-    @import '@/Styles/Home/Mensagem.sass'
+    @import '@/Styles/Home/Mensagem.sass';
 </style>

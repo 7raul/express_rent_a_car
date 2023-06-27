@@ -1,18 +1,15 @@
 <template>
     <div>
-        <Header />
         <div class="backgound"></div>
         <Cliente />
     </div>
 </template>
 
 <script>
-    import Header from '@/components/Login/Header.vue'
     import Cliente from '@/components/RegistrarCliente/Cliente.vue'
     export default {
         name: 'RegistrarCliente',
         components: {
-            Header,
             Cliente
         }
     }

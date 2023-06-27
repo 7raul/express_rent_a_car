@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container-main">
         <div class="hero">
             <h1>Deseja alugar um carro?</h1>
             <p>Ligamos você as melhores empresas de <br> aluguel de carros</p> 

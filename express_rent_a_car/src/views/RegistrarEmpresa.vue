@@ -1,18 +1,15 @@
 <template>
     <div>
-        <Header />
         <div class="backgound"></div>
         <Empresa />
     </div>
 </template>
 
 <script>
-    import Header from '@/components/Login/Header.vue'
     import Empresa from '@/components/RegistrarEmppresa/Empresa.vue'
     export default {
         name: 'RegistrarEmpresa',
         components: {
-            Header,
             Empresa
         }
     }

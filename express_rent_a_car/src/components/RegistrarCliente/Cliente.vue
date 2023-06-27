@@ -26,23 +26,11 @@
                     <form action="#" @submit.prevent="matuta">
                         <h2>Cliente</h2>
 
-                        <div class="input-box">
-                            <span class="icon"><i class="bx bxs-user"></i></span>
-                            <input type="text" required v-model="cliente.nome">
-                            <label for="name">Nome</label>
-                        </div>
+                        <input type="text" placeholder="Nome" required v-model="cliente.nome">
 
-                        <div class="input-box">
-                            <span class="icon"><i class="bx bxs-envelope"></i></span>
-                            <input type="email" required v-model="cliente.email">
-                            <label for="email">E-mail</label>
-                        </div>
+                        <input type="email" placeholder="E-mail" required v-model="cliente.email">
 
-                        <div class="input-box">
-                            <span class="icon"><i class="bx bxs-phone"></i></span>
-                            <input type="number" required v-model="cliente.telefone">
-                            <label for="number">Telefone</label>
-                        </div>
+                        <input type="number" placeholder="Telefone" required v-model="cliente.telefone">
 
                         <button type="submit" class="btn" @click="activateContinue">Continuar</button>
 
@@ -56,23 +44,14 @@
                     <form action="#">
                         <h2>Cliente</h2>
 
-                        <div class="input-box">
-                            <span class="icon"><i class="bx bxs-lock-alt"></i></span>
-                            <input type="password" required v-model="cliente.password">
-                            <label for="password">Senha</label>
-                        </div>
+                        <input type="password" placeholder="Senha" required>
 
-                        <div class="input-box">
-                            <span class="icon"><i class="bx bxs-lock-alt"></i></span>
-                            <input type="password" required>
-                            <label for="password">Confirmar senha</label>
-                        </div>
+                        <input type="password" placeholder="Confirmar senha" required>
 
                         <div class="btn-option">
                             <button type="submit" class="btn-cad">Cadastrar</button>
                             <button type="submit" class="btn" @click="deactivateContinue">Voltar</button>
                         </div>
-
 
                         <div class="register">
                             <p>Já tem uma conta? <a href="#" @click="redirectToLogin">Entrar</a></p>
@@ -85,7 +64,7 @@
 </template>
 
 <script>
-import dados from "@/services/getBy"
+import api from "@/services/getBy"
 export default ({
 
 
@@ -108,13 +87,13 @@ export default ({
 
     mounted() {
 
-
+        api.Listar().then(e => console.log(e.data)).catch(err => console.log("Deu erro =>", err))
     },
     methods: {
-        matuta() {
-            alert("Salvo")
-            if (dados.CriarCliente(this.cliente.nome, "jkdshlje897ew78t") && dados.CriarSenha(this.cliente.password)) {
-            }
+        async matuta() {
+            const nome = this.cliente.nome
+            api.CriarCliente(await nome)
+            console.log("O nome é =>", nome)
         },
         activateContinue() {
             this.isRegisterActive = true;

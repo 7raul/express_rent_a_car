@@ -26,23 +26,11 @@
                     <form action="#">
                         <h2>Empresa</h2>
 
-                        <div class="input-box">
-                            <span class="icon"><i class="bx bxs-user"></i></span>
-                            <input type="text">
-                            <label for="name">Nome da empresa</label>
-                        </div>
+                        <input type="text" placeholder="Nome da empresa">
+                        
+                        <input type="email" placeholder="E-mail da empresa">
 
-                        <div class="input-box">
-                            <span class="icon"><i class="bx bxs-envelope"></i></span>
-                            <input type="email">
-                            <label for="email">E-mail da empresa</label>
-                        </div>
-
-                        <div class="input-box">
-                            <span class="icon"><i class="bx bxs-phone"></i></span>
-                            <input type="number">
-                            <label for="number">Telefone da empresa</label>
-                        </div>
+                        <input type="number" placeholder="Telefone da empresa">
 
                         <button type="submit" class="btn" @click.prevent="activateForm('another')">Continuar</button>
 
@@ -54,8 +42,6 @@
 
                 <div class="form-box another"  :class="{ active: activeForm === 'another' }">
                     <form action="#">
-                        <h2>Empresa</h2>
-
                         <FileEmpresa />
 
                         <div class="btn-option">
@@ -67,8 +53,6 @@
 
                 <div class="form-box the-end" :class="{ active: activeForm === 'the-end' }">
                     <form action="#">
-                        <h2>Empresa</h2>
-
                         <PassWord />
 
                         <div class="btn-option">

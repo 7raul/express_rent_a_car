@@ -31,16 +31,10 @@
                 <form action="#">
                     <h2>Entrar</h2>
 
-                    <div class="input-box">
-                    <span class="icone"><i class="bx bxs-envelope"></i></span>
-                    <input type="email" required>
-                    <label for="email">E-mail</label>
-                    </div>
+                    <div class="inputs">
+                        <input type="email" id="email" placeholder="E-mail" required>
 
-                    <div class="input-box">
-                    <span class="icone"><i class="bx bxs-lock-alt"></i></span>
-                    <input type="password" required>
-                    <label for="password">Senha</label>
+                        <input type="password" id="passoword" placeholder="Password" required>
                     </div>
 
                     <div class="remember-forgot">
@@ -59,18 +53,18 @@
                 </div>
 
                 <div class="form-box register">
-                <form action="#">
-                    <h2>Registrar como</h2>
+                    <form action="#">
+                        <h2>Registrar como</h2>
 
-                    <div class="btn-option">
-                        <button type="submit" class="btn-empresa" @click="redirectToEmpresa">Empresa</button>
-                        <button type="submit" class="btn-cliente" @click="redirectToCliente">Cliente</button>
-                    </div>
+                        <div class="btn-option">
+                            <button type="submit" class="btn-empresa" @click="redirectToEmpresa">Empresa</button>
+                            <button type="submit" class="btn-cliente" @click="redirectToCliente">Cliente</button>
+                        </div>
 
-                    <div class="login-register">
-                    <p>Já tem uma conta? <a href="#" class="login-link" @click="deactivateRegister">Entrar</a></p>
-                    </div>
-                </form>
+                        <div class="login-register">
+                        <p>Já tem uma conta? <a href="#" class="login-link" @click="deactivateRegister">Entrar</a></p>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
