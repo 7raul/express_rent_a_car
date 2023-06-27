@@ -50,12 +50,6 @@ const routes = [
     name: 'portfolio',
     component: () => import('../views/Portfolio.vue')
   },
-  {
-    path: '/adminDashboard',
-    name: 'adminDashboard',
-    component: () => import('../views/AdminDashboard.vue')
-  }
-
 
 ]
 

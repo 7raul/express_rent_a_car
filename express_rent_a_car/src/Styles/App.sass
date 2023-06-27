@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Root variable for theme toggle */
+:root:not(.light) {
+    --bg-color-1: #222327;
+    --bg-color-2: #232f33;
+    --color3: #5977b1;
+    --color1: #e4e4e4;
+}
+
+:root.light{
+    --bg-color-1: #fff;
+    --bg-color-2: #f2f2f2;
+    --color1: #495057;
+    --color2: #000;
+}
+
+/* Setting initials */
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    font-size: 0.875rem;
+    overflow-y: scroll;
+    background: var(--bg-color-1)
+}
+
+a{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}

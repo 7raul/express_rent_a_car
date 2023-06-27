@@ -1,0 +1,127 @@
+.atention-container{
+    width: 100%;
+    margin: 4rem 0;
+}
+
+.atention-container .links{
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center; 
+    text-align: start;    
+}
+
+.link-1{
+    position: relative;
+    width: 700px;
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.2)), 
+    url("@/assets/img/link-1.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.element-1{
+    position: absolute;
+    bottom: 0;
+    padding: 2.5rem;
+}
+
+.element-1,
+.element-2,
+.element-3{
+    color: var(--color1);
+}
+
+.element-1 p{
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.element-1 a{
+    font-size: 20px;
+}
+
+.element-1 a:hover{
+    text-decoration: underline;
+    color: var(--color1)
+}
+
+.link-2{
+    position: relative;
+    width: 700px;
+    height: 50%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8) 100%, rgba(0, 0, 0, 0.2)), 
+    url("@/assets/img/link-2.jpg");
+    background-size: cover;
+    background-position: center;   
+}
+
+.link-3{
+    position: relative;
+    width: 700px;
+    height: 50%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.2)),  
+    url("@/assets/img/link-3.jpg");
+    background-size: cover;
+    background-position: center;   
+}
+
+.element-2,
+.element-3{
+    position: absolute;
+    bottom: 0;
+    padding: 2rem;
+}
+
+.element-2 p,
+.element-3 p{
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.element-2 a,
+.element-3 a{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.element a:hover,
+.element-2 a:hover,
+.element-3 a:hover{
+    text-decoration: underline;
+    color: var(--color1)
+}
+
+/* Responsividade */
+@media(max-width: 1400px){
+    .link-1{
+        width: 550px;
+    }
+
+    .link-2,
+    .link-3{
+        width: 550px;  
+    }
+}
+
+@media(max-width: 1150px){
+    .link-1{
+        width: 450px;
+    }
+
+    .link-2,
+    .link-3{
+        width: 450px;  
+    } 
+}
+
+@media(max-width: 920px){
+    .atention-container{
+        display: none;
+        margin: 0;  
+          
+    }
+}

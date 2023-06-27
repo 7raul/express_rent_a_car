@@ -186,12 +186,12 @@
     export default {
         name: 'Carros',
 
-        data() {
+       data() {
             return{
                 carImg: require("@/assets/img/fiat.jpg"),
                 alt: "alt"
             }
-        }
+        } 
     }
 </script>
 

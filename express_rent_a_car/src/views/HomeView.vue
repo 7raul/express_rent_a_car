@@ -1,48 +1,42 @@
 <template>
   <div>
-    <NavBar />
-      <div class="container">
-        <Carros />
-        <Servicos />
-        <Nota />
-        <Texto />
-        <Mensagem />
-      </div>
+    <Header />
+    <Banner />
+    <ShowCars />
+    <Servicos />
+    <Atention />
+    <DicasDeClientes />
+    <Destaque  />
     <Footer />
   </div>
 </template>
 
 <script>
-  import NavBar from '@/components/home/NavBar.vue'
-  import Carros from '@/components/home/Carros.vue'
-  import Footer from '@/components/home/Footer.vue'
+  import Header from '@/components/home/Header.vue'
+  import Banner from '@/components/home/Banner.vue'
+  import ShowCars from '@/components/home/ShowCars.vue'
   import Servicos from '@/components/home/Servicos.vue'
-  import Nota from '@/components/home/Nota.vue'
-  import Texto from '@/components/home/Texto.vue'
-  import Mensagem from '@/components/home/Mensagem.vue'
+  import Atention from '@/components/home/Atention.vue'
+  import DicasDeClientes from '@/components/home/DicasDeClientes.vue'
+  import Destaque from '@/components/home/Destaque.vue'
+  import Footer from '@/components/home/Footer.vue'
 
   export default {
     name: 'HomeView',
 
     components: {
-      NavBar,
-      Carros,
+      Header,
+      Banner,
+      ShowCars,
       Servicos,
-      Nota,
-      Texto,
-      Mensagem,
+      Atention,
+      DicasDeClientes,
+      Destaque,
       Footer
     }
   }
 </script>
 
 <style scoped>
-  .container{
-    background-color: #222327;
-    color: #e4e4e4;
-  }
 
-  .produtos-container{
-    padding: 5rem;
-  }
 </style>
