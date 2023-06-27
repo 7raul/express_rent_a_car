@@ -82,21 +82,13 @@
                     <li><router-link to="feedback">Feedback</router-link></li>
                 </ul>
             </div>
-
-            <!--REZERVADO PARA O BANNER-->
-            <Banner />
-        </header>
-        
+        </header> 
     </div>
 </template>
 
 <script>
-    import Banner from '@/components/home/Banner.vue'
     export default {
         name: 'Header',
-        components: {
-            Banner
-        },
 
         data() {
             return{

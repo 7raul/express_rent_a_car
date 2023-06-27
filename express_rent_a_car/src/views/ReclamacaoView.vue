@@ -1,21 +1,15 @@
 <template>
     <div>
-        <Header />
-        <Reclamacao />
         <Footer />
     </div>
 </template>
 
 <script>
-    import Header from '@/components/about/Header.vue'
-    import Reclamacao from '@/components/reclamacao/Reclamacao.vue'
     import Footer from '@/components/home/Footer.vue'
     export default{
         name: 'ReclamacaoView',
 
         components: {
-            Header,
-            Reclamacao,
             Footer
         }
     }
