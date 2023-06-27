@@ -1,0 +1,70 @@
+.feedback-container{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    color: var(--color1)
+}
+
+.form-container {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.2)),
+    url('@/assets/img/feedback.jpeg');
+    background-size: cover;
+    background-position: center;  
+    image-rendering: pixelated;
+    padding: 5rem 25rem;
+}
+
+.content-container{
+    z-index: 10;
+    display: flex;
+    align-items: center;  
+    justify-content: space-between  
+}
+
+.feedback-content h3{
+    font-size: 3rem;
+}
+
+.feedback-content p{
+    font-size: 1.5rem;
+    font-weight: 500;    
+}
+
+.feedback{
+    display: block;
+    padding: 3rem 5rem;  
+    background: transparent;
+    backdrop-filter: blur(15px);  
+}
+
+.feedback textarea{
+    border: 2px solid #807c7c;
+    display: block;
+    width: 250px;
+    height: 100px; 
+    background: transparent;
+    backdrop-filter: blur(20px); 
+    margin-bottom: 1rem;
+    padding: .5rem;
+    font-size: 1rem;
+    color: var(--color1);
+    outline: none;
+}
+
+.feedback button{
+    width: 100%;
+    border: none;
+    background: var(--color3);  
+    padding: .5rem 0;  
+    color: var(--color1);
+    font-weight: 500;
+    transition: all .3s ease;
+}
+
+.feedback button:hover{
+    background: transparent;
+    border: 3px solid var(--color3);
+    color: var(--color3);
+    font-weight: 600;
+}
