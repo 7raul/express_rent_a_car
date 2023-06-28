@@ -1,0 +1,83 @@
+.reclamacao-container{
+    width: 100%;
+    position: relative;
+    color: var(--color1)    
+}
+
+.reclamacao-container .form-container{
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.2)),
+    url('@/assets/img/reclamacao.jpg');
+    background-size: cover;
+    background-position: center;  
+    image-rendering: pixelated;    
+}
+
+.form-container .content-container{
+    z-index: 10;
+    display: flex;
+    align-items: center;  
+    justify-content: space-between;
+    padding: 10rem 20rem;
+}
+
+.content-container .reclamacao-content h3{
+    font-size: 3rem;
+}
+
+.content-container .reclamacao-content p{
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+    font-weight: 500;    
+}
+
+.reclamacao{
+    display: block;
+    padding: 3rem 5rem;  
+    background: transparent;
+    backdrop-filter: blur(15px);     
+}
+
+.reclamacao form input{
+    border: 2px solid #807c7c;
+    display: block;
+    width: 250px;
+    background: transparent;
+    backdrop-filter: blur(20px); 
+    margin-bottom: 1rem;
+    padding: .5rem;
+    font-size: 1rem;
+    color: var(--color1);
+    outline: none;    
+}
+
+.reclamacao form textarea{
+    border: 2px solid #807c7c;
+    display: block;
+    width: 250px;
+    height: 100px; 
+    background: transparent;
+    backdrop-filter: blur(20px); 
+    margin-bottom: 1rem;
+    padding: .5rem;
+    font-size: 1rem;
+    color: var(--color1);
+    outline: none;    
+}
+
+.reclamacao form button{
+    width: 100%;
+    border: none;
+    background: var(--color3);  
+    padding: .5rem 0;  
+    color: var(--color1);
+    font-weight: 500;
+    transition: all .3s ease;    
+}
+
+.reclamacao form button:hover{
+    background: transparent;
+    border: 3px solid var(--color3);
+    color: var(--color3);
+    font-weight: 600;
+}
