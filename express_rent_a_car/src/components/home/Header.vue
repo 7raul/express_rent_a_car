@@ -23,7 +23,7 @@
                 <div class="navbar-center">
                     <ul class="navbar-links">
                         <li><router-link to="/">Inicio</router-link></li>
-                        <li><router-link to="#">Carros</router-link></li>
+                        <li><router-link to="/carros">Carros</router-link></li>
                         <li><router-link to="/about">Sobre</router-link></li>
                         <li><router-link to="/reclamacao">Reclamação</router-link></li>
                         <li><router-link to="feedback">Feedback</router-link></li>
@@ -76,7 +76,7 @@
                         </div>
                     </li>
                     <li><router-link to="/">Inicio</router-link></li>
-                    <li><router-link to="#">Carros</router-link></li>
+                    <li><router-link to="/carros">Carros</router-link></li>
                     <li><router-link to="/about">Sobre</router-link></li>
                     <li><router-link to="/reclamacao">Reclamação</router-link></li>
                     <li><router-link to="feedback">Feedback</router-link></li>

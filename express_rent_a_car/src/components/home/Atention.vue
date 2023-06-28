@@ -20,7 +20,7 @@
                     <div class="link-3">
                         <div class="element-3">
                             <p>Saiba mais sobre a Express Rent a Car</p>
-                            <router-link to="#">>Saber</router-link>
+                            <router-link to="/about">>Saber</router-link>
                         </div>
                     </div>
                 </div>
