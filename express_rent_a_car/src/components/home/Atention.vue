@@ -5,7 +5,7 @@
                 <div class="link-1">
                     <div class="element-1">
                         <p>Faça sua reserva qualquer hora em qualquer lugar</p>
-                        <router-link to="#">>Reservar</router-link>
+                        <router-link to="/carros">>Reservar</router-link>
                     </div>
                 </div>
 
@@ -13,7 +13,7 @@
                     <div class="link-2">
                         <div class="element-2">
                             <p>Conheça as empresas ligadas a <span>Express Rent a Car</span></p>
-                            <router-link to="#">>Conhecer</router-link>
+                            <router-link to="/empresas">>Conhecer</router-link>
                         </div>
                     </div>
 

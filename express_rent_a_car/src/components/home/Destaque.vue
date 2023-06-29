@@ -20,11 +20,13 @@
                             <i class="far fa-star"></i>
                         </div>
 
-                        <p>
-                            Satisfazer nossos clientes é primordial
-                        </p>
+                        <div class="paragrafo">
+                            <p>Satisfazer os nossos clientes nos satisfaz</p>
+                        </div>
 
-                        <button class="card_btn">Ver mais</button>
+                        <div class="empresa-btn">
+                            <a href="#">Ver mais</a>
+                        </div>
                     </div>
                 </div>
 
@@ -44,11 +46,14 @@
                             <i class="far fa-star"></i>
                         </div>
 
-                        <p>
-                            Satisfazer nossos clientes é primordial
-                        </p>
+                        
+                        <div class="paragrafo">
+                            <p>Satisfazer os nossos clientes nos satisfaz</p>
+                        </div>
 
-                        <button class="card_btn">Ver mais</button>
+                        <div class="empresa-btn">
+                            <a href="#">Ver mais</a>
+                        </div>
                     </div>
                 </div>
 
@@ -68,11 +73,40 @@
                             <i class="far fa-star"></i>
                         </div>
 
-                        <p>
-                            Satisfazer nossos clientes é primordial
-                        </p>
+                        
+                        <div class="paragrafo">
+                            <p>Satisfazer os nossos clientes nos satisfaz</p>
+                        </div>
 
-                        <button class="card_btn">Ver mais</button>
+                        <div class="empresa-btn">
+                            <a href="#">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card swiper-slide">
+                    <div class="card_image">
+                        <img :src="img">
+                    </div>
+
+                    <div class="card-content">
+                        <span class="card_title">Artur Rent acar</span>
+
+                        <div class="reviews">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        
+                        <div class="paragrafo">
+                            <p>Satisfazer os nossos clientes nos satisfaz</p>
+                        </div>
+
+                        <div class="empresa-btn">
+                            <a href="#">Ver mais</a>
+                        </div>
                     </div>
                 </div>
 
@@ -92,35 +126,14 @@
                             <i class="far fa-star"></i>
                         </div>
 
-                        <p>
-                            Satisfazer nossos clientes é primordial
-                        </p>
-
-                        <button class="card_btn">Ver mais</button>
-                    </div>
-                </div>
-
-                <div class="card swiper-slide">
-                    <div class="card_image">
-                        <img :src="img">
-                    </div>
-
-                    <div class="card-content">
-                        <span class="card_title">Artur Rent acar</span>
-
-                        <div class="reviews">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
+                        
+                        <div class="paragrafo">
+                            <p>Satisfazer os nossos clientes nos satisfaz</p>
                         </div>
 
-                        <p>
-                            Satisfazer nossos clientes é primordial
-                        </p>
-
-                        <button class="card_btn">Ver mais</button>
+                        <div class="empresa-btn">
+                            <a href="#">Ver mais</a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -174,7 +174,7 @@
             </div>
 
             <div class="view">
-                <a href="#">Ver todos</a>
+                <a href="/carros">Ver todos</a>
             </div>
         </div>
     </div>
