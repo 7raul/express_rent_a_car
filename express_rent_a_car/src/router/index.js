@@ -48,7 +48,7 @@ const routes = [
   {
     path: '/portfolio',
     name: 'portfolio',
-    component: () => import('../views/Portfolio.vue')
+    component: () => import('../views/PortfolioView.vue')
   },
   {
     path: '/carros',
