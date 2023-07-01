@@ -1,5 +1,6 @@
 <template>
     <div>
+        <EstrelasTodos />
         <div class="carros">
             <div class="todos-carros">
                 <div class="carro-estrelas">
@@ -22,8 +23,13 @@
 </template>
 
 <script>
+    import EstrelasTodos from '@/components/Portfolio/EstrelasTodos.vue'
     export default {
-        name: 'Estrelas'
+        name: 'Estrelas',
+
+        components: {
+            EstrelasTodos
+        }
     }
 </script>
 
