@@ -308,7 +308,12 @@
                                 </div>
                             </div>
                             
-                        </div> 
+                        </div>
+                        <EstrelasTodos />
+
+                        <!--Conteudos dos links-->
+                        <Carros />
+                        <Estrelas />
                     </div>
                 </div>
             </div>
@@ -317,8 +322,17 @@
 </template>
 
 <script>
+    import EstrelasTodos from '@/components/Portfolio/EstrelasTodos.vue'
+    import Carros from '@/components/Portfolio/Carros.vue'
+    import Estrelas from '@/components/Portfolio/Estrelas.vue'
     export default {
         name: 'PerfilEmpresa',
+
+        components: {
+            EstrelasTodos,
+            Carros,
+            Estrelas
+        },
 
         data() {
             return {
