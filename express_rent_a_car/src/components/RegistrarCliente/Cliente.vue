@@ -26,7 +26,7 @@
                     <form action="#" @submit.prevent="matuta">
                         <h2>Cliente</h2>
 
-                        <input type="text" placeholder="Nome" required v-model="cliente.nome">
+                        <input type="name" placeholder="Nome" required v-model="cliente.nome">
 
                         <input type="email" placeholder="E-mail" required v-model="cliente.email">
 
@@ -90,11 +90,21 @@ export default ({
         api.Listar().then(e => console.log(e.data)).catch(err => console.log("Deu erro =>", err))
     },
     methods: {
-        async matuta() {
-            const nome = this.cliente.nome
-            api.CriarCliente(await nome)
-            console.log("O nome é =>", nome)
+
+        matuta() {
+            try {
+                let data = JSON.stringify({
+                    username: this.cliente.nome,
+                });
+                api.CriarCliente(data.username)
+                alert("Criado")
+            } catch (err) {
+                console.log(" Erro => ", err)
+            }
+
         },
+
+
         activateContinue() {
             this.isRegisterActive = true;
         },

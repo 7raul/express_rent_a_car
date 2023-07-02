@@ -2,5 +2,5 @@ import axios from "axios";
 
 
 export const http = axios.create({
-    baseURL: 'http://localhost:5553/',
+    baseURL: 'http://localhost:5553',
 });
