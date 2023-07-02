@@ -1,0 +1,56 @@
+.todas-estrelas{
+    margin-top: 2rem;
+    margin-left: 2.5rem;
+    margin-right: 1rem;
+    background: var(--bg-color-2);
+    padding: 2rem;
+    box-shadow: 2px 2px 30px rgba(0,0,0,0.1);
+}
+
+.todas-estrelas .estrelas{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.estrelas i{
+    color: #fcba03;    
+}
+
+.todas-estrelas .estatisticas{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;    
+}
+
+.estatisticas .progresso{
+    position: relative;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;    
+}
+
+.progresso svg{
+    width: 7rem;
+    height: 7rem;
+}
+
+.progresso svg circle{
+    fill: none;
+    stroke: var(--color3);
+    stroke-width: 14;
+    stroke-linecap: round;
+    transform: translate(5px, 5px);
+    stroke-dasharray: 110;
+    stroke-dashoffset: 92;
+}
+
+.progresso .number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}  

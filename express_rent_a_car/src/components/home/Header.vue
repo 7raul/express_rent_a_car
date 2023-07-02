@@ -22,11 +22,11 @@
 
                 <div class="navbar-center">
                     <ul class="navbar-links">
-                        <li><router-link to="/">Inicio</router-link></li>
-                        <li><router-link to="#">Carros</router-link></li>
-                        <li><router-link to="/about">Sobre</router-link></li>
-                        <li><router-link to="/reclamacao">Reclamação</router-link></li>
-                        <li><router-link to="feedback">Feedback</router-link></li>
+                        <li><router-link to="/" exact class="nav-link">Inicio</router-link></li>
+                        <li><router-link to="/carros" class="nav-link">Carros</router-link></li>
+                        <li><router-link to="/about" class="nav-link">Sobre</router-link></li>
+                        <li><router-link to="/reclamacao" class="nav-link">Reclamação</router-link></li>
+                        <li><router-link to="/feedback" class="nav-link">Feedback</router-link></li>
                     </ul>
                 </div>
 
@@ -76,7 +76,7 @@
                         </div>
                     </li>
                     <li><router-link to="/">Inicio</router-link></li>
-                    <li><router-link to="#">Carros</router-link></li>
+                    <li><router-link to="/carros">Carros</router-link></li>
                     <li><router-link to="/about">Sobre</router-link></li>
                     <li><router-link to="/reclamacao">Reclamação</router-link></li>
                     <li><router-link to="feedback">Feedback</router-link></li>

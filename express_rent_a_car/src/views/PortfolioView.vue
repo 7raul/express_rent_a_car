@@ -1,23 +1,25 @@
 <template>
     <div>
+        <Header />
+        <PerfilEmpresa />
         <Footer />
     </div>
 </template>
 
 <script>
+    import Header from '@/components/home/Header.vue'
+    import PerfilEmpresa from '@/components/Portfolio/PerfilEmpresa.vue'
     import Footer from '@/components/home/Footer.vue'
     export default {
         name: 'Portfolio',
         components: {
-            HeaderPortfolio,
-            BodyPortfolio,
+            Header,
+            PerfilEmpresa,
             Footer
         }
     }
 </script>
 
 <style scoped>
-    *{
-        background-color: #232f33;
-    }
+
 </style>

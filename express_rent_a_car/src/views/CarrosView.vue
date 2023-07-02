@@ -1,25 +1,21 @@
 <template>
     <div>
         <Header />
-        <FeedbackCliente />
+        <Carros />
         <Footer />
     </div>
 </template>
 
 <script>
     import Header from '@/components/home/Header.vue'
-    import FeedbackCliente from '@/components/FeedbackClientes/FeedbackClientes.vue'
+    import Carros from '@/components/Carros/Carros.vue'
     import Footer from '@/components/home/Footer.vue'
-    export default{
-        name: 'FeedbackView',
-
+    export default {
+        name: 'CarrosView',
         components: {
             Header,
-            FeedbackCliente,
+            Carros,
             Footer
         }
     }
 </script>
-
-<style scoped>
-</style>

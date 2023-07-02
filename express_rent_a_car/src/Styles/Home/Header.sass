@@ -99,7 +99,8 @@ header .navbar-center .navbar-links{
     color: var(--color1);   
 }
 
-.navbar-links a:hover{
+.navbar-links .nav-link:hover,
+.navbar-links .nav-link.router-link-exact-active {
     color: var(--color3);
 }
 
@@ -156,7 +157,8 @@ header .toggle_dropdown{
     background: var(--bg-color-1);
     padding: .5rem 2rem;
     color: var(--color1);
-    text-align: center;    
+    text-align: center;  
+    z-index: 10;  
 }
 
 .toggle_dropdown .login-logout{

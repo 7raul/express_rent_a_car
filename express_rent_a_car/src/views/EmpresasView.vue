@@ -1,25 +1,22 @@
 <template>
     <div>
         <Header />
-        <FeedbackCliente />
+        <Empresas />
         <Footer />
     </div>
 </template>
 
 <script>
     import Header from '@/components/home/Header.vue'
-    import FeedbackCliente from '@/components/FeedbackClientes/FeedbackClientes.vue'
+    import Empresas from '@/components/Empresas/Empresas.vue'
     import Footer from '@/components/home/Footer.vue'
-    export default{
-        name: 'FeedbackView',
+    export default {
+        name:'EmpresasView',
 
         components: {
             Header,
-            FeedbackCliente,
+            Empresas,
             Footer
         }
     }
 </script>
-
-<style scoped>
-</style>
