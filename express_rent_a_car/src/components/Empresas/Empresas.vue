@@ -146,17 +146,17 @@
 </template>
 
 <script>
-    export default {
-        name: 'Empresas',
+export default {
+    name: 'Empresas',
 
-        data() {
-            return {
-                empresaImg: require("@/assets/img/userPerfil.png")
-            }
+    data() {
+        return {
+            empresaImg: require("@/assets/img/userPerfil.png")
         }
     }
+}
 </script>
 
 <style scoped>
-    @import '@/Styles/Empresas/Empresas.sass';
+@import '@/Styles/Empresas/Empresas.sass';
 </style>

@@ -4,10 +4,14 @@ export default {
     Listar: () => {
         return http.get('/cliente');
     },
-    CriarCliente: (nome) => {
-        return http.post("/cliente", nome)
+    CriarCliente: (cliente) => {
+        const { nome, password, email } = cliente
+        return http.post("/cliente", { nome, password }, { email })
     },
     CreateSenha: (senha,) => {
-        return http.post("/login", { senha })
+        return http.post("/login", senha)
+    },
+    ListarCarro: () => {
+        return http.get("/carro");
     }
 }

@@ -86,24 +86,15 @@ export default ({
     },
 
     mounted() {
-
         api.Listar().then(e => console.log(e.data)).catch(err => console.log("Deu erro =>", err))
     },
     methods: {
 
         matuta() {
-            try {
-                let data = JSON.stringify({
-                    username: this.cliente.nome,
-                });
-                api.CriarCliente(data.username)
-                alert("Criado")
-            } catch (err) {
-                console.log(" Erro => ", err)
-            }
+
+            api.CriarCliente(this.cliente).then(res => alert("funcionou => ",)).catch(err => console.log(" Erro => ", err))
 
         },
-
 
         activateContinue() {
             this.isRegisterActive = true;
