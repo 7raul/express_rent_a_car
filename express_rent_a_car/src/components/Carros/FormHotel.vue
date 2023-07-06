@@ -85,7 +85,7 @@
                 </div>
             </form>
 
-            <div class="btn">
+            <div class="botton">
                 <div class="checkbox">
                     <input type="checkbox">
                     <span>Condutor com a idade entre 20 e 60 anos</span>
