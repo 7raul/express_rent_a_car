@@ -99,13 +99,15 @@
                                 </div>
                             </form>
 
-                            <button type="submit">Continuar ></button>
+                            <button type="submit">Continuar</button>
                         </div>
                     </div>
                 </div>
 
                 <!--Reservado para componentes-->
                 <FormHotel />
+                <FormAeroporto />
+                <FormBalcao />
             </div>
         </div>
     </div>
@@ -113,11 +115,15 @@
 
 <script>
     import FormHotel from '@/components/Carros/FormHotel.vue'
+    import FormAeroporto from '@/components/Carros/FormAeroporto.vue'
+    import FormBalcao from '@/components/Carros/FormBalcao.vue'
     export default {
         name: 'Detalhes',
 
         components: {
             FormHotel,
+            FormAeroporto,
+            FormBalcao
         },
 
         data() {
@@ -125,7 +131,13 @@
                 carImg: require("@/assets/img/fiat.jpg"),
                 logoEmpresa: require("@/assets/img/empresa.jpg")
             }
-        } 
+        },
+
+        methods: {
+            closeDetalhes() {
+                this.showDetalhes = false;
+            }
+        }
     }
 </script>
 

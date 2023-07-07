@@ -85,21 +85,29 @@
                 </div>
             </form>
 
-            <div class="botton">
-                <div class="checkbox">
-                    <input type="checkbox">
-                    <span>Condutor com a idade entre 20 e 60 anos</span>
+            <div class="bottom">
+                <div class="idade">
+                    <input type="Checkbox">
+                    <span>Condutor com a idade entre 20  e 60 anos</span>
                 </div>
-
-                <button type="submit">Continuar ></button>
+                <div class="bottom-button">
+                    <button type="submit">Voltar</button>
+                    <button type="submit">Continuar</button>
+                </div>
             </div>
         </div>
+        <Pagamento />
     </div>
 </template>
 
 <script>
+    import Pagamento from '@/components/Carros/Pagamento.vue'
     export default {
-        name: 'FormHotel'
+        name: 'FormHotel',
+
+        components: {
+            Pagamento
+        }
     }
 </script>
 

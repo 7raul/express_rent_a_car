@@ -63,14 +63,19 @@
                                 </div>
 
                                 <div class="btn-reservar">
-                                    <button>Reservar</button>
+                                    <button @click="showDetalhes = true"> Continuar </button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <Detalhes />
+                <div class="show-detalhes" v-if="showDetalhes">
+                    <Detalhes />
+                    <div class="xmark">
+                        <i class="fa-solid fa-xmark" @click="closeDetalhes"></i>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -88,9 +93,15 @@
         data() {
             return{
                 carImg: require("@/assets/img/fiat.jpg"),
-                alt: "alt"
+                showDetalhes: false
             }
-        } 
+        },
+
+        methods: {
+            closeDetalhes() {
+                this.showDetalhes = false;
+            }
+        }
     }
 </script>
 
