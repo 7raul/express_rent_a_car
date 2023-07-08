@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="form-hotel">
+        <div class="form-hotel" v-if="exibirFormAeroporto">
             <form action="#">
                 <div class="entrega-devolucao">
                     <div class="entrega">
@@ -23,20 +23,12 @@
                     </div>
                     
                     <div class="devolucao">
-
-                        <div class="opcao-devolucao">
-                            <div class="local-devolucao">
-                                <input type="checkbox">
-                                <span>Devolver no mesmo local</span>
-                            </div>
-
-                            <div class="tempo-devolucao">
-                                <input type="checkbox">
-                                <span>Devolver na mesma hora/dia</span>
-                            </div>
+                        <div class="local-devolucao">
+                            <input type="checkbox" v-model="devolverNoMesmoLocal">
+                            <span>Devolver no mesmo local</span>
                         </div>
 
-                        <div class="local">
+                        <div class="local" v-show="!devolverNoMesmoLocal">
                             <label for="#">Local de devolução</label>
                             <input type="text" required placeholder="Nome do hotel">
                         </div>
@@ -46,7 +38,6 @@
                                 <label for="#">Data de devolução</label>
                                 <input type="date">
                             </div>
-
                             <div class="hora">
                                 <label for="#">hora de devolução</label>
                                 <input type="time">
@@ -94,22 +85,39 @@
 
             <div class="bottom">
                 <div class="idade">
-                    <input type="Checkbox">
+                    <input type="Checkbox" required>
                     <span>Condutor com a idade entre 20  e 60 anos</span>
                 </div>
                 <div class="bottom-button">
-                    <button type="submit">Voltar</button>
-                    <button type="submit">Continuar</button>
+                    <button type="submit" @click="mostrarPagamento">Continuar</button>
                 </div>
             </div>
         </div>
-        <Pagamento />
+        <Pagamento v-else />
     </div>
 </template>
 
 <script>
+    import Pagamento from '@/components/Carros/Pagamento.vue'
     export default {
-        name: 'FormAeroporto'
+        name: 'FormAeroporto',
+
+        components: {
+            Pagamento
+        },
+
+        data() {
+            return {
+                exibirFormAeroporto: true,
+                devolverNoMesmoLocal: false
+            }
+        },
+
+        methods: {
+            mostrarPagamento() {
+                this.exibirFormAeroporto = false
+            }
+        }
     }
 </script>
 

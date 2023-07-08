@@ -101,17 +101,16 @@
             </div>
         </div>
 
-        <Pagar v-else />
+        <PagarBalcao v-else />
     </div>
 </template>
 
 <script>
-    import Pagar from '@/components/Carros/Pagar.vue'
+    import PagarBalcao from '@/components/Carros/PagarBalcao.vue'
     export default {
-        name: 'Pagamento',
-
+        name: 'PagamentoBalcao',
         components: {
-            Pagar
+            PagarBalcao
         },
 
         data() {
@@ -126,12 +125,12 @@
             },
 
             pagarSemCaucao() {
-                this.exibirPagamento = false;
+                this.exibirPagamento = false
             }
         }
     }
 </script>
 
 <style scoped>
-    @import '@/Styles/Carros/Pagamento.sass';
+
 </style>

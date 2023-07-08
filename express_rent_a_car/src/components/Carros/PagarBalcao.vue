@@ -2,8 +2,7 @@
     <div>
         <div class="pagar-container" v-if="exibirPagar">
             <p>
-                A sua reserva está sendo processada, será enviado no seu e-mail os dados bancários para 
-                efetuar o pagamento, por favor verifique o seu correio electrónico.
+                Aguadamos você no balcão de atendimento presencial para o levantamento da viatura.
             </p>
             <button type="submit" @click="fecharPagar">Terminar</button>
         </div>
@@ -12,7 +11,7 @@
 
 <script>
     export default {
-        name: 'Pagar',
+        name: 'PagarBalcao',
 
         data() {
             return {
@@ -27,7 +26,3 @@
         }
     }
 </script>
-
-<style scoped>
-    @import '@/Styles/Carros/Pagar.sass';
-</style>

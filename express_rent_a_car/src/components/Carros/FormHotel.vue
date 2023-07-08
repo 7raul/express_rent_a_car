@@ -23,20 +23,12 @@
                     </div>
                     
                     <div class="devolucao">
-
-                        <div class="opcao-devolucao">
-                            <div class="local-devolucao">
-                                <input type="checkbox">
-                                <span>Devolver no mesmo local</span>
-                            </div>
-
-                            <div class="tempo-devolucao">
-                                <input type="checkbox">
-                                <span>Devolver na mesma hora/dia</span>
-                            </div>
+                        <div class="local-devolucao">
+                            <input type="checkbox" v-model="devolverNoMesmoLocal">
+                            <span>Devolver no mesmo local</span>
                         </div>
 
-                        <div class="local">
+                        <div class="local" v-show="!devolverNoMesmoLocal">
                             <label for="#">Local de devolução</label>
                             <input type="text" required placeholder="Nome do hotel">
                         </div>
@@ -46,7 +38,6 @@
                                 <label for="#">Data de devolução</label>
                                 <input type="date">
                             </div>
-
                             <div class="hora">
                                 <label for="#">hora de devolução</label>
                                 <input type="time">
@@ -91,7 +82,6 @@
                     <span>Condutor com a idade entre 20  e 60 anos</span>
                 </div>
                 <div class="bottom-button">
-                    <button type="submit">Voltar</button>
                     <button type="submit" @click="mostrarPagamento">Continuar</button>
                 </div>
             </div>
@@ -111,7 +101,8 @@
 
         data() {
             return {
-                exibirFormHotel: true
+                exibirFormHotel: true,
+                devolverNoMesmoLocal: true
             };
         },
 
