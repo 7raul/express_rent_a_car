@@ -21,6 +21,7 @@
                         <p>4.4 <span>(10,482 reviews)</span></p>
                     </div>
                 </div>
+
                 <div class="detalhes-carro">
                     <div class="detalhes">
                         <div class="img-car">
@@ -86,28 +87,30 @@
                         <div class="att">
                             <form action="#">
                                 <div class="hotel">
-                                    <input type="radio" required>
+                                    <input type="radio" name="opcao-entrega" v-model="opcaoEntrega" value="hotel">
                                     <span>Hotel</span>
                                 </div>
                                 <div class="aeroporto">
-                                    <input type="radio" required>
+                                    <input type="radio" name="opcao-entrega" v-model="opcaoEntrega" value="aeroporto">
                                     <span>Aeroporto</span>
                                 </div>
                                 <div class="balcao">
-                                    <input type="radio" required>
+                                    <input type="radio" name="opcao-entrega" v-model="opcaoEntrega" value="balcao">
                                     <span>Balcão</span>
                                 </div>
                             </form>
 
-                            <button type="submit">Continuar</button>
+                            <button type="submit" @click="mostrarComponente">Continuar</button>
                         </div>
                     </div>
                 </div>
 
                 <!--Reservado para componentes-->
-                <FormHotel />
-                <FormAeroporto />
-                <FormBalcao />
+                <transition name="slide">
+                    <div v-if="exibirComponente" class="detalhes-carro">
+                        <component :is="componenteSelecionado" />
+                    </div>
+                </transition>
             </div>
         </div>
     </div>
@@ -129,13 +132,33 @@
         data() {
             return{
                 carImg: require("@/assets/img/fiat.jpg"),
-                logoEmpresa: require("@/assets/img/empresa.jpg")
+                logoEmpresa: require("@/assets/img/empresa.jpg"),
+                opcaoEntrega: '',
+                exibirComponente: false,
+                componenteSelecionado: ''
             }
         },
 
         methods: {
             closeDetalhes() {
                 this.showDetalhes = false;
+            },
+
+            mostrarComponente(){
+                // Verificar a opção selecionada e exibir o componente correspondente após clicar em "Continuar"
+                if (this.opcaoEntrega === 'hotel') {
+                    this.exibirComponente = true;
+                    this.componenteSelecionado = 'FormHotel';
+                } else if (this.opcaoEntrega === 'aeroporto') {
+                    this.exibirComponente = true;
+                    this.componenteSelecionado = 'FormAeroporto';
+                } else if (this.opcaoEntrega === 'balcao') {
+                    this.exibirComponente = true;
+                    this.componenteSelecionado = 'FormBalcao';
+                } else {
+                    this.exibirComponente = false;
+                    this.componenteSelecionado = '';
+                }
             }
         }
     }

@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="pagar">
-            <div class="pagamento-container">
+            <div class="pagamento-container" >
                 <div class="incluidos">
                     <div class="incluido">
                         <h4>Incluido no preço</h4>

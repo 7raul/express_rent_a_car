@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="form-hotel">
+        <div v-if="exibirFormHotel" class="form-hotel">
             <form action="#">
                 <div class="entrega-devolucao">
                     <div class="entrega">
@@ -92,11 +92,11 @@
                 </div>
                 <div class="bottom-button">
                     <button type="submit">Voltar</button>
-                    <button type="submit">Continuar</button>
+                    <button type="submit" @click="mostrarPagamento">Continuar</button>
                 </div>
             </div>
         </div>
-        <Pagamento />
+        <Pagamento v-else />
     </div>
 </template>
 
@@ -107,6 +107,18 @@
 
         components: {
             Pagamento
+        },
+
+        data() {
+            return {
+                exibirFormHotel: true
+            };
+        },
+
+        methods: {
+            mostrarPagamento() {
+                this.exibirFormHotel = false;
+            }
         }
     }
 </script>
