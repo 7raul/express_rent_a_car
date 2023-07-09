@@ -19,6 +19,14 @@
                                 </select>
                             </div>
 
+                            <div class="select-box">
+                                <label for="#">Kilometragrm</label>
+                                <select>
+                                    <option>Ilimitada</option>
+                                    <option>Limitada</option>
+                                </select>
+                            </div>
+
                             <button type="submit">Buscar</button>
                         </form>
                     </div>

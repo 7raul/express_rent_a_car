@@ -47,6 +47,21 @@
                             <span>27.000kz</span>
                         </div>
 
+                        <form action="#">
+                            <input type="checkbox" v-model="semMotorista">
+                            <span>Sem motorista</span>
+                        </form>
+
+                        <div class="preco-aluguel" v-show="!semMotorista">
+                            <p>Preço do motorista:</p>
+                            <span>10.000kz</span>
+                        </div>
+
+                        <div class="preco-aluguel">
+                            <p>Preço da entrega:</p>
+                            <span>3.000kz</span>
+                        </div>
+
                         <div class="valor-caucao">
                             <p>Preço da caução:</p>
                             <span>270.000kz</span>
@@ -73,6 +88,21 @@
                         <div class="preco-aluguel">
                             <p>Preço do alugel:</p>
                             <span>27.000kz</span>
+                        </div>
+
+                        <form action="#">
+                            <input type="checkbox" v-model="semMotorista">
+                            <span>Sem motorista</span>
+                        </form>
+
+                        <div class="preco-aluguel" v-show="!semMotorista">
+                            <p>Preço do motorista:</p>
+                            <span>10.000kz</span>
+                        </div>
+
+                        <div class="valor-caucao">
+                            <p>Preço da entrega:</p>
+                            <span>3.000kz</span>
                         </div>
 
                         <div class="valor-caucao">
@@ -116,7 +146,8 @@
 
         data() {
             return {
-                exibirPagamento: true
+                exibirPagamento: true,
+                semMotorista: false
             }
         },
 
