@@ -60,6 +60,12 @@ const routes = [
     name: 'empresas',
     component: () => import('../views/EmpresasView.vue')
   },
+  {
+    path: '/reservas',
+    name: 'reservas',
+    component: () => import('../views/GerenciarReservas.vue')
+  },
+  
   
 
 ]
