@@ -68,7 +68,7 @@
                                     <img :src="userProfile" alt="Profile" class="avatar">
                                 </a>
                                 <div class="user-link-dropdown" v-show="showDropdown">
-                                    <a href="#" class="dropdown-item">Reservas</a>
+                                    <a href="/reservas" class="dropdown-item">Gerenciar Reservas</a>
                                     <a href="#" class="dropdown-item">Editar Perfil</a>
                                     <a href="#" class="dropdown-item">Sair</a>
                                 </div>
