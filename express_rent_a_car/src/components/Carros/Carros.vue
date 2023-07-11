@@ -204,7 +204,7 @@
 
 <script>
 import Api from "@/services/getBy"
-export default {
+export default ({
 
     name: 'Carros',
 
@@ -220,11 +220,10 @@ export default {
     mounted() {
         Api.ListarCarro().then(e => {
             this.carro = e.data
-            console.log(this.carro)
         }).catch(error => console.log("Deu erro", error))
 
     },
-}
+})
 </script>
 
 <style scoped>

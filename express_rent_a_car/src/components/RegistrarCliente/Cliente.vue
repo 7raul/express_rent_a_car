@@ -23,14 +23,14 @@
 
             <div class="registro-box" :class="{ active: isRegisterActive }">
                 <div class="form-box register">
-                    <form action="#" @submit.prevent="matuta">
+                    <form action="#" @submit.prevent="salvar1">
                         <h2>Cliente</h2>
 
                         <input type="name" placeholder="Nome" required v-model="cliente.nome">
 
-                        <input type="email" placeholder="E-mail" required v-model="cliente.email">
+                        <input type="email" placeholder="E-mail" required v-model="contacto.email">
 
-                        <input type="number" placeholder="Telefone" required v-model="cliente.telefone">
+                        <input type="number" placeholder="Telefone" required v-model="contacto.telefone">
 
                         <button type="submit" class="btn" @click="activateContinue">Continuar</button>
 
@@ -41,12 +41,12 @@
                 </div>
 
                 <div class="form-box another">
-                    <form action="#">
+                    <form action="#" @submit.prevent="salvar">
                         <h2>Cliente</h2>
 
-                        <input type="password" placeholder="Senha" required>
+                        <input type="password" placeholder="Senha" v-model="cliente.password" required>
 
-                        <input type="password" placeholder="Confirmar senha" required>
+                        <input type="password" placeholder="Confirmar senha" v-model="confirmaSenha" required>
 
                         <div class="btn-option">
                             <button type="submit" class="btn-cad">Cadastrar</button>
@@ -64,10 +64,8 @@
 </template>
 
 <script>
-import api from "@/services/getBy"
+import Api from "@/services/getBy"
 export default ({
-
-
 
     name: 'Cliente',
 
@@ -78,21 +76,26 @@ export default ({
             isRegisterActive: false,
             cliente: {
                 nome: "",
-                email: "",
                 password: "",
+            },
+            contacto: {
+                email: "",
                 telefone: "",
-            }
+            },
+            confirmaSenha: ""
         }
     },
 
     mounted() {
-        api.Listar().then(e => console.log(e.data)).catch(err => console.log("Deu erro =>", err))
+        Api.Listar().then(e => console.log(e.data)).catch(err => console.log("Deu erro =>", err))
     },
     methods: {
 
-        matuta() {
-
-            api.CriarCliente(this.cliente).then(res => alert("funcionou => ",)).catch(err => console.log(" Erro => ", err))
+        async salvar() {
+            if (this.cliente.password != this.confirmaSenha) {
+                alert("Senha incorreta")
+            }
+            await Api.CriarCliente(this.cliente, this.contacto).then(res => alert("funcionou => ",)).catch(err => console.log(" Erro => ", err))
 
         },
 
