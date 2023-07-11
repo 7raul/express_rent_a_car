@@ -65,6 +65,11 @@ const routes = [
     name: 'reservas',
     component: () => import('../views/GerenciarReservas.vue')
   },
+  {
+    path: '/dashboard',
+    name: 'dashboard',
+    component: () => import('../views/AdminView.vue')
+  },
   
   
 

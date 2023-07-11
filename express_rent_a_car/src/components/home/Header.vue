@@ -4,7 +4,7 @@
             <nav class="header-navbar">
                 <div class="navbar-left">
                     <div class="navbar-logo">
-                        <router-link to="#">
+                        <router-link to="/">
                             <i class="ri-roadster-fill"></i><span>Express<span class="color">RentaCar</span></span>
                         </router-link>
                     </div>
