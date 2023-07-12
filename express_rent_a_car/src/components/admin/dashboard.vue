@@ -1,126 +1,127 @@
 <template>
     <div>
         <div class="wrapper">
-            <aside id="sidebar">
+            <aside id="sidebar" :class="{ 'collapsed': isSidebarCollapsed }">
                 <div class="h-100">
-                    <div class="navbar-logo">
-                        <router-link to="/">
-                            <i class="ri-roadster-fill"></i><span>Express<span class="color">RentaCar</span></span>
-                        </router-link>
-                    </div>
+                <div class="navbar-logo">
+                    <router-link to="/">
+                    <i class="ri-roadster-fill"></i><span>Express<span class="color">RentaCar</span></span>
+                    </router-link>
+                </div>
 
-                    <ul class="sidebar-nav">
-                        <li class="sidebar-header">
-                            Páginas
-                        </li>
+                <ul class="sidebar-nav">
+                    <li class="sidebar-header">
+                        Páginas
+                    </li>
 
-                        <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">
-                                <i class="fa-regular fa-user"></i>
-                                Editar Perfil
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="#" class="sidebar-link">
-                                <i class="fa-regular fa-bell"></i>
-                                Notificão <span class="red">7</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="#" class="sidebar-link has-dropdown">
-                                <i class="fa-solid fa-user-gear"></i>
-                                Configurações
-                            </a>
-                            
-                            <ul class="sidebar-dropdown">
-                                <li class="sidebar-item">
-                                    <a href="#" class="sidebar-link">
-                                        Sair
-                                    </a>
-                                    <a href="#" class="sidebar-link">
-                                        Ver como cliente
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="sidebar-header">
-                            Pedidos
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="#" class="sidebar-link has-dropdown">
-                                <i class="ri-survey-line"></i>
-                                Reservas
-                            </a>
-                            
-                            <ul class="sidebar-dropdown">
-                                <li class="sidebar-item">
-                                    <a href="#" class="sidebar-link">
-                                        Solicitação
-                                    </a>
-                                    <a href="#" class="sidebar-link">
-                                        Cancelados
-                                    </a>
-                                    <a href="#" class="sidebar-link">
-                                        Todos
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <i class="fa-regular fa-user"></i>
+                            Editar Perfil
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
+                            <i class="fa-regular fa-bell"></i>
+                            Notificão <span class="red">7</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link has-dropdown" @click="toggleDropdown">
+                            <i class="fa-solid fa-user-gear"></i>
+                            Configurações
+                        </a>
                         
-                        <li class="sidebar-header">
-                            Carros
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="#" class="sidebar-link has-dropdown">
-                                <i class="ri-car-line"></i>
-                                Frota
-                            </a>
-                            
-                            <ul class="sidebar-dropdown">
-                                <li class="sidebar-item">
-                                    <a href="#" class="sidebar-link">
-                                        Adicionar veiculo
-                                    </a>
-                                    <a href="#" class="sidebar-link">
-                                        Listar veiculo
-                                    </a>
-                                    <a href="#" class="sidebar-link">
-                                        Veiculos Disponível
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                        <ul class="sidebar-dropdown" v-show="isDropdownOpen">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">
+                                    Sair
+                                </a>
+                                <a href="#" class="sidebar-link">
+                                    Ver como cliente
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li class="sidebar-header">
+                        Pedidos
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link has-dropdown">
+                            <i class="ri-survey-line"></i>
+                            Reservas
+                        </a>
                         
-                        <li class="sidebar-header">
-                            Contrato
-                        </li>
-                        <li class="sidebar-item">
-                            <a href="#" class="sidebar-link has-dropdown">
-                                <i class="ri-draft-fill"></i>
-                                Termos e Politicas
-                            </a>
-                            
-                            <ul class="sidebar-dropdown">
-                                <li class="sidebar-item">
-                                    <a href="#" class="sidebar-link">
-                                        Solicitação
-                                    </a>
-                                    <a href="#" class="sidebar-link">
-                                        Cancelados
-                                    </a>
-                                    <a href="#" class="sidebar-link">
-                                        Todos
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+                        <ul class="sidebar-dropdown">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">
+                                Solicitação
+                                </a>
+                                <a href="#" class="sidebar-link">
+                                Cancelados
+                                </a>
+                                <a href="#" class="sidebar-link">
+                                Todos
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li class="sidebar-header">
+                        Carros
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link has-dropdown">
+                            <i class="ri-car-line"></i>
+                            Frota
+                        </a>
+                        
+                        <ul class="sidebar-dropdown">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">
+                                    Adicionar veiculo
+                                </a>
+                                <a href="#" class="sidebar-link">
+                                    Listar veiculo
+                                </a>
+                                <a href="#" class="sidebar-link">
+                                    Veiculos Disponível
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li class="sidebar-header">
+                        Contrato
+                    </li>
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link has-dropdown">
+                            <i class="ri-draft-fill"></i>
+                            Termos e Politicas
+                        </a>
+                        
+                        <ul class="sidebar-dropdown">
+                            <li class="sidebar-item">
+                                <a href="#" class="sidebar-link">
+                                    Solicitação
+                                </a>
+                                <a href="#" class="sidebar-link">
+                                    Cancelados
+                                </a>
+                                <a href="#" class="sidebar-link">
+                                    Todos
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
                 </div>
             </aside>
 
             <div class="main">
                 <nav class="dashboard-navbar">
-                    <button type="button" class="toggle-btn">
+                    <button type="button" class="toggle-btn" @click="toggleSidebar">
                         <i class="fa-solid fa-bars-staggered"></i>
                     </button>
 
@@ -137,10 +138,10 @@
                     <div class="navbar-content">
                         <ul class="main-navbar">
                             <li class="user-link">
-                                <a href="#" class="user-profile">
+                                <a href="#" class="user-profile" @click="toggleUserDropdown">
                                     <img :src="userProfile" alt="Profile" class="avatar">
                                 </a>
-                                <div class="user-link-dropdown">
+                                <div class="user-link-dropdown" v-show="isUserDropdownOpen">
                                     <a href="#" class="dropdown-item">Profile</a>
                                     <a href="#" class="dropdown-item">Logout</a>
                                 </div>
@@ -152,7 +153,7 @@
                 <main class="content">
                     <div class="dashboard-container">
                         <h4>Admin Dashboard</h4>
-
+            
                         <div class="dashboard-row">
                             <div class="dashboard-card">
                                 <div class="greeting">
@@ -160,7 +161,7 @@
                                         <h3>Bem-vindo de volta, Admin!</h3>
                                         <p>Artur Rent a car</p>
                                     </div>
-
+                
                                     <div class="greeting-img">
                                         <img :src="greeting">
                                     </div>
@@ -203,7 +204,7 @@
                                     <td>Fiat500</td>
                                     <td>24h</td>
                                 </tr>
-                                
+                        
                                 <tr>
                                     <td>Raúl</td>
                                     <td>raulmigueleb7@gmail.com</td>
@@ -221,7 +222,7 @@
                                     <td>Fiat500</td>
                                     <td>24h</td>
                                 </tr>
-
+                
                                 <tr>
                                     <td>Raúl</td>
                                     <td>raulmigueleb7@gmail.com</td>
@@ -243,8 +244,8 @@
                                     <i class="ri-roadster-fill"></i><span>Express<span class="color">RentaCar</span></span>
                                 </router-link>
                             </div>
-
-                            <div class="footer-content footer-nav">
+        
+                        <div class="footer-content footer-nav">
                                 <ul class="footer-link">
                                     <li class="footer-link-item">
                                         <a href="#"><i class="bx bxl-linkedin"></i></a>
@@ -264,29 +265,59 @@
                     </div>
                 </footer>
 
-                <!--Theme Swhitch-->
-                <button class="theme-toggle">
-                    <i class="fas fa-moon"></i>
-                    <i class="fas fa-sun"></i>
-                </button>
+                <!--Theme Switch-->
+                    <button class="theme-toggle" @click="toggleTheme">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
 </template>
-
+  
 <script>
     export default {
         name: 'dashboard',
-
         data() {
             return {
-                userProfile: require("@/assets/img/userPerfil.png"),
-                greeting: require("@/assets/img/admin.png")
+                isSidebarCollapsed: false,
+                isDropdownOpen: false,
+                isUserDropdownOpen: false,
+                userProfile: require('@/assets/img/userPerfil.png'), // Replace with your image path
+                greeting: require('@/assets/img/admin.png')
+            };
+        },
 
+        methods: {
+            toggleSidebar() {
+                this.isSidebarCollapsed = !this.isSidebarCollapsed;
+            },
+
+            toggleTheme() {
+                const rootElement = document.querySelector(":root");
+                rootElement.classList.toggle("light");
+                this.toggleLocalStorageItem();
+            },
+            isLight() {
+                return localStorage.getItem("light-theme");
+            },
+            toggleLocalStorageItem() {
+                if (this.isLight()) {
+                localStorage.removeItem("light-theme");
+                } else {
+                localStorage.setItem("light-theme", "set");
+                }
+            },
+        },
+        mounted() {
+            if (this.isLight()) {
+            this.toggleTheme();
             }
-        }
-    }
+        },
+    };
 </script>
+
+  
 
 <style scoped>
     @import '@/Styles/Admin/dashboard.sass';
