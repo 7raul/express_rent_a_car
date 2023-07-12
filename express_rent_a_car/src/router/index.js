@@ -60,6 +60,17 @@ const routes = [
     name: 'empresas',
     component: () => import('../views/EmpresasView.vue')
   },
+  {
+    path: '/reservas',
+    name: 'reservas',
+    component: () => import('../views/GerenciarReservas.vue')
+  },
+  {
+    path: '/dashboard',
+    name: 'dashboard',
+    component: () => import('../views/AdminView.vue')
+  },
+  
   
 
 ]

@@ -13,6 +13,9 @@ export default {
     ListarCarro: () => {
         return http.get("/carro");
     },
+    ListarCarroModelo: (modelo) => {
+        return http.get(`/carro/${modelo}`);
+    },
     ListarEmpresa: () => {
         return http.get("/empresa")
     }
