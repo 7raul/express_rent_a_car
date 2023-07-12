@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="wrapper">
-            <aside id="sidebar" :class="{ 'collapsed': isSidebarCollapsed }">
+            <aside id="sidebar" v-show="isSidebarCollapsed" >
                 <div class="h-100">
                 <div class="navbar-logo">
                     <router-link to="/">
@@ -27,12 +27,14 @@
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a href="#" class="sidebar-link has-dropdown" @click="toggleDropdown">
+                        <a href="#" class="sidebar-link has-dropdown" @click="toggleConfig">
                             <i class="fa-solid fa-user-gear"></i>
                             Configurações
+                            <i class="ri-arrow-down-s-line" id="down" v-if="!showConfig"></i>
+                            <i class="ri-arrow-up-s-line" id="down" v-if="showConfig"></i>
                         </a>
                         
-                        <ul class="sidebar-dropdown" v-show="isDropdownOpen">
+                        <ul class="sidebar-dropdown" v-show="showConfig">
                             <li class="sidebar-item">
                                 <a href="#" class="sidebar-link">
                                     Sair
@@ -48,12 +50,14 @@
                         Pedidos
                     </li>
                     <li class="sidebar-item">
-                        <a href="#" class="sidebar-link has-dropdown">
+                        <a href="#" class="sidebar-link has-dropdown" @click="toggleReserva">
                             <i class="ri-survey-line"></i>
                             Reservas
+                            <i class="ri-arrow-down-s-line" id="down" v-if="!showReserva"></i>
+                            <i class="ri-arrow-up-s-line" id="down" v-if="showReserva"></i>
                         </a>
                         
-                        <ul class="sidebar-dropdown">
+                        <ul class="sidebar-dropdown" v-show="showReserva">
                             <li class="sidebar-item">
                                 <a href="#" class="sidebar-link">
                                 Solicitação
@@ -72,15 +76,17 @@
                         Carros
                     </li>
                     <li class="sidebar-item">
-                        <a href="#" class="sidebar-link has-dropdown">
+                        <a href="#" class="sidebar-link has-dropdown" @click="toggleFrota">
                             <i class="ri-car-line"></i>
-                            Frota
+                            Frota 
+                            <i class="ri-arrow-down-s-line" id="down" v-if="!showFrota"></i>
+                            <i class="ri-arrow-up-s-line" id="down" v-if="showFrota"></i>
                         </a>
                         
-                        <ul class="sidebar-dropdown">
+                        <ul class="sidebar-dropdown" v-show="showFrota">
                             <li class="sidebar-item">
                                 <a href="#" class="sidebar-link">
-                                    Adicionar veiculo
+                                    Adicionar veiculo 
                                 </a>
                                 <a href="#" class="sidebar-link">
                                     Listar veiculo
@@ -96,12 +102,14 @@
                         Contrato
                     </li>
                     <li class="sidebar-item">
-                        <a href="#" class="sidebar-link has-dropdown">
+                        <a href="#" class="sidebar-link has-dropdown" @click="toggleContrato">
                             <i class="ri-draft-fill"></i>
                             Termos e Politicas
+                            <i class="ri-arrow-down-s-line" id="down" v-if="!showContrato"></i>
+                            <i class="ri-arrow-up-s-line" id="down" v-if="showContrato"></i>
                         </a>
                         
-                        <ul class="sidebar-dropdown">
+                        <ul class="sidebar-dropdown" v-show="showContrato">
                             <li class="sidebar-item">
                                 <a href="#" class="sidebar-link">
                                     Solicitação
@@ -280,9 +288,11 @@
         name: 'dashboard',
         data() {
             return {
-                isSidebarCollapsed: false,
-                isDropdownOpen: false,
-                isUserDropdownOpen: false,
+                isSidebarCollapsed: true,
+                showFrota: false,
+                showReserva: false,
+                showConfig: false,
+                showContrato: false,
                 userProfile: require('@/assets/img/userPerfil.png'), // Replace with your image path
                 greeting: require('@/assets/img/admin.png')
             };
@@ -308,6 +318,30 @@
                 localStorage.setItem("light-theme", "set");
                 }
             },
+            toggleFrota() {
+                this.showFrota = !this.showFrota;
+                this.showReserva = false;
+                this.showConfig = false;
+                this.showContrato = false;
+            },
+            toggleReserva() {
+                this.showReserva = !this.showReserva;
+                this.showFrota = false;
+                this.showConfig = false;
+                this.showContrato = false;
+            },
+            toggleConfig() {
+                this.showConfig = !this.showConfig;
+                this.showFrota = false;
+                this.showReserva = false;
+                this.showContrato = false;
+            },
+            toggleContrato() {
+                this.showContrato = !this.showContrato;
+                this.showFrota = false;
+                this.showReserva = false;
+                this.showConfig = false;
+            }
         },
         mounted() {
             if (this.isLight()) {
