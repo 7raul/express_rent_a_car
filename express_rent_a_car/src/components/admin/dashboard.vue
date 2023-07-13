@@ -4,8 +4,8 @@
             <aside id="sidebar" v-show="isSidebarCollapsed" >
                 <div class="h-100">
                 <div class="navbar-logo">
-                    <router-link to="/">
-                    <i class="ri-roadster-fill"></i><span>Express<span class="color">RentaCar</span></span>
+                    <router-link to="#">
+                        <i class="ri-roadster-fill"></i><span>Express<span class="color">RentaCar</span></span>
                     </router-link>
                 </div>
 
@@ -89,7 +89,7 @@
                                     Adicionar veiculo 
                                 </a>
                                 <a href="#" class="sidebar-link">
-                                    Listar veiculo
+                                    Lista de veiculos
                                 </a>
                                 <a href="#" class="sidebar-link">
                                     Veiculos Disponível
@@ -242,8 +242,10 @@
                             </tbody>
                         </table>
                     </div>
-                </main>
 
+                    <AddVeiculo />  
+                </main>
+                
                 <footer>
                     <div class="dashboard-container">
                         <div class="dashboard-row">
@@ -271,6 +273,8 @@
                             </div>
                         </div>
                     </div>
+
+
                 </footer>
 
                 <!--Theme Switch-->
@@ -284,8 +288,12 @@
 </template>
   
 <script>
+    import AddVeiculo from '@/components/admin/Frota/AddVeiculo.vue'
     export default {
         name: 'dashboard',
+        components: {
+            AddVeiculo
+        },
         data() {
             return {
                 isSidebarCollapsed: true,

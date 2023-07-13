@@ -70,12 +70,16 @@
                                     <p class="color">Sim</p>
                                 </div>
                                 <div class="dados">
-                                    <p>Freiod ABS:</p>
+                                    <p>Camera Reversa:</p>
                                     <p class="color">SIm</p>
                                 </div>
                                 <div class="dados">
                                     <p>Áudio:</p>
                                     <p class="color">Rádio/USB</p>
+                                </div>
+                                <div class="dados">
+                                    <p>Banco de couro:</p>
+                                    <p class="color">Não</p>
                                 </div>
                             </div>
                         </div>
