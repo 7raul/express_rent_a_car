@@ -1,0 +1,94 @@
+.listaDeVeiculos-container{
+    margin: 0 2rem;
+    position: relative;
+}
+
+.listaDeVeiculos-container h4{
+    margin-bottom: 1rem;    
+}
+
+.listar-veiculos{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    min-width: 100%;  
+}
+
+.listar-veiculos .veiculo{
+    width: 49%;
+    background: var(--bg-color-1);
+    position: relative;  
+    padding: 1rem; 
+    margin-bottom: 2rem;  
+}
+
+.veiculo .dados-veiculo{
+    display: flex;   
+}
+
+.dados-veiculo .foto-viatura{
+    width: 50%;    
+}
+
+.foto-viatura img{
+    width: 100%    
+}
+
+.detalhes-optcioes {
+    width: 50%;
+    color: var(--color1);
+    display: block;
+    gap: 1rem;
+    margin-left: 1rem;
+}
+
+.detalhes-viatura {
+    margin-bottom: 1rem;    
+}
+
+.sobre-viatura{
+    display: flex;
+    justify-content: space-between;   
+    align-items: center;
+    gap: 1rem;
+}
+
+.sobre-viatura p{
+    font-size: 1.3rem;    
+}
+
+.sobre-viatura h5{
+    font-size: 1.5rem;
+    color: #817e7e;    
+}
+
+.options-veiculo{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;       
+}
+
+.options-veiculo button {
+    padding: 1rem;
+    width: 6rem; 
+    gap: .5rem;   
+    border: none;
+    text-align: center;
+    background-color: #ec5050;
+    color: var(--color1);
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all .3s ease
+}
+
+.options-veiculo button:hover {
+    opacity: .8    
+}
+
+.options-veiculo .editar{
+    background-color: #d68d20;    
+}
+
+.options-veiculo .postar{
+    background: #40b35d;    
+}
