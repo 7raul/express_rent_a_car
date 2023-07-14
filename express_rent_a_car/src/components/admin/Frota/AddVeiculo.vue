@@ -48,6 +48,15 @@
                             </div>
                         </div>
 
+                        <div class="select-box">
+                            <label for="mileage">Região <span class="required-field">*</span></label>
+                            <select>
+                                <option>Luanda</option>
+                                <option>Benguela</option>
+                                <option>Malanje</option>
+                            </select>
+                        </div>
+
                         <div class="radio-container">
                             <div class="box-input">
                                 <p>Tipo de câmbio <span class="required-field">*</span></p>
