@@ -250,9 +250,13 @@
                         </table>
                     </div>
 
+                    <!--Frota-->
                     <AddVeiculo /> 
                     <ListaDeVeiculos /> 
                     <VeiculosDisponivel />
+
+                    <!--Reservas-->
+                    <Solicitacao />
                 </main>
                 
                 <footer>
@@ -300,12 +304,14 @@
     import AddVeiculo from '@/components/admin/Frota/AddVeiculo.vue'
     import  ListaDeVeiculos from '@/components/admin/Frota/ListaDeVeiculos.vue'
     import VeiculosDisponivel from '@/components/admin/Frota/VeiculosDisponivel.vue'
+    import Solicitacao from '@/components/admin/Pedidos/Solicitacao.vue'
     export default {
         name: 'dashboard',
         components: {
             AddVeiculo,
             ListaDeVeiculos,
-            VeiculosDisponivel
+            VeiculosDisponivel,
+            Solicitacao
         },
         data() {
             return {
