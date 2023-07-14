@@ -170,7 +170,7 @@
                     </div>
                 </div>
 
-                
+
             </div>
 
             <div class="view">
@@ -181,16 +181,23 @@
 </template>
 
 <script>
-    export default {
-        name: 'ShowCars',
+import Api from "@/services/getBy"
+export default {
+    name: 'ShowCars',
 
-        data() {
-            return{
-                carImg: require("@/assets/img/fiat.jpg")
-            }
-        } 
+    data() {
+        return {
+            carImg: require("@/assets/img/fiat.jpg"),
+            carro: []
+        }
+    },
+    mounted() {
+        Api.ListarCarro().then(e => {
+            this.carro = e.data
+        }).catchcatch(error => console.log("Deu erro", error))
     }
+}
 </script>
 <style scoped>
-    @import '@/Styles/Home/ShowCars.sass';
+@import '@/Styles/Home/ShowCars.sass';
 </style>

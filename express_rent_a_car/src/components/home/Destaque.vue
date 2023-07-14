@@ -4,7 +4,7 @@
             <h3>Empresas em destaque</h3>
 
             <div class="destaques">
-                <div class="card swiper-slide">
+                <!--    <div class="card swiper-slide">
                     <div class="card_image">
                         <img :src="img">
                     </div>
@@ -46,7 +46,7 @@
                             <i class="far fa-star"></i>
                         </div>
 
-                        
+
                         <div class="paragrafo">
                             <p>Satisfazer os nossos clientes nos satisfaz</p>
                         </div>
@@ -73,33 +73,7 @@
                             <i class="far fa-star"></i>
                         </div>
 
-                        
-                        <div class="paragrafo">
-                            <p>Satisfazer os nossos clientes nos satisfaz</p>
-                        </div>
 
-                        <div class="empresa-btn">
-                            <a href="/portfolio">Ver mais</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card swiper-slide">
-                    <div class="card_image">
-                        <img :src="img">
-                    </div>
-
-                    <div class="card-content">
-                        <span class="card_title">Artur Rent acar</span>
-
-                        <div class="reviews">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                        
                         <div class="paragrafo">
                             <p>Satisfazer os nossos clientes nos satisfaz</p>
                         </div>
@@ -126,7 +100,33 @@
                             <i class="far fa-star"></i>
                         </div>
 
-                        
+                        <div class="paragrafo">
+                            <p>Satisfazer os nossos clientes nos satisfaz</p>
+                        </div>
+
+                        <div class="empresa-btn">
+                            <a href="/portfolio">Ver mais</a>
+                        </div>
+                    </div>
+                </div>
+-->
+                <div class="card swiper-slide">
+                    <div class="card_image">
+                        <img :src="img">
+                    </div>
+
+                    <div class="card-content">
+                        <span class="card_title">Nome da Empresa</span>
+
+                        <div class="reviews">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+
+
                         <div class="paragrafo">
                             <p>Satisfazer os nossos clientes nos satisfaz</p>
                         </div>
@@ -144,21 +144,30 @@
             <div class="view">
                 <a href="#">Ver todos</a>
             </div>
-        </div>    
-    </div>        
+        </div>
+    </div>
 </template>
 <script>
-    export default{
-        name: 'Destaque',
+import Api from "@/services/getBy"
+export default ({
+    name: 'Destaque',
 
-        data() {
-            return {
-                img: require("@/assets/img/userPerfil.png")
-            }
+    data() {
+        return {
+            img: require("@/assets/img/userPerfil.png"),
+            empresa: []
         }
+    },
+    mounted() {
+        Api.ListarEmpresa().then(e =>
+            console.log(e.data)
+        ).catch(error => console.log("Deu erro =>", error))
+
     }
+
+})
 </script>
 
 <style scoped>
-    @import '@/Styles/Home/Destaque.sass';
+@import '@/Styles/Home/Destaque.sass';
 </style>
