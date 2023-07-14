@@ -16,6 +16,13 @@
 
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link">
+                            <i class="ri-dashboard-fill"></i>
+                            Dashboard
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item">
+                        <a href="#" class="sidebar-link">
                             <i class="fa-regular fa-user"></i>
                             Editar Perfil
                         </a>
