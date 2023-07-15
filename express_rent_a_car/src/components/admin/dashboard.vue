@@ -30,7 +30,7 @@
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link">
                             <i class="fa-regular fa-bell"></i>
-                            Notificão <span class="red">7</span>
+                            Notificões <span class="red">7</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
@@ -43,10 +43,10 @@
                         
                         <ul class="sidebar-dropdown" v-show="showConfig">
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">
+                                <a href="/login" class="sidebar-link">
                                     Sair
                                 </a>
-                                <a href="#" class="sidebar-link">
+                                <a href="http://localhost:8080/" class="sidebar-link">
                                     Ver como cliente
                                 </a>
                             </li>
@@ -123,9 +123,6 @@
                                 </a>
                                 <a href="#" class="sidebar-link">
                                     Cancelados
-                                </a>
-                                <a href="#" class="sidebar-link">
-                                    Todos
                                 </a>
                             </li>
                         </ul>
@@ -250,6 +247,9 @@
                         </table>
                     </div>
 
+                    <!--Notificações-->
+                    <Notificacoes />
+
                     <!--Frota-->
                     <AddVeiculo /> 
                     <ListaDeVeiculos /> 
@@ -257,6 +257,7 @@
 
                     <!--Reservas-->
                     <Solicitacao />
+                    <Cancelados />
                 </main>
                 
                 <footer>
@@ -305,13 +306,17 @@
     import  ListaDeVeiculos from '@/components/admin/Frota/ListaDeVeiculos.vue'
     import VeiculosDisponivel from '@/components/admin/Frota/VeiculosDisponivel.vue'
     import Solicitacao from '@/components/admin/Pedidos/Solicitacao.vue'
+    import Cancelados from '@/components/admin/Pedidos/Cancelados.vue'
+    import Notificacoes from '@/components/admin/Notificacoes/Notificacoes.vue'
     export default {
         name: 'dashboard',
         components: {
             AddVeiculo,
             ListaDeVeiculos,
             VeiculosDisponivel,
-            Solicitacao
+            Solicitacao,
+            Cancelados,
+            Notificacoes
         },
         data() {
             return {
