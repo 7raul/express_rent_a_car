@@ -247,6 +247,9 @@
                         </table>
                     </div>
 
+                    <!--Editar Perfil-->
+                    <EditarPerfil />
+
                     <!--Notificações-->
                     <Notificacoes />
 
@@ -308,6 +311,7 @@
     import Solicitacao from '@/components/admin/Pedidos/Solicitacao.vue'
     import Cancelados from '@/components/admin/Pedidos/Cancelados.vue'
     import Notificacoes from '@/components/admin/Notificacoes/Notificacoes.vue'
+    import EditarPerfil from '@/components/admin/EditarPerfil/EditarPerfil.vue'
     export default {
         name: 'dashboard',
         components: {
@@ -316,7 +320,8 @@
             VeiculosDisponivel,
             Solicitacao,
             Cancelados,
-            Notificacoes
+            Notificacoes,
+            EditarPerfil
         },
         data() {
             return {
