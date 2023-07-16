@@ -58,7 +58,9 @@
                             </div>
                         </div>
 
-                        <button>Editar</button>
+                        <div class="btn-editar">
+                            <button>Editar</button>
+                        </div>
                     </form>
                 </div>
             </div>

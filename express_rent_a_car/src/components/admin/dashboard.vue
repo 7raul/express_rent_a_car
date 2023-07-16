@@ -119,10 +119,10 @@
                         <ul class="sidebar-dropdown" v-show="showContrato">
                             <li class="sidebar-item">
                                 <a href="#" class="sidebar-link">
-                                    Solicitação
+                                    Termos
                                 </a>
                                 <a href="#" class="sidebar-link">
-                                    Cancelados
+                                    Politica
                                 </a>
                             </li>
                         </ul>
@@ -261,6 +261,10 @@
                     <!--Reservas-->
                     <Solicitacao />
                     <Cancelados />
+
+                    <!--Termos & Politicas-->
+                    <Termos />
+                    <Politicas />
                 </main>
                 
                 <footer>
@@ -306,12 +310,14 @@
   
 <script>
     import AddVeiculo from '@/components/admin/Frota/AddVeiculo.vue'
-    import  ListaDeVeiculos from '@/components/admin/Frota/ListaDeVeiculos.vue'
+    import ListaDeVeiculos from '@/components/admin/Frota/ListaDeVeiculos.vue'
     import VeiculosDisponivel from '@/components/admin/Frota/VeiculosDisponivel.vue'
     import Solicitacao from '@/components/admin/Pedidos/Solicitacao.vue'
     import Cancelados from '@/components/admin/Pedidos/Cancelados.vue'
     import Notificacoes from '@/components/admin/Notificacoes/Notificacoes.vue'
     import EditarPerfil from '@/components/admin/EditarPerfil/EditarPerfil.vue'
+    import Termos from '@/components/admin/TermosEPoliticas/Termos.vue'
+    import Politicas from '@/components/admin/TermosEPoliticas/Politicas.vue'
     export default {
         name: 'dashboard',
         components: {
@@ -321,7 +327,9 @@
             Solicitacao,
             Cancelados,
             Notificacoes,
-            EditarPerfil
+            EditarPerfil,
+            Termos,
+            Politicas
         },
         data() {
             return {
