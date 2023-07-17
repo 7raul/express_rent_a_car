@@ -14,21 +14,21 @@
                         Páginas
                     </li>
 
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">
+                    <li class="sidebar-item" :class="{ 'active': currentComponent === 'dashboard' }">
+                        <a href="#" class="sidebar-link" @click="showDashboard">
                             <i class="ri-dashboard-fill"></i>
                             Dashboard
                         </a>
                     </li>
 
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">
+                    <li class="sidebar-item" :class="{ 'active': currentComponent === 'EditarPerfil' }">
+                        <a href="#" class="sidebar-link" @click="showEditarPerfil">
                             <i class="fa-regular fa-user"></i>
                             Editar Perfil
                         </a>
                     </li>
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">
+                    <li class="sidebar-item" :class="{ 'active': currentComponent === 'Notificacoes'}">
+                        <a href="#" class="sidebar-link" @click="showNotificacoes">
                             <i class="fa-regular fa-bell"></i>
                             Notificões <span class="red">7</span>
                         </a>
@@ -64,16 +64,13 @@
                             <i class="ri-arrow-up-s-line" id="down" v-if="showReserva"></i>
                         </a>
                         
-                        <ul class="sidebar-dropdown" v-show="showReserva">
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">
-                                Solicitação
+                        <ul class="sidebar-dropdown" v-show="showReserva" >
+                            <li class="sidebar-item" >
+                                <a href="#" class="sidebar-link" @click="showSolicitacao" :class="{ 'active': currentComponent === 'Solicitacao' }">
+                                    Solicitação
                                 </a>
-                                <a href="#" class="sidebar-link">
-                                Cancelados
-                                </a>
-                                <a href="#" class="sidebar-link">
-                                Todos
+                                <a href="#" class="sidebar-link" @click="showCancelados" :class="{ 'active': currentComponent === 'Cancelados' }">
+                                    Cancelados
                                 </a>
                             </li>
                         </ul>
@@ -92,13 +89,13 @@
                         
                         <ul class="sidebar-dropdown" v-show="showFrota">
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">
+                                <a href="#" class="sidebar-link" @click="showAddVeiculo" :class="{ 'active': currentComponent === 'AddVeiculo' }">
                                     Adicionar veiculo 
                                 </a>
-                                <a href="#" class="sidebar-link">
+                                <a href="#" class="sidebar-link" @click="showListaDeVeiculos" :class="{ 'active': currentComponent === 'ListaDeVeiculos' }">
                                     Lista de veiculos
                                 </a>
-                                <a href="#" class="sidebar-link">
+                                <a href="#" class="sidebar-link" @click="showVeiculosDisponivel" :class="{ 'active': currentComponent === 'VeiculosDisponivel' }">
                                     Veiculos Disponível
                                 </a>
                             </li>
@@ -118,10 +115,10 @@
                         
                         <ul class="sidebar-dropdown" v-show="showContrato">
                             <li class="sidebar-item">
-                                <a href="#" class="sidebar-link">
+                                <a href="#" class="sidebar-link" @click="showTermos" :class="{ 'active': currentComponent === 'Termos' }">
                                     Termos
                                 </a>
-                                <a href="#" class="sidebar-link">
+                                <a href="#" class="sidebar-link" @click="showPoliticas" :class="{ 'active': currentComponent === 'Politicas' }">
                                     Politica
                                 </a>
                             </li>
@@ -163,7 +160,7 @@
                 </nav>
 
                 <main class="content">
-                    <div class="dashboard-container">
+                    <div class="dashboard-container" v-if="currentComponent === 'dashboard'">
                         <h4>Admin Dashboard</h4>
             
                         <div class="dashboard-row">
@@ -248,23 +245,23 @@
                     </div>
 
                     <!--Editar Perfil-->
-                    <EditarPerfil />
+                    <EditarPerfil v-else-if="currentComponent === 'EditarPerfil'"  />
 
                     <!--Notificações-->
-                    <Notificacoes />
+                    <Notificacoes v-else-if="currentComponent === 'Notificacoes'"/>
 
                     <!--Frota-->
-                    <AddVeiculo /> 
-                    <ListaDeVeiculos /> 
-                    <VeiculosDisponivel />
+                    <AddVeiculo v-else-if="currentComponent === 'AddVeiculo'"/> 
+                    <ListaDeVeiculos v-else-if="currentComponent === 'ListaDeVeiculos'"/> 
+                    <VeiculosDisponivel v-else-if="currentComponent === 'VeiculosDisponivel'"/>
 
                     <!--Reservas-->
-                    <Solicitacao />
-                    <Cancelados />
+                    <Solicitacao v-else-if="currentComponent === 'Solicitacao'"/>
+                    <Cancelados v-else-if="currentComponent === 'Cancelados'"/>
 
                     <!--Termos & Politicas-->
-                    <Termos />
-                    <Politicas />
+                    <Termos v-else-if="currentComponent === 'Termos'"/>
+                    <Politicas v-else-if="currentComponent === 'Politicas'"/>
                 </main>
                 
                 <footer>
@@ -339,7 +336,8 @@
                 showConfig: false,
                 showContrato: false,
                 userProfile: require('@/assets/img/userPerfil.png'), // Replace with your image path
-                greeting: require('@/assets/img/admin.png')
+                greeting: require('@/assets/img/admin.png'),
+                currentComponent: 'dashboard'
             };
         },
 
@@ -386,6 +384,36 @@
                 this.showFrota = false;
                 this.showReserva = false;
                 this.showConfig = false;
+            },
+            showDashboard(){
+                this.currentComponent = 'dashboard';
+            },
+            showEditarPerfil(){
+                this.currentComponent = 'EditarPerfil';
+            },
+            showNotificacoes(){
+                this.currentComponent = 'Notificacoes';
+            },
+            showAddVeiculo(){
+                this.currentComponent = 'AddVeiculo';
+            },
+            showListaDeVeiculos(){
+                this.currentComponent = 'ListaDeVeiculos';
+            },
+            showVeiculosDisponivel(){
+                this.currentComponent = 'VeiculosDisponivel';
+            },
+            showSolicitacao(){
+                this.currentComponent = 'Solicitacao';
+            },
+            showCancelados(){
+                this.currentComponent = 'Cancelados';
+            },
+            showTermos(){
+                this.currentComponent = 'Termos';
+            },
+            showPoliticas(){
+                this.currentComponent = 'Politicas';
             }
         },
         mounted() {
