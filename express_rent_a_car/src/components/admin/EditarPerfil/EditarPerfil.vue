@@ -34,11 +34,6 @@
                             </div>
                         </div>
 
-                        <div class="textbox-box">
-                            <label for="#">Editar Biográfia</label>
-                            <textarea placeholder="Editar biográfia da empresa..."></textarea>
-                        </div>
-
                         <div class="form2">
                             <div class="link-box">
                                 <i class="ri-facebook-circle-line"></i>
@@ -56,6 +51,11 @@
                                 <i class="ri-linkedin-box-fill"></i>
                                 <input type="text" placeholder="URL">
                             </div>
+                        </div>
+
+                        <div class="textbox-box">
+                            <label for="#">Editar Biográfia</label>
+                            <textarea placeholder="Editar biográfia da empresa..."></textarea>
                         </div>
 
                         <div class="btn-editar">
