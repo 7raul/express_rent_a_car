@@ -23,15 +23,6 @@
                     </div>
                     
                     <div class="devolucao">
-                        <div class="local-devolucao">
-                            <input type="checkbox" v-model="devolverNoMesmoLocal">
-                            <span>Devolver no mesmo local</span>
-                        </div>
-
-                        <div class="local" v-show="!devolverNoMesmoLocal">
-                            <label for="#">Local de devolução</label>
-                            <input type="text" required placeholder="Nome do hotel">
-                        </div>
 
                         <div class="data-time">
                             <div class="data">

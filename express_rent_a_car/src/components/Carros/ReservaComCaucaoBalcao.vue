@@ -1,43 +1,6 @@
 <template>
     <div>
-        <div class="solicitacao-container">
-            <h4>Solicitação</h4>
-
-            <table id="posts">
-                <thead>
-                    <tr>
-                        <th>Cliente</th>
-                        <th>E-mail</th>
-                        <th>Telefone</th>
-                        <th>B.I</th>
-                        <th>Viatura</th>
-                        <th>Duração</th>
-                        <th>Estado</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Raúl</td>
-                        <td>raulmigueleb7@gmail.com</td>
-                        <td>932157393</td>
-                        <td>123456789LA22</td>
-                        <td>Fiat500</td>
-                        <td>24h</td>
-                        <td>
-                            <p v-if="status === 'Em espera'">Em espera</p>
-                            <p v-else-if="status === 'Cancelado'">Cancelado</p>
-                            <p v-else-if="status === 'Entregue'">Entregue</p>
-                            <p v-else-if="status === 'Devolvido'">Devolvido</p>
-                        </td>
-                        <td class="btn-solicitacao">
-                            <button><i class="ri-delete-bin-2-line"></i></button>
-                            <button class="verde"><i class="ri-shield-check-fill"></i></button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
+        <div class="confirmar-reserva" v-if="exibirConfirmacao">
             <div class="card-reserva">
                 <div class="conteiner-card">
                     <div class="card-top">
@@ -45,10 +8,7 @@
                             <i class="ri-roadster-fill"></i><span>Express<span class="color">RentaCar</span></span>
                         </router-link>
 
-                        <div class="id-reserva">
-                            <h6>ID:</h6>
-                            <span>1234567890</span>
-                        </div>
+                        
                     </div>
 
                     <div class="card-content">
@@ -75,7 +35,7 @@
                         <div class="card-local-date-time">
                             <div class="card-local">
                                 <h6>Local de entrega</h6>
-                                <span>Hotel Alvalade</span>
+                                <span>Balcão de atendimento</span>
                             </div>
                             <div class="card-local">
                                 <h6>Data e hora</h6>
@@ -86,17 +46,12 @@
                         <div class="card-local-date-time">
                             <div class="card-local">
                                 <h6>Local de Devoluçãõ</h6>
-                                <span>Hotel Alvalade</span>
+                                <span>Balcão de atendimento</span>
                             </div>
                             <div class="card-local">
                                 <h6>Data e hora</h6>
                                 <span>20/07/2023 - 12h50</span>
                             </div>
-                        </div>
-
-                        <div class="card-info">
-                            <h6>Numero do quarto</h6>
-                            <span>320</span>
                         </div>
 
                         <div class="card-info">
@@ -129,27 +84,40 @@
                                     <h6>Entidade responsavel</h6>
                                     <span>Artur Rent a car</span>
                                 </div>
-                            </div>
+                            </div> 
+                        </div>
+
+                        <div class="btn-confirmar">
+                            <button @click="confirmarReserva">Confirmar reserva</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <PagarBalcao v-else />
     </div>
 </template>
 
 <script>
+    import PagarBalcao from '@/components/Carros/PagarBalcao.vue'
     export default {
-        name: 'Solicitacao',
+        name: 'ReservaComCaucaoBalcao',
+        components: {
+            PagarBalcao
+        },
 
         data() {
             return {
-                status: 'Em espera'
-            };
+                exibirConfirmacao: true
+            }
+        },
+
+        methods: {
+            confirmarReserva() {
+                this.exibirConfirmacao = false
+            }
         }
+        
     }
 </script>
-
-<style scoped>
-    @import '@/Styles/Admin/Pedidos/Solicitacao.sass';
-</style>

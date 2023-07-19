@@ -86,17 +86,17 @@
                 </div>
             </div>
         </div>
-        <Pagamento v-else />
+        <PagamentoHotel v-else />
     </div>
 </template>
 
 <script>
-    import Pagamento from '@/components/Carros/Pagamento.vue'
+    import PagamentoHotel from '@/components/Carros/PagamentoHotel.vue'
     export default {
         name: 'FormHotel',
 
         components: {
-            Pagamento
+            PagamentoHotel
         },
 
         data() {

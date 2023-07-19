@@ -93,17 +93,17 @@
                 </div>
             </div>
         </div>
-        <Pagamento v-else />
+        <PagamentoAeroporto v-else />
     </div>
 </template>
 
 <script>
-    import Pagamento from '@/components/Carros/Pagamento.vue'
+    import PagamentoAeroporto from '@/components/Carros/PagamentoAeroporto.vue'
     export default {
         name: 'FormAeroporto',
 
         components: {
-            Pagamento
+            PagamentoAeroporto
         },
 
         data() {

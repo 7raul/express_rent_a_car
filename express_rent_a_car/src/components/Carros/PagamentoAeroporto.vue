@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="pagar" v-if="exibirPagamento">
+        <div class="pagar" v-if="!mostrarReservaComCaucao && !mostrarReservaSemCaucao">
             <div class="pagamento-container" >
                 <div class="incluidos">
                     <div class="incluido">
@@ -57,11 +57,6 @@
                             <span>10.000kz</span>
                         </div>
 
-                        <div class="preco-aluguel">
-                            <p>Preço da entrega:</p>
-                            <span>3.000kz</span>
-                        </div>
-
                         <div class="valor-caucao">
                             <p>Preço da caução:</p>
                             <span>270.000kz</span>
@@ -101,11 +96,6 @@
                         </div>
 
                         <div class="valor-caucao">
-                            <p>Preço da entrega:</p>
-                            <span>3.000kz</span>
-                        </div>
-
-                        <div class="valor-caucao">
                             <p>Custo total:</p>
                             <span>270.000kz</span>
                         </div>
@@ -131,38 +121,39 @@
             </div>
         </div>
 
-        <Pagar v-else />
+        <ReservaComCaucaoAeroporto v-if="mostrarReservaComCaucao" />
+        <ReservaSemCaucaoAeroporto v-if="mostrarReservaSemCaucao" />
     </div>
 </template>
 
 <script>
-    import Pagar from '@/components/Carros/Pagar.vue'
+    import ReservaComCaucaoAeroporto from '@/components/Carros/ReservaComCaucaoAeroporto.vue'
+    import ReservaSemCaucaoAeroporto from '@/components/Carros/ReservaSemCaucaoAeroporto.vue'
     export default {
-        name: 'Pagamento',
+        name: 'PagamentoAeroporto',
 
         components: {
-            Pagar
+            ReservaComCaucaoAeroporto,
+            ReservaSemCaucaoAeroporto
         },
 
         data() {
             return {
-                exibirPagamento: true,
+                mostrarReservaComCaucao: false,
+                mostrarReservaSemCaucao: false,
                 semMotorista: false
             }
         },
 
         methods: {
             pagarComCaucao() {
-                this.exibirPagamento = false;
+                this.mostrarReservaComCaucao = true;
+                this.mostrarReservaSemCaucao = false;
             },
-
             pagarSemCaucao() {
-                this.exibirPagamento = false;
+                this.mostrarReservaComCaucao = false;
+                this.mostrarReservaSemCaucao = true;
             }
         }
     }
 </script>
-
-<style scoped>
-    @import '@/Styles/Carros/Pagamento.sass';
-</style>
