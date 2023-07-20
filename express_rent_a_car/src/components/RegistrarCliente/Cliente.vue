@@ -28,9 +28,9 @@
 
                         <input type="name" placeholder="Nome" required v-model="cliente.nome">
 
-                        <input type="email" placeholder="E-mail" required v-model="contacto.email">
+                        <input type="email" placeholder="E-mail" required v-model="cliente.contacto.email">
 
-                        <input type="number" placeholder="Telefone" required v-model="contacto.telefone">
+                        <input type="number" placeholder="Telefone" required v-model="cliente.contacto.telefone">
 
                         <button type="submit" class="btn" @click="activateContinue">Continuar</button>
 
@@ -77,11 +77,12 @@ export default ({
             cliente: {
                 nome: "",
                 password: "",
+                contacto: {
+                    email: "",
+                    telefone: "",
+                },
             },
-            contacto: {
-                email: "",
-                telefone: "",
-            },
+            arrayCliente: [],
             confirmaSenha: ""
         }
     },
@@ -94,8 +95,12 @@ export default ({
         async salvar() {
             if (this.cliente.password != this.confirmaSenha) {
                 alert("Senha incorreta")
+            } else {
+                localStorage.setItem("Cliente", JSON.stringify(this.cliente))
+                console.log(JSON.parse(localStorage.getItem(this.cliente)))
+                // await Api.CriarCliente(this.cliente, this.contacto).then(res => alert("funcionou => ",)).catch(err => console.log(" Erro => ", err))
+
             }
-            await Api.CriarCliente(this.cliente, this.contacto).then(res => alert("funcionou => ",)).catch(err => console.log(" Erro => ", err))
 
         },
 

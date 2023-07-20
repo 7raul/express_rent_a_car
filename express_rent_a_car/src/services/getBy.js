@@ -5,7 +5,9 @@ export default {
         return http.get('/cliente');
     },
     CriarCliente: (cliente, contato) => {
-        return http.post("/cliente", [cliente, contato])
+        const { nome, imagem, password } = cliente;
+        const { email, telefone } = contato
+        return http.post("/cliente", { nome, imagem, password }, { email, telefone })
     },
     CreateSenha: (senha,) => {
         return http.post("/login", senha)
