@@ -98,7 +98,7 @@
 </template>
 
 <script>
-    import PagamentoAeroporto from '@/components/Carros/PagamentoAeroporto.vue'
+    import PagamentoAeroporto from '@/components/Carros/ReservaAeroporto/PagamentoAeroporto.vue'
     export default {
         name: 'FormAeroporto',
 

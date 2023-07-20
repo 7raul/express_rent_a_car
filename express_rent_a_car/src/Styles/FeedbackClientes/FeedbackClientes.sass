@@ -5,7 +5,7 @@
     color: var(--color1)
 }
 
-.form-container {
+.form-feedback {
     background-image: linear-gradient(rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.2)),
     url('@/assets/img/feedback.jpeg');
     background-size: cover;
@@ -14,7 +14,7 @@
     padding: 5rem 25rem;
 }
 
-.content-container{
+.content-feedback{
     z-index: 10;
     display: flex;
     align-items: center;  
@@ -33,16 +33,16 @@
 .feedback{
     display: block;
     padding: 3rem 5rem;  
-    background: transparent;
+    background: var(--bg-color-1);
     backdrop-filter: blur(15px);  
 }
 
 .feedback textarea{
-    border: 2px solid #807c7c;
+    border: none;
     display: block;
     width: 250px;
     height: 100px; 
-    background: transparent;
+    background: var(--bg-color-2);
     backdrop-filter: blur(20px); 
     margin-bottom: 1rem;
     padding: .5rem;

@@ -2,8 +2,8 @@
     <div>
         <div class="feedback-container">
             <header>
-                <div class="form-container">
-                    <div class="content-container">
+                <div class="form-feedback">
+                    <div class="content-feedback">
                         <div class="feedback-content">
                             <h3>Feedback</h3>
 

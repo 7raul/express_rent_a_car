@@ -121,20 +121,20 @@
             </div>
         </div>
 
-        
-        <ReservaComCaucaoBalcao v-if="mostrarReservaComCaucao" />
-        <ReservaSemCaucaoBalcao v-if="mostrarReservaSemCaucao" />
+        <ReservaComCaucaoHotel v-if="mostrarReservaComCaucao" />
+        <ReservaSemCaucaoHotel v-if="mostrarReservaSemCaucao" />
     </div>
 </template>
 
 <script>
-    import ReservaComCaucaoBalcao from '@/components/Carros/ReservaComCaucaoBalcao.vue'
-    import ReservaSemCaucaoBalcao from '@/components/Carros/ReservaSemCaucaoBalcao.vue'
+    import ReservaComCaucaoHotel from '@/components/Carros/ReservaHotel/ReservaComCaucaoHotel.vue'
+    import ReservaSemCaucaoHotel from '@/components/Carros/ReservaHotel/ReservaSemCaucaoHotel.vue'
     export default {
-        name: 'PagamentoBalcao',
+        name: 'Pagamento',
+
         components: {
-            ReservaComCaucaoBalcao,
-            ReservaSemCaucaoBalcao
+            ReservaComCaucaoHotel,
+            ReservaSemCaucaoHotel
         },
 
         data() {
@@ -155,10 +155,9 @@
                 this.mostrarReservaSemCaucao = true;
             }
         }
-
     }
 </script>
 
 <style scoped>
-
+    @import '@/Styles/Carros/Pagamento.sass';
 </style>

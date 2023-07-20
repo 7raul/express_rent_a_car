@@ -35,7 +35,7 @@
                         <div class="card-local-date-time">
                             <div class="card-local">
                                 <h6>Local de entrega</h6>
-                                <span>Balcão de atendimento</span>
+                                <span>Hotel Alvalade</span>
                             </div>
                             <div class="card-local">
                                 <h6>Data e hora</h6>
@@ -46,11 +46,22 @@
                         <div class="card-local-date-time">
                             <div class="card-local">
                                 <h6>Local de Devoluçãõ</h6>
-                                <span>Balcão de atendimento</span>
+                                <span>Hotel Alvalade</span>
                             </div>
                             <div class="card-local">
                                 <h6>Data e hora</h6>
                                 <span>20/07/2023 - 12h50</span>
+                            </div>
+                        </div>
+
+                        <div class="card-local-date-time">
+                            <div class="card-local">
+                                <h6>Numero do voo</h6>
+                                <span>00015</span>
+                            </div>
+                            <div class="card-local">
+                                <h6>Numero do acento</h6>
+                                <span>10203</span>
                             </div>
                         </div>
 
@@ -100,9 +111,10 @@
 </template>
 
 <script>
-    import PagarBalcao from '@/components/Carros/PagarBalcao.vue'
+    import PagarBalcao from '@/components/Carros/ReservaBalcao/PagarBalcao.vue'
     export default {
-        name: 'ReservaComCaucaoBalcao',
+        name: 'ReservaSemCaucaoBalcao',
+
         components: {
             PagarBalcao
         },
@@ -118,6 +130,6 @@
                 this.exibirConfirmacao = false
             }
         }
-        
+
     }
 </script>

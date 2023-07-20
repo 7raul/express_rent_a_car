@@ -121,20 +121,20 @@
             </div>
         </div>
 
-        <ReservaComCaucaoAeroporto v-if="mostrarReservaComCaucao" />
-        <ReservaSemCaucaoAeroporto v-if="mostrarReservaSemCaucao" />
+        
+        <ReservaComCaucaoBalcao v-if="mostrarReservaComCaucao" />
+        <ReservaSemCaucaoBalcao v-if="mostrarReservaSemCaucao" />
     </div>
 </template>
 
 <script>
-    import ReservaComCaucaoAeroporto from '@/components/Carros/ReservaComCaucaoAeroporto.vue'
-    import ReservaSemCaucaoAeroporto from '@/components/Carros/ReservaSemCaucaoAeroporto.vue'
+    import ReservaComCaucaoBalcao from '@/components/Carros/ReservaBalcao/ReservaComCaucaoBalcao.vue'
+    import ReservaSemCaucaoBalcao from '@/components/Carros/ReservaBalcao/ReservaSemCaucaoBalcao.vue'
     export default {
-        name: 'PagamentoAeroporto',
-
+        name: 'PagamentoBalcao',
         components: {
-            ReservaComCaucaoAeroporto,
-            ReservaSemCaucaoAeroporto
+            ReservaComCaucaoBalcao,
+            ReservaSemCaucaoBalcao
         },
 
         data() {
@@ -155,5 +155,10 @@
                 this.mostrarReservaSemCaucao = true;
             }
         }
+
     }
 </script>
+
+<style scoped>
+
+</style>

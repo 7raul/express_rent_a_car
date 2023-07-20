@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="form-hotel" v-if="exibirFormBalcao">
+        <div v-if="exibirFormHotel" class="form-hotel">
             <form action="#">
                 <div class="entrega-devolucao">
                     <div class="entrega">
@@ -23,6 +23,15 @@
                     </div>
                     
                     <div class="devolucao">
+                        <div class="local-devolucao">
+                            <input type="checkbox" v-model="devolverNoMesmoLocal">
+                            <span>Devolver no mesmo local</span>
+                        </div>
+
+                        <div class="local" v-show="!devolverNoMesmoLocal">
+                            <label for="#">Local de devolução</label>
+                            <input type="text" required placeholder="Nome do hotel">
+                        </div>
 
                         <div class="data-time">
                             <div class="data">
@@ -59,6 +68,11 @@
                             <input type="text" required placeholder="Numero do B.I">
                         </div>
                     </div>
+                    
+                    <div class="hote-number">
+                        <label for="#">Quarto</label>
+                        <input type="text" required placeholder="Numero do quarto">
+                    </div>
                 </div>
             </form>
 
@@ -68,34 +82,38 @@
                     <span>Condutor com a idade entre 20  e 60 anos</span>
                 </div>
                 <div class="bottom-button">
-                    <button type="submit" @click="mostrarFormBalcao">Continuar</button>
+                    <button type="submit" @click="mostrarPagamento">Continuar</button>
                 </div>
             </div>
         </div>
-        <PagamentoBalcao v-else />
+        <PagamentoHotel v-else />
     </div>
 </template>
 
 <script>
-    import PagamentoBalcao from '@/components/Carros/PagamentoBalcao.vue'
+    import PagamentoHotel from '@/components/Carros/ReservaHotel/PagamentoHotel.vue'
     export default {
-        name: 'FormBalcao',
+        name: 'FormHotel',
 
         components: {
-            PagamentoBalcao
+            PagamentoHotel
         },
 
         data() {
             return {
-                exibirFormBalcao: true,
-                devolverNoMesmoLocal: false
-            }
+                exibirFormHotel: true,
+                devolverNoMesmoLocal: true
+            };
         },
 
         methods: {
-            mostrarFormBalcao() {
-                this.exibirFormBalcao = false;
+            mostrarPagamento() {
+                this.exibirFormHotel = false;
             }
         }
     }
 </script>
+
+<style scoped>
+    @import '@/Styles/Carros/FormHotel.sass';
+</style>

@@ -121,9 +121,9 @@
 </template>
 
 <script>
-    import FormHotel from '@/components/Carros/FormHotel.vue'
-    import FormAeroporto from '@/components/Carros/FormAeroporto.vue'
-    import FormBalcao from '@/components/Carros/FormBalcao.vue'
+    import FormHotel from '@/components/Carros/ReservaHotel/FormHotel.vue'
+    import FormAeroporto from '@/components/Carros/ReservaAeroporto/FormAeroporto.vue'
+    import FormBalcao from '@/components/Carros/ReservaBalcao/FormBalcao.vue'
     export default {
         name: 'Detalhes',
 
