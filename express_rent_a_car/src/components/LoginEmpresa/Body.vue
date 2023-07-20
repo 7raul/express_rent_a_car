@@ -2,9 +2,11 @@
     <div>
         <div class="loginEmpresa-conteiner">
             <div class="loginEmpresa-content">
-                <a href="#" class="logo">
-                    <i class="ri-roadster-fill"></i><span>Express Rent a Car</span>
-                </a>
+                <div class="navbar-logo">
+                    <router-link to="/">
+                        <i class="ri-roadster-fill"></i><span>Express<span class="color">RentaCar</span></span>
+                    </router-link>
+                </div>
 
                 <div class="text-sci">
                     <h2>Bem-vindo! <br><span>Ao seu novo website</span></h2>

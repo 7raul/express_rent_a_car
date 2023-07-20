@@ -112,6 +112,10 @@
                 this.loggedIn = true;
             },
 
+            userProfile(){
+                return "@/assets/img/userPerfil.png"
+            },
+
             // MenuDropdown
             handleResize() {
                 this.screenWidth = window.innerWidth;

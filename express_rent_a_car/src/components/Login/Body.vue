@@ -1,11 +1,12 @@
 <template>
     <div>
-        <div class="backgound"></div>
         <div class="container">
             <div class="content">
-                <a href="#" class="logo">
-                    <i class="ri-roadster-fill"></i><span>Express Rent a Car</span>
-                </a>
+                <div class="navbar-logo">
+                    <router-link to="/">
+                        <i class="ri-roadster-fill"></i><span>Express<span class="color">RentaCar</span></span>
+                    </router-link>
+                </div>
 
                 <div class="text-sci">
                     <h2>Bem-vindo! <br><span>Ao seu novo website</span></h2>
@@ -28,28 +29,28 @@
             
             <div class="logreg-box" :class="{ active: isRegisterActive }">
                 <div class="form-box login">
-                    <form action="#">
-                        <h2>Entrar</h2>
+                <form action="#">
+                    <h2>Entrar</h2>
 
-                        <div class="inputs">
-                            <input type="email" id="email" placeholder="E-mail" required>
+                    <div class="inputs">
+                        <input type="email" id="email" placeholder="E-mail" required>
 
-                            <input type="password" id="passoword" placeholder="Password" required>
-                        </div>
+                        <input type="password" id="passoword" placeholder="Password" required>
+                    </div>
 
-                        <div class="remember-forgot">
-                            <label for="">
-                                <input type="checkbox"> Lembre-me
-                            </label>
-                            <a href="#">Esqueceu a senha?</a>
-                        </div>
+                    <div class="remember-forgot">
+                        <label for="">
+                            <input type="checkbox"> Lembre-me
+                        </label>
+                        <a href="#">Esqueceu a senha?</a>
+                    </div>
 
-                        <button type="submit" class="btn">Entrar</button>
+                    <button type="submit" class="btn">Entrar</button>
 
-                        <div class="login-register">
-                            <p>Ainda não tem uma conta? <a href="#" class="register-link" @click="activateRegister">Registrar</a></p>
-                        </div>
-                    </form>
+                    <div class="login-register">
+                        <p>Ainda não tem uma conta? <a href="#" class="register-link" @click="activateRegister">Registrar</a></p>
+                    </div>
+                </form>
                 </div>
 
                 <div class="form-box register">

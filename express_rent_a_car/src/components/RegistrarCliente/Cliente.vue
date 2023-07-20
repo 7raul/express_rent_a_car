@@ -1,11 +1,12 @@
 <template>
     <div>
-        <div class="background"></div>
-        <div class="container">
-            <div class="content">
-                <a href="#" class="logo">
-                    <i class="ri-roadster-fill"></i><span>Express Rent a Car</span>
-                </a>
+        <div class="cliente-container">
+            <div class="cliente-content">
+                <div class="navbar-logo">
+                    <router-link to="/">
+                        <i class="ri-roadster-fill"></i><span>Express<span class="color">RentaCar</span></span>
+                    </router-link>
+                </div>
 
                 <div class="text-sci">
                     <h2>Bem-vindo! <br><span>Ao seu novo website</span></h2>

@@ -1,18 +1,18 @@
-.container{
+.cliente-container{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 75%;
     min-height: 550px;
-    background: url('@/assets/img/backgroundCliente.jpg') no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.8) 100%, rgba(0, 0, 0, 0.5)), url('@/assets/img/backgroundCliente.jpg') no-repeat;
     background-size: cover;
     background-position: center;
     border-radius: 10px;
     margin-top: 20px;
 }
 
-.container .content{
+.cliente-container .cliente-content{
     position: absolute;
     top: 0;
     margin-left: 5rem;
@@ -20,32 +20,25 @@
     height: 100%;
     background: transparent;
     padding: 80px;
-    color: #e4e4e4;
+    color: var(--color1);
     display: flex;
     justify-content: space-between;
     flex-direction: column;
 }
 
-.logo{
-    position: absolute;
-    left: 0;
-    display: flex;
+.navbar-logo i{
+    font-size: 2rem;
+    color: var(--color3);
 }
 
-.logo i{
-    color: #9ABCFF;
-    font-size: 30px;
-    margin-right: 3px;
+.navbar-logo a{
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    color: var(--color1);   
 }
 
-.content a{
-    text-decoration: none;
-}
-
-.logo span{
-    color: #e4e4e4;
-    font-size: 1.3rem;
-    font-weight: 600;
+.navbar-logo .color{
+   color: var(--color3);
 }
 
 .text-sci{
@@ -74,7 +67,7 @@
 
 .social-icon a i{
     font-size: 22px;
-    color: #e4e4e4;
+    color: var(--color1);
     margin-right: 10px;
     transition: .5s ease;
 }
@@ -83,7 +76,7 @@
     transform: scale(1.2);
 }
 
-.container .registro-box{
+.cliente-container .registro-box{
     position: absolute;
     top: 0;
     right: 0;
@@ -103,7 +96,7 @@
     backdrop-filter: blur(20px);
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
-    color: #e4e4e4;
+    color: var(--color1);
 }  
 
 .registro-box .form-box.register{
@@ -143,21 +136,21 @@
     border: none;
     font-size: 1rem;
     outline: none;
-    border-bottom: 2px solid #e4e4e4;
-    color: #e4e4e4;
+    border-bottom: 2px solid var(--color1);
+    color: var(--color1);
 }
 
 .btn,
 .btn-cad{
     width: 100%;
     height: 45px;
-    background: #c4103d;
+    background: var(--color3);
     border: none;
     outline: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-    color: #e4e4e4;
+    color: var(--color1);
     font-weight: 500;
     box-shadow: 0 0 10px rgba(0, 0, 0, .5);
 }
@@ -173,7 +166,7 @@
 }
 
 .register p a{
-    color: #e4e4e4;
+    color: var(--color1);
     font-weight: 600;
     text-decoration: none;
 }
