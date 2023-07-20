@@ -1,8 +1,7 @@
 <template>
     <div>
-        <div class="backgound"></div>
-        <div class="container">
-            <div class="content">
+        <div class="loginEmpresa-conteiner">
+            <div class="loginEmpresa-content">
                 <a href="#" class="logo">
                     <i class="ri-roadster-fill"></i><span>Express Rent a Car</span>
                 </a>
@@ -25,8 +24,8 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="logreg-box" :class="{ active: isRegisterActive }">
+
+            <div class="logreg-boxEmpresa">
                 <div class="form-box login">
                     <form action="#">
                         <h2>Entrar</h2>
@@ -45,25 +44,6 @@
                         </div>
 
                         <button type="submit" class="btn">Entrar</button>
-
-                        <div class="login-register">
-                            <p>Ainda não tem uma conta? <a href="#" class="register-link" @click="activateRegister">Registrar</a></p>
-                        </div>
-                    </form>
-                </div>
-
-                <div class="form-box register">
-                    <form action="#">
-                        <h2>Registrar como</h2>
-
-                        <div class="btn-option">
-                            <button type="submit" class="btn-empresa" @click="redirectToEmpresa">Empresa</button>
-                            <button type="submit" class="btn-cliente" @click="redirectToCliente">Cliente</button>
-                        </div>
-
-                        <div class="login-register">
-                        <p>Já tem uma conta? <a href="#" class="login-link" @click="deactivateRegister">Entrar</a></p>
-                        </div>
                     </form>
                 </div>
             </div>
@@ -73,32 +53,10 @@
 
 <script>
     export default {
-        name: 'Body',
-
-        data() {
-            return {
-                isRegisterActive: false
-            };
-        },
-        methods: {
-            activateRegister() {
-                this.isRegisterActive = true;
-            },
-            deactivateRegister() {
-                this.isRegisterActive = false;
-            },
-            redirectToEmpresa() {
-                // Redirecionar para a view da Empresa
-                this.$router.push('/empresa');
-            },
-            redirectToCliente() {
-                // Redirecionar para a view do Cliente
-                this.$router.push('/cliente');
-            }
-        }
+        name: 'Body'
     }
 </script>
 
 <style scoped>
-    @import '@/Styles/Login/Body.sass';    
+    @import '@/Styles/LoginEmpresa/Body.sass';
 </style>

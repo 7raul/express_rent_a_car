@@ -70,6 +70,11 @@ const routes = [
     name: 'dashboard',
     component: () => import('../views/AdminView.vue')
   },
+  {
+    path: '/loginEmpresa',
+    name: 'loginEmpresa',
+    component: () => import('../views/LoginEmpresa.vue')
+  },
   
   
 
