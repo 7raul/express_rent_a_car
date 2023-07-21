@@ -97,7 +97,7 @@
 
                         <div class="valor-caucao">
                             <p>Custo total:</p>
-                            <span>{{ calcularPrecoTotal() }}kz</span>
+                            <span>{{ calcularPrecoTotalSemCaucao() }}kz</span>
                         </div>
                     </div>
                     
@@ -173,6 +173,10 @@
             calcularPrecoTotal() {
                 const precoMotorista = this.semMotorista ? 0 : this.precoMotorista;
                 return this.precoViatura + precoMotorista + this.precoCaucao;
+            },
+            calcularPrecoTotalSemCaucao() {
+                const precoMotorista = this.semMotorista ? 0 : this.precoMotorista;
+                return this.precoViatura + precoMotorista;
             },
         }
     }

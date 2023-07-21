@@ -84,7 +84,7 @@
                             <div class="preco-total">
                                 <div>
                                     <h6>Preço total</h6>
-                                    <span>{{ precoTotal }}kz</span>
+                                    <span>{{ calcularPrecoTotal() }}kz</span>
                                 </div>
                                 <div>
                                     <h6>Entidade responsavel</h6>
@@ -139,11 +139,8 @@
         methods: {
             confirmarReserva() {
                 this.exibirConfirmacao = false
-            }
-        },
-
-        computed: {
-            precoTotal() {
+            },
+            calcularPrecoTotal() {
                 const precoMotorista = this.semMotorista ? 0 : this.precoMotorista;
                 return this.precoViatura + precoMotorista;
             },
