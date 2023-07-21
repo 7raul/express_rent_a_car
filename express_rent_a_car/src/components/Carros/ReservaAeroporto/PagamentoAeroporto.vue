@@ -64,7 +64,7 @@
 
                         <div class="valor-caucao">
                             <p>Custo total:</p>
-                            <span>297.000kz</span>
+                            <span>{{ calcularPrecoTotal() }}kz</span>
                         </div>
                     </div>
                     
@@ -121,8 +121,21 @@
             </div>
         </div>
 
-        <ReservaComCaucaoAeroporto v-if="mostrarReservaComCaucao" :semMotorista="semMotorista" />
-        <ReservaSemCaucaoAeroporto v-if="mostrarReservaSemCaucao" :semMotorista="semMotorista" />
+        <ReservaComCaucaoAeroporto
+            v-if="mostrarReservaComCaucao"
+            :semMotorista="semMotorista"
+            :precoViatura="precoViatura"
+            :precoMotorista="precoMotorista"
+            :precoCaucao="precoCaucao"
+            ref="reservaComCaucao"
+        />
+        <ReservaSemCaucaoAeroporto
+            v-if="mostrarReservaSemCaucao"
+            :semMotorista="semMotorista"
+            :precoViatura="precoViatura"
+            :precoMotorista="precoMotorista"
+            ref="reservaSemCaucao"
+        />
     </div>
 </template>
 
@@ -141,7 +154,10 @@
             return {
                 mostrarReservaComCaucao: false,
                 mostrarReservaSemCaucao: false,
-                semMotorista: false
+                semMotorista: false,
+                precoViatura: 27000, // Defina o preço correto da viatura
+                precoMotorista: 10000, // Defina o preço correto do motorista
+                precoCaucao: 270000, // Defina o preço correto da caução
             }
         },
 
@@ -153,7 +169,11 @@
             pagarSemCaucao() {
                 this.mostrarReservaComCaucao = false;
                 this.mostrarReservaSemCaucao = true;
-            }
+            },
+            calcularPrecoTotal() {
+                const precoMotorista = this.semMotorista ? 0 : this.precoMotorista;
+                return this.precoViatura + precoMotorista + this.precoCaucao;
+            },
         }
     }
 </script>

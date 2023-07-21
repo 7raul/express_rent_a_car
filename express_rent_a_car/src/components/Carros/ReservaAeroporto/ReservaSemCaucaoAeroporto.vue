@@ -73,18 +73,18 @@
                         <div class="pagamento">
                             <div class="preco-viatura">
                                 <h6>Preço da viatura</h6>
-                                <span>27 000kz</span>
+                                <span>{{ precoViatura }}kz</span>
                             </div>
 
                             <div class="preco-viatura" v-if="!semMotorista" >
                                 <h6>Preço do motorista</h6>
-                                <span>5 000kz</span>
+                                <span>{{ precoMotorista }}kz</span>
                             </div>
 
                             <div class="preco-total">
                                 <div>
                                     <h6>Preço total</h6>
-                                    <span>300 000kz</span>
+                                    <span>{{ precoTotal }}kz</span>
                                 </div>
                                 <div>
                                     <h6>Entidade responsavel</h6>
@@ -125,6 +125,14 @@
                 type: Boolean,
                 default: false,
             },
+            precoViatura: {
+                type: Number,
+                default: 0,
+            },
+            precoMotorista: {
+                type: Number,
+                default: 0,
+            },
             // Outras propriedades que você pode ter em seu componente
         },
 
@@ -132,6 +140,13 @@
             confirmarReserva() {
                 this.exibirConfirmacao = false
             }
-        }
+        },
+
+        computed: {
+            precoTotal() {
+                const precoMotorista = this.semMotorista ? 0 : this.precoMotorista;
+                return this.precoViatura + precoMotorista;
+            },
+        },
     }
 </script>
