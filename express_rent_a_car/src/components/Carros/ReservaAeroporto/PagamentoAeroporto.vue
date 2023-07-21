@@ -97,7 +97,7 @@
 
                         <div class="valor-caucao">
                             <p>Custo total:</p>
-                            <span>270.000kz</span>
+                            <span>{{ calcularPrecoTotal() }}kz</span>
                         </div>
                     </div>
                     
