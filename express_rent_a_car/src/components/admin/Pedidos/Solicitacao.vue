@@ -11,6 +11,7 @@
                         <th>Telefone</th>
                         <th>B.I</th>
                         <th>Viatura</th>
+                        <th>Opção</th>
                         <th>Duração</th>
                         <th>Estado</th>
                         <th></th>
@@ -23,130 +24,89 @@
                         <td>932157393</td>
                         <td>123456789LA22</td>
                         <td>Fiat500</td>
+                        <td>
+                            <p v-if="opcao === 'Hotel'">Hotel</p>
+                            <p v-else-if="opcao === 'Aeroporto'">Aeroporto</p>
+                            <p v-else-if="opcao === 'Balcao'">Balcao</p>
+                        </td>
                         <td>24h</td>
                         <td>
                             <p v-if="status === 'Em espera'">Em espera</p>
-                            <p v-else-if="status === 'Cancelado'">Cancelado</p>
                             <p v-else-if="status === 'Entregue'">Entregue</p>
                             <p v-else-if="status === 'Devolvido'">Devolvido</p>
                         </td>
                         <td class="btn-solicitacao">
                             <button><i class="ri-delete-bin-2-line"></i></button>
                             <button class="verde"><i class="ri-shield-check-fill"></i></button>
+                            <div class="icon-conteiner">
+                                <button v-if="!showDetails" @click="toggleDetails">
+                                    <i class="ri-eye-close-fill"></i>
+                                </button>
+                                <button v-else>
+                                    <i class="ri-eye-2-fill"></i>
+                                </button>
+                            </div>
                         </td>
                     </tr>
                 </tbody>
             </table>
 
-            <div class="card-reserva">
-                <div class="conteiner-card">
-                    <div class="card-top">
-                        <router-link to="#">
-                            <i class="ri-roadster-fill"></i><span>Express<span class="color">RentaCar</span></span>
-                        </router-link>
+            <div v-if="showDetails">
+                <!--Pedidos Hotel-->
+                <PedidoHotel v-if="tipoPedido === 'hotel'" />
 
-                        <div class="id-reserva">
-                            <h6>ID:</h6>
-                            <span>1234567890</span>
-                        </div>
-                    </div>
+                <!--Pedido Aeroporto-->
+                <PedidoAeroporto v-else-if="tipoPedido === 'aeroporto'" />
 
-                    <div class="card-content">
-                        <div class="card-info">
-                            <h6>Nome do requerente</h6>
-                            <span>Raúl Miguel Martinho António</span>
-                        </div>
-
-                        <div class="card-info">
-                            <h6>Telefone</h6>
-                            <span>932157393</span>
-                        </div>
-
-                        <div class="card-info">
-                            <h6>E-mail</h6>
-                            <span>raulmigueleb7@gmail.com</span>
-                        </div>
-
-                        <div class="card-info">
-                            <h6>B.I</h6>
-                            <span>123456789LA12</span>
-                        </div>
-
-                        <div class="card-local-date-time">
-                            <div class="card-local">
-                                <h6>Local de entrega</h6>
-                                <span>Hotel Alvalade</span>
-                            </div>
-                            <div class="card-local">
-                                <h6>Data e hora</h6>
-                                <span>19/07/2023 - 12h50</span>
-                            </div>
-                        </div>
-
-                        <div class="card-local-date-time">
-                            <div class="card-local">
-                                <h6>Local de Devoluçãõ</h6>
-                                <span>Hotel Alvalade</span>
-                            </div>
-                            <div class="card-local">
-                                <h6>Data e hora</h6>
-                                <span>20/07/2023 - 12h50</span>
-                            </div>
-                        </div>
-
-                        <div class="card-info">
-                            <h6>Numero do quarto</h6>
-                            <span>320</span>
-                        </div>
-
-                        <div class="card-info">
-                            <h6>Viatura solicitada</h6>
-                            <span>Fiat 500</span>
-                        </div>
-
-                        <div class="pagamento">
-                            <div class="preco-viatura">
-                                <h6>Preço da viatura</h6>
-                                <span>27 000kz</span>
-                            </div>
-
-                            <div class="preco-viatura">
-                                <h6>Preço do motorista</h6>
-                                <span>5 000kz</span>
-                            </div>
-
-                            <div class="preco-viatura">
-                                <h6>Preço da Caução</h6>
-                                <span>270 000kz</span>
-                            </div>
-
-                            <div class="preco-total">
-                                <div>
-                                    <h6>Preço total</h6>
-                                    <span>300 000kz</span>
-                                </div>
-                                <div>
-                                    <h6>Entidade responsavel</h6>
-                                    <span>Artur Rent a car</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!--Pedido Balcao-->
+                <PedidoBalcao v-else-if="tipoPedido === 'balcao'" />
             </div>
+    
         </div>
     </div>
 </template>
 
 <script>
+    import PedidoHotel from '@/components/admin/Pedidos/PedidosHotel/PedidoHotel.vue'
+    import PedidoAeroporto from '@/components/admin/Pedidos/PedidosAeroporto/PedidoAeroporto.vue'
+    import PedidoBalcao from '@/components/admin/Pedidos/PedidosBalcao/PedidoBalcao.vue'
     export default {
         name: 'Solicitacao',
 
+        components: {
+            PedidoHotel,
+            PedidoAeroporto,
+            PedidoBalcao
+        },
+
         data() {
             return {
-                status: 'Em espera'
+                status: 'Em espera',
+                opcao: 'Hotel',
+                showDetails: false
             };
-        }
+        },
+
+        methods: {
+            toggleDetails() {
+                this.showDetails = !this.showDetails;
+            },
+            // Outros métodos do componente
+        },
+
+        computed: {
+            tipoPedido() {
+                if (this.opcao === 'Hotel') {
+                return 'hotel';
+                } else if (this.opcao === 'Aeroporto') {
+                return 'aeroporto';
+                } else if (this.opcao === 'Balcao') {
+                return 'balcao';
+                } else {
+                return null; // Retornar null ou outro valor padrão caso opcao não corresponda a nenhum tipo conhecido
+                }
+            },
+        },
     }
 </script>
 

@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="confirmar-reserva" v-if="exibirConfirmacao">
+        <div class="confirmar-reserva">
             <div class="card-reserva">
                 <div class="conteiner-card">
                     <div class="card-top">
@@ -8,7 +8,10 @@
                             <i class="ri-roadster-fill"></i><span>Express<span class="color">RentaCar</span></span>
                         </router-link>
 
-                        
+                        <div id="id-reserva">
+                            <h6>ID:</h6>
+                            <span>1234567890</span>
+                        </div>
                     </div>
 
                     <div class="card-content">
@@ -35,7 +38,7 @@
                         <div class="card-local-date-time">
                             <div class="card-local">
                                 <h6>Local de entrega</h6>
-                                <span>Hotel Alvalade</span>
+                                <span>Balcão de atendimento</span>
                             </div>
                             <div class="card-local">
                                 <h6>Data e hora</h6>
@@ -46,22 +49,11 @@
                         <div class="card-local-date-time">
                             <div class="card-local">
                                 <h6>Local de Devoluçãõ</h6>
-                                <span>Hotel Alvalade</span>
+                                <span>Balcão de atendimento</span>
                             </div>
                             <div class="card-local">
                                 <h6>Data e hora</h6>
                                 <span>20/07/2023 - 12h50</span>
-                            </div>
-                        </div>
-
-                        <div class="card-local-date-time">
-                            <div class="card-local">
-                                <h6>Numero do voo</h6>
-                                <span>00015</span>
-                            </div>
-                            <div class="card-local">
-                                <h6>Numero do acento</h6>
-                                <span>10203</span>
                             </div>
                         </div>
 
@@ -76,7 +68,7 @@
                                 <span>27 000kz</span>
                             </div>
 
-                            <div class="preco-viatura" v-if="!semMotorista">
+                            <div class="preco-viatura">
                                 <h6>Preço do motorista</h6>
                                 <span>5 000kz</span>
                             </div>
@@ -99,44 +91,17 @@
                         </div>
 
                         <div class="btn-confirmar">
-                            <button @click="confirmarReserva">Confirmar reserva</button>
+                            <button>Enviar confirmaçao</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <Pagar v-else />
     </div>
 </template>
 
 <script>
-    import Pagar from '@/components/Carros/Pagar.vue'
     export default {
-        name: 'ReservarComCaucaoAeroporto',
-
-        components: {
-            Pagar
-        },
-        
-        data() {
-            return {
-                exibirConfirmacao: true
-            }
-        },
-
-        props: {
-            semMotorista: {
-                type: Boolean,
-                default: false,
-            },
-            // Outras propriedades que você pode ter em seu componente
-        },
-
-        methods: {
-            confirmarReserva() {
-                this.exibirConfirmacao = false
-            }
-        }
+        name: 'PedidoBalcao'
     }
 </script>

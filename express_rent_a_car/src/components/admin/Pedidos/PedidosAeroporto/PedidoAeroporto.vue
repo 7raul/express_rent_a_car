@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="confirmar-reserva" v-if="exibirConfirmacao">
+        <div class="confirmar-reserva">
             <div class="card-reserva">
                 <div class="conteiner-card">
                     <div class="card-top">
@@ -8,7 +8,10 @@
                             <i class="ri-roadster-fill"></i><span>Express<span class="color">RentaCar</span></span>
                         </router-link>
 
-                        
+                        <div id="id-reserva">
+                            <h6>ID:</h6>
+                            <span>1234567890</span>
+                        </div>
                     </div>
 
                     <div class="card-content">
@@ -76,7 +79,7 @@
                                 <span>27 000kz</span>
                             </div>
 
-                            <div class="preco-viatura" v-if="!semMotorista">
+                            <div class="preco-viatura">
                                 <h6>Preço do motorista</h6>
                                 <span>5 000kz</span>
                             </div>
@@ -99,44 +102,17 @@
                         </div>
 
                         <div class="btn-confirmar">
-                            <button @click="confirmarReserva">Confirmar reserva</button>
+                            <button>Enviar confirmacao</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <Pagar v-else />
     </div>
 </template>
 
 <script>
-    import Pagar from '@/components/Carros/Pagar.vue'
     export default {
-        name: 'ReservarComCaucaoAeroporto',
-
-        components: {
-            Pagar
-        },
-        
-        data() {
-            return {
-                exibirConfirmacao: true
-            }
-        },
-
-        props: {
-            semMotorista: {
-                type: Boolean,
-                default: false,
-            },
-            // Outras propriedades que você pode ter em seu componente
-        },
-
-        methods: {
-            confirmarReserva() {
-                this.exibirConfirmacao = false
-            }
-        }
+        name: 'PedidoComCaucaoA'
     }
 </script>

@@ -3,128 +3,122 @@
         <div class="wrapper">
             <aside id="sidebar" v-show="isSidebarCollapsed" >
                 <div class="h-100">
-                <div class="navbar-logo">
-                    <router-link to="#">
-                        <i class="ri-roadster-fill"></i><span>Express<span class="color">RentaCar</span></span>
-                    </router-link>
-                </div>
+                    <div class="navbar-logo">
+                        <router-link to="#">
+                            <i class="ri-roadster-fill"></i><span>Express<span class="color">RentaCar</span></span>
+                        </router-link>
+                    </div>
 
-                <ul class="sidebar-nav">
-                    <li class="sidebar-header">
-                        Páginas
-                    </li>
+                    <ul class="sidebar-nav">
+                        <li class="sidebar-header">
+                            Páginas
+                        </li>
 
-                    <li class="sidebar-item" :class="{ 'active': currentComponent === 'dashboard' }">
-                        <a href="#" class="sidebar-link" @click="showDashboard">
-                            <i class="ri-dashboard-fill"></i>
-                            Dashboard
-                        </a>
-                    </li>
+                        <li class="sidebar-item" :class="{ 'active': currentComponent === 'dashboard' }">
+                            <a href="#" class="sidebar-link" @click="showDashboard">
+                                <i class="ri-dashboard-fill"></i>
+                                Dashboard
+                            </a>
+                        </li>
 
-                    <li class="sidebar-item" :class="{ 'active': currentComponent === 'EditarPerfil' }">
-                        <a href="#" class="sidebar-link" @click="showEditarPerfil">
-                            <i class="fa-regular fa-user"></i>
-                            Editar Perfil
-                        </a>
-                    </li>
-                    <li class="sidebar-item" :class="{ 'active': currentComponent === 'Notificacoes'}">
-                        <a href="#" class="sidebar-link" @click="showNotificacoes">
-                            <i class="fa-regular fa-bell"></i>
-                            Notificões <span class="red">7</span>
-                        </a>
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link has-dropdown" @click="toggleConfig">
-                            <i class="fa-solid fa-user-gear"></i>
-                            Configurações
-                            <i class="ri-arrow-down-s-line" id="down" v-if="!showConfig"></i>
-                            <i class="ri-arrow-up-s-line" id="down" v-if="showConfig"></i>
-                        </a>
+                        <li class="sidebar-item" :class="{ 'active': currentComponent === 'EditarPerfil' }">
+                            <a href="#" class="sidebar-link" @click="showEditarPerfil">
+                                <i class="fa-regular fa-user"></i>
+                                Editar Perfil
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link has-dropdown" @click="toggleConfig">
+                                <i class="fa-solid fa-user-gear"></i>
+                                Configurações
+                                <i class="ri-arrow-down-s-line" id="down" v-if="!showConfig"></i>
+                                <i class="ri-arrow-up-s-line" id="down" v-if="showConfig"></i>
+                            </a>
+                            
+                            <ul class="sidebar-dropdown" v-show="showConfig">
+                                <li class="sidebar-item">
+                                    <a href="/login" class="sidebar-link">
+                                        Sair
+                                    </a>
+                                    <a href="http://localhost:8080/" class="sidebar-link">
+                                        Ver como cliente
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                         
-                        <ul class="sidebar-dropdown" v-show="showConfig">
-                            <li class="sidebar-item">
-                                <a href="/login" class="sidebar-link">
-                                    Sair
-                                </a>
-                                <a href="http://localhost:8080/" class="sidebar-link">
-                                    Ver como cliente
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    
-                    <li class="sidebar-header">
-                        Pedidos
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link has-dropdown" @click="toggleReserva">
-                            <i class="ri-survey-line"></i>
-                            Reservas
-                            <i class="ri-arrow-down-s-line" id="down" v-if="!showReserva"></i>
-                            <i class="ri-arrow-up-s-line" id="down" v-if="showReserva"></i>
-                        </a>
+                        <li class="sidebar-header">
+                            Pedidos
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link has-dropdown" @click="toggleReserva">
+                                <i class="ri-survey-line"></i>
+                                Reservas
+                                <i class="ri-arrow-down-s-line" id="down" v-if="!showReserva"></i>
+                                <i class="ri-arrow-up-s-line" id="down" v-if="showReserva"></i>
+                            </a>
+                            
+                            <ul class="sidebar-dropdown" v-show="showReserva" >
+                                <li class="sidebar-item" >
+                                    <a href="#" class="sidebar-link" @click="showSolicitacao" :class="{ 'active': currentComponent === 'Solicitacao' }">
+                                        Solicitação
+                                    </a>
+                                    <a href="#" class="sidebar-link" @click="showCancelados" :class="{ 'active': currentComponent === 'Cancelados' }">
+                                        Cancelados
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                         
-                        <ul class="sidebar-dropdown" v-show="showReserva" >
-                            <li class="sidebar-item" >
-                                <a href="#" class="sidebar-link" @click="showSolicitacao" :class="{ 'active': currentComponent === 'Solicitacao' }">
-                                    Solicitação
-                                </a>
-                                <a href="#" class="sidebar-link" @click="showCancelados" :class="{ 'active': currentComponent === 'Cancelados' }">
-                                    Cancelados
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    
-                    <li class="sidebar-header">
-                        Carros
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link has-dropdown" @click="toggleFrota">
-                            <i class="ri-car-line"></i>
-                            Frota 
-                            <i class="ri-arrow-down-s-line" id="down" v-if="!showFrota"></i>
-                            <i class="ri-arrow-up-s-line" id="down" v-if="showFrota"></i>
-                        </a>
+                        <li class="sidebar-header">
+                            Carros
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link has-dropdown" @click="toggleFrota">
+                                <i class="ri-car-line"></i>
+                                Frota 
+                                <i class="ri-arrow-down-s-line" id="down" v-if="!showFrota"></i>
+                                <i class="ri-arrow-up-s-line" id="down" v-if="showFrota"></i>
+                            </a>
+                            
+                            <ul class="sidebar-dropdown" v-show="showFrota">
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link" @click="showAddVeiculo" :class="{ 'active': currentComponent === 'AddVeiculo' }">
+                                        Adicionar veiculo 
+                                    </a>
+                                    <a href="#" class="sidebar-link" @click="showListaDeVeiculos" :class="{ 'active': currentComponent === 'ListaDeVeiculos' }">
+                                        Lista de veiculos
+                                    </a>
+                                    <a href="#" class="sidebar-link" @click="showVeiculosDisponivel" :class="{ 'active': currentComponent === 'VeiculosDisponivel' }">
+                                        Veiculos Disponível
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                         
-                        <ul class="sidebar-dropdown" v-show="showFrota">
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link" @click="showAddVeiculo" :class="{ 'active': currentComponent === 'AddVeiculo' }">
-                                    Adicionar veiculo 
-                                </a>
-                                <a href="#" class="sidebar-link" @click="showListaDeVeiculos" :class="{ 'active': currentComponent === 'ListaDeVeiculos' }">
-                                    Lista de veiculos
-                                </a>
-                                <a href="#" class="sidebar-link" @click="showVeiculosDisponivel" :class="{ 'active': currentComponent === 'VeiculosDisponivel' }">
-                                    Veiculos Disponível
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    
-                    <li class="sidebar-header">
-                        Contrato
-                    </li>
-                    <li class="sidebar-item">
-                        <a href="#" class="sidebar-link has-dropdown" @click="toggleContrato">
-                            <i class="ri-draft-fill"></i>
-                            Termos e Politicas
-                            <i class="ri-arrow-down-s-line" id="down" v-if="!showContrato"></i>
-                            <i class="ri-arrow-up-s-line" id="down" v-if="showContrato"></i>
-                        </a>
-                        
-                        <ul class="sidebar-dropdown" v-show="showContrato">
-                            <li class="sidebar-item">
-                                <a href="#" class="sidebar-link" @click="showTermos" :class="{ 'active': currentComponent === 'Termos' }">
-                                    Termos
-                                </a>
-                                <a href="#" class="sidebar-link" @click="showPoliticas" :class="{ 'active': currentComponent === 'Politicas' }">
-                                    Politica
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+                        <li class="sidebar-header">
+                            Contrato
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link has-dropdown" @click="toggleContrato">
+                                <i class="ri-draft-fill"></i>
+                                Termos e Politicas
+                                <i class="ri-arrow-down-s-line" id="down" v-if="!showContrato"></i>
+                                <i class="ri-arrow-up-s-line" id="down" v-if="showContrato"></i>
+                            </a>
+                            
+                            <ul class="sidebar-dropdown" v-show="showContrato">
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link" @click="showTermos" :class="{ 'active': currentComponent === 'Termos' }">
+                                        Termos
+                                    </a>
+                                    <a href="#" class="sidebar-link" @click="showPoliticas" :class="{ 'active': currentComponent === 'Politicas' }">
+                                        Politica
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </aside>
 
@@ -247,9 +241,6 @@
                     <!--Editar Perfil-->
                     <EditarPerfil v-else-if="currentComponent === 'EditarPerfil'"  />
 
-                    <!--Notificações-->
-                    <Notificacoes v-else-if="currentComponent === 'Notificacoes'"/>
-
                     <!--Frota-->
                     <AddVeiculo v-else-if="currentComponent === 'AddVeiculo'"/> 
                     <ListaDeVeiculos v-else-if="currentComponent === 'ListaDeVeiculos'"/> 
@@ -311,7 +302,6 @@
     import VeiculosDisponivel from '@/components/admin/Frota/VeiculosDisponivel.vue'
     import Solicitacao from '@/components/admin/Pedidos/Solicitacao.vue'
     import Cancelados from '@/components/admin/Pedidos/Cancelados.vue'
-    import Notificacoes from '@/components/admin/Notificacoes/Notificacoes.vue'
     import EditarPerfil from '@/components/admin/EditarPerfil/EditarPerfil.vue'
     import Termos from '@/components/admin/TermosEPoliticas/Termos.vue'
     import Politicas from '@/components/admin/TermosEPoliticas/Politicas.vue'
@@ -323,7 +313,6 @@
             VeiculosDisponivel,
             Solicitacao,
             Cancelados,
-            Notificacoes,
             EditarPerfil,
             Termos,
             Politicas
@@ -390,9 +379,6 @@
             },
             showEditarPerfil(){
                 this.currentComponent = 'EditarPerfil';
-            },
-            showNotificacoes(){
-                this.currentComponent = 'Notificacoes';
             },
             showAddVeiculo(){
                 this.currentComponent = 'AddVeiculo';

@@ -76,14 +76,9 @@
                                 <span>27 000kz</span>
                             </div>
 
-                            <div class="preco-viatura">
+                            <div class="preco-viatura" v-if="!semMotorista" >
                                 <h6>Preço do motorista</h6>
                                 <span>5 000kz</span>
-                            </div>
-
-                            <div class="preco-viatura">
-                                <h6>Preço da Caução</h6>
-                                <span>270 000kz</span>
                             </div>
 
                             <div class="preco-total">
@@ -123,6 +118,14 @@
             return {
                 exibirConfirmacao: true
             }
+        },
+
+        props: {
+            semMotorista: {
+                type: Boolean,
+                default: false,
+            },
+            // Outras propriedades que você pode ter em seu componente
         },
 
         methods: {

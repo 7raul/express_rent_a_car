@@ -121,8 +121,8 @@
             </div>
         </div>
 
-        <ReservaComCaucaoAeroporto v-if="mostrarReservaComCaucao" />
-        <ReservaSemCaucaoAeroporto v-if="mostrarReservaSemCaucao" />
+        <ReservaComCaucaoAeroporto v-if="mostrarReservaComCaucao" :semMotorista="semMotorista" />
+        <ReservaSemCaucaoAeroporto v-if="mostrarReservaSemCaucao" :semMotorista="semMotorista" />
     </div>
 </template>
 
