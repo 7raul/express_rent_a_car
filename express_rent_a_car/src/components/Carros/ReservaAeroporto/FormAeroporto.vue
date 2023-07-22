@@ -6,7 +6,7 @@
                     <div class="entrega">
                         <div class="local">
                             <label for="#">Local de entrega</label>
-                            <input type="text" required placeholder="Nome do hotel">
+                            <input type="text" required placeholder="Nome do aeroporto">
                         </div>
 
                         <div class="data-time">
@@ -30,7 +30,7 @@
 
                         <div class="local" v-show="!devolverNoMesmoLocal">
                             <label for="#">Local de devolução</label>
-                            <input type="text" required placeholder="Nome do hotel">
+                            <input type="text" required placeholder="Nome do hotel ou aeroporto">
                         </div>
 
                         <div class="data-time">

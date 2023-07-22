@@ -6,7 +6,7 @@
                 <img :src="slide.image" :style="{ height: slide.height }">
                 <div class="caption">
                     <div class="caption-text">{{ slide.caption }}</div>
-                    <a class="button" href="#">Sobre nós</a>
+                    <a class="button" href="/carros">Pesquisar veiculo</a>
                 </div>
                 <div class="dot-container">
                     <span class="dot" v-for="(_, dotIndex) in slides" :key="dotIndex" :class="{ active: dotIndex === currentSlide }" @click="currentSlide(dotIndex)"></span>

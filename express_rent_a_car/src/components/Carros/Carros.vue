@@ -71,7 +71,7 @@
                                 </div>
 
                                 <div class="btn-reservar">
-                                    <button @click="showDetalhes = true"> Continuar </button>
+                                    <button @click="showDetalhes = true">Reservar</button>
                                 </div>
                             </div>
                         </div>
