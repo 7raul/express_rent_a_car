@@ -73,23 +73,18 @@
                         <div class="pagamento">
                             <div class="preco-viatura">
                                 <h6>Preço da viatura</h6>
-                                <span>27 000kz</span>
+                                <span>{{ precoViatura }}kz</span>
                             </div>
 
-                            <div class="preco-viatura">
+                            <div class="preco-viatura" v-if="!semMotorista" >
                                 <h6>Preço do motorista</h6>
-                                <span>5 000kz</span>
-                            </div>
-
-                            <div class="preco-viatura">
-                                <h6>Preço da Caução</h6>
-                                <span>270 000kz</span>
+                                <span>{{ precoMotorista }}kz</span>
                             </div>
 
                             <div class="preco-total">
                                 <div>
                                     <h6>Preço total</h6>
-                                    <span>300 000kz</span>
+                                    <span>{{ calcularPrecoTotal() }}kz</span>
                                 </div>
                                 <div>
                                     <h6>Entidade responsavel</h6>
@@ -125,11 +120,30 @@
             }
         },
 
+        props: {
+            semMotorista: {
+                type: Boolean,
+                default: false,
+            },
+            precoViatura: {
+                type: Number,
+                default: 0,
+            },
+            precoMotorista: {
+                type: Number,
+                default: 0,
+            },
+            // Outras propriedades que você pode ter em seu componente
+        },
+
         methods: {
             confirmarReserva() {
                 this.exibirConfirmacao = false
-            }
-        }
-
+            },
+            calcularPrecoTotal() {
+                const precoMotorista = this.semMotorista ? 0 : this.precoMotorista;
+                return this.precoViatura + precoMotorista;
+            },
+        },
     }
 </script>
