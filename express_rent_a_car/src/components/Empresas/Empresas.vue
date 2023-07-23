@@ -19,11 +19,21 @@
                             <span class="empresa-name">Artur Rent a car</span>
 
                             <div class="reviews">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
+                                <div class="preenchidos">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+
+                                <div class="nao-preenchidos">
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
                             </div>
 
                             <div class="paragrafo">
@@ -36,109 +46,6 @@
                         </div>
                     </div>
 
-                    <div class="empresa">
-                        <div class="empresa-img">
-                            <img :src="empresaImg">
-                        </div>
-
-                        <div class="empresa-content">
-                            <span class="empresa-name">Artur Rent a car</span>
-
-                            <div class="reviews">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-
-                            <div class="paragrafo">
-                                <p>Satisfazer os nossos clientes nos satisfaz</p>
-                            </div>
-
-                            <div class="empresa-btn">
-                                <a href="#">Ver mais</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="empresa">
-                        <div class="empresa-img">
-                            <img :src="empresaImg">
-                        </div>
-
-                        <div class="empresa-content">
-                            <span class="empresa-name">Artur Rent a car</span>
-
-                            <div class="reviews">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-
-                            <div class="paragrafo">
-                                <p>Satisfazer os nossos clientes nos satisfaz</p>
-                            </div>
-
-                            <div class="empresa-btn">
-                                <a href="#">Ver mais</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="empresa">
-                        <div class="empresa-img">
-                            <img :src="empresaImg">
-                        </div>
-
-                        <div class="empresa-content">
-                            <span class="empresa-name">Artur Rent a car</span>
-
-                            <div class="reviews">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-
-                            <div class="paragrafo">
-                                <p>Satisfazer os nossos clientes nos satisfaz</p>
-                            </div>
-
-                            <div class="empresa-btn">
-                                <a href="#">Ver mais</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="empresa">
-                        <div class="empresa-img">
-                            <img :src="empresaImg">
-                        </div>
-
-                        <div class="empresa-content">
-                            <span class="empresa-name">Artur Rent a car</span>
-
-                            <div class="reviews">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-
-                            <div class="paragrafo">
-                                <p>Satisfazer os nossos clientes nos satisfaz</p>
-                            </div>
-
-                            <div class="empresa-btn">
-                                <a href="#">Ver mais</a>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

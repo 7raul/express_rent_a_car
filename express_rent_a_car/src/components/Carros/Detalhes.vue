@@ -11,14 +11,16 @@
                     </div>
 
                     <div class="reviews">
-                        <div>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
+                        <div class="stars">
+                            <div class="preenchidos">
+                                <i v-for="index in 5" :key="index" :class="['fas', {'fa-star': index <= filledStars, 'fa-star-half-alt': index === Math.ceil(filledStars), 'fa-star-o': index > filledStars}]" @click="updateStars(index)"></i>
+                            </div>
+
+                            <div class="nao-preenchidos">
+                                <i v-for="index in 5 - Math.ceil(filledStars)" :key="index" class="far fa-star" @click="updateStars(Math.ceil(filledStars) + index)"></i>
+                            </div>
                         </div>
-                        <p>4.4 <span>(10,482 reviews)</span></p>
+                        <p>{{ calculateAverageStars() }} <span>({{ ratings.length }} reviews)</span></p>
                     </div>
                 </div>
 
@@ -139,7 +141,22 @@
                 logoEmpresa: require("@/assets/img/empresa.jpg"),
                 opcaoEntrega: '',
                 exibirComponente: false,
-                componenteSelecionado: ''
+                componenteSelecionado: '',
+                filledStars: 0, // Número de estrelas preenchidas inicialmente
+                ratings: [], // Avaliações dos clientes em uma matriz
+
+            }
+        },
+
+        created() {
+            // Recupera as classificações de todos os clientes do localStorage se estiverem disponíveis
+            if (localStorage.getItem('allRatings')) {
+                this.ratings = JSON.parse(localStorage.getItem('allRatings'));
+                // Encontra a classificação do cliente atual nas classificações armazenadas
+                const currentRating = this.ratings.find((rating) => rating.client === 'current');
+                if (currentRating) {
+                    this.filledStars = parseFloat(currentRating.rating);
+                }
             }
         },
 
@@ -163,7 +180,30 @@
                     this.exibirComponente = false;
                     this.componenteSelecionado = '';
                 }
-            }
+            },
+
+            //Avaliação de estrelas
+            // Função para atualizar o número de estrelas preenchidas ao clicar
+            updateStars(stars) {
+                // Se o cliente clicar em uma estrela, preenche todas as estrelas à esquerda
+                this.filledStars = stars;
+
+                // Atualiza as classificações do cliente no array e salva em localStorage
+                const currentRatingIndex = this.ratings.findIndex((rating) => rating.client === 'current');
+                if (currentRatingIndex !== -1) {
+                    this.ratings.splice(currentRatingIndex, 1, { client: 'current', rating: this.filledStars });
+                } else {
+                    this.ratings.push({ client: 'current', rating: this.filledStars });
+                }
+                localStorage.setItem('allRatings', JSON.stringify(this.ratings));
+            },
+
+            // Função para calcular a média das estrelas atribuídas
+            calculateAverageStars() {
+                const totalStars = this.ratings.reduce((total, rating) => total + parseFloat(rating.rating), 0);
+                const average = totalStars / this.ratings.length;
+                return average.toFixed(1);
+            },
         }
     }
 </script>
