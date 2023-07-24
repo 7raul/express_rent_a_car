@@ -88,7 +88,8 @@
                 this.$router.push('/login');
             },
             activateForm(formName) {
-                this.activeForm = formName
+                console.log('Activating form:', formName);
+                this.activeForm = formName;
             }
         }
     }
