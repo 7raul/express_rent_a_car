@@ -2,17 +2,17 @@
     <div>
         <div class="cliente-container">
             <div class="cliente-content">
-                <div class="navbar-logo">
+                <div class="navbar-logo-cliente">
                     <router-link to="/">
                         <i class="ri-roadster-fill"></i><span>Express<span class="color">RentaCar</span></span>
                     </router-link>
                 </div>
 
-                <div class="text-sci">
+                <div class="text-sci-cliente">
                     <h2>Bem-vindo! <br><span>Ao seu novo website</span></h2>
                 </div>
 
-                <div class="text-sci">
+                <div class="text-sci-cliente">
                     <div class="social-icon">
                         <a href="#"><i class="bx bxl-linkedin"></i></a>
                         <a href="#"><i class="bx bxl-facebook"></i></a>
@@ -34,6 +34,7 @@
                         <input type="number" placeholder="Telefone" required>
 
                         <button type="submit" class="btn" @click="activateContinue">Continuar</button>
+                        <button type="submit" class="btn-google"><i class="fa-brands fa-google-plus-g"></i> Cadastrar com google</button>
 
                         <div class="register">
                             <p>Já tem uma conta? <a href="#" @click="redirectToLogin">Entrar</a></p>

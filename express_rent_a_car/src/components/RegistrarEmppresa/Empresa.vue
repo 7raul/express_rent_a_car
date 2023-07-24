@@ -1,17 +1,18 @@
 <template>
     <div>
-        <div class="background"></div>
-        <div class="container">
-            <div class="content">
-                <a href="#" class="logo">
-                    <i class="ri-roadster-fill"></i><span>Express Rent a Car</span>
-                </a>
+        <div class="container-empresa-register">
+            <div class="content-empresa-register">
+                <div class="navbar-logo-empresa">
+                    <router-link to="/">
+                        <i class="ri-roadster-fill"></i><span>Express<span class="color">RentaCar</span></span>
+                    </router-link>
+                </div>
 
-                <div class="text-sci">
+                <div class="text-sci-empresa">
                     <h2>Bem-vindo! <br><span>Ao seu novo website</span></h2>
                 </div>
 
-                <div class="text-sci">
+                <div class="text-sci-empresa">
                     <div class="social-icon">
                         <a href="#"><i class="bx bxl-linkedin"></i></a>
                         <a href="#"><i class="bx bxl-facebook"></i></a>
@@ -33,7 +34,8 @@
                         <input type="number" placeholder="Telefone da empresa">
 
                         <button type="submit" class="btn" @click.prevent="activateForm('another')">Continuar</button>
-
+                        <button type="submit" class="btn-google"><i class="fa-brands fa-google-plus-g"></i> Cadastrar com google</button>
+                        
                         <div class="register">
                             <p>Já tem uma conta? <a href="#" @click="redirectToLogin">Entrar</a></p>
                         </div>
@@ -45,7 +47,7 @@
                         <FileEmpresa />
 
                         <div class="btn-option">
-                            <button type="submit" class="btn-cad" @click.prevent="activateForm('the-end')">Continuar</button>
+                            <button type="submit" class="btn-cad" @click.prevent="activateForm('the-end')" >Continuar</button>
                             <button type="submit" class="btn" @click.prevent="activateForm('register')">Voltar</button>
                         </div>
                     </form>
