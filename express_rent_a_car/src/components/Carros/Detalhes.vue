@@ -12,10 +12,12 @@
 
                     <div class="reviews">
                         <div class="stars">
+                            <!-- Estrelas preenchidas -->
                             <div class="preenchidos">
                                 <i v-for="index in 5" :key="index" :class="['fas', {'fa-star': index <= filledStars, 'fa-star-half-alt': index === Math.ceil(filledStars), 'fa-star-o': index > filledStars}]" @click="updateStars(index)"></i>
                             </div>
 
+                            <!-- Estrelas não preenchidas -->
                             <div class="nao-preenchidos">
                                 <i v-for="index in 5 - Math.ceil(filledStars)" :key="index" class="far fa-star" @click="updateStars(Math.ceil(filledStars) + index)"></i>
                             </div>
@@ -148,11 +150,21 @@
             }
         },
 
+        props: {
+            initialRating: {
+                type: Number,
+                default: 0,
+            },
+            totalReviews: {
+                type: Number,
+                default: 0,
+            },
+        },
+
         created() {
             // Recupera as classificações de todos os clientes do localStorage se estiverem disponíveis
             if (localStorage.getItem('allRatings')) {
                 this.ratings = JSON.parse(localStorage.getItem('allRatings'));
-                // Encontra a classificação do cliente atual nas classificações armazenadas
                 const currentRating = this.ratings.find((rating) => rating.client === 'current');
                 if (currentRating) {
                     this.filledStars = parseFloat(currentRating.rating);
@@ -197,7 +209,6 @@
                 }
                 localStorage.setItem('allRatings', JSON.stringify(this.ratings));
             },
-
             // Função para calcular a média das estrelas atribuídas
             calculateAverageStars() {
                 const totalStars = this.ratings.reduce((total, rating) => total + parseFloat(rating.rating), 0);
