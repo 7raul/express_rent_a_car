@@ -18,22 +18,32 @@
                             </div>
 
                             <div class="box-input">
-                                <label for="model">Modelo <span class="required-field">*</span></label>
-                                <input 
-                                type="text" 
-                                name="model" 
-                                id="model" 
-                                placeholder="Digite o modelo do veiculo"
-                                required>
-                            </div>
-
-                            <div class="box-input">
                                 <label for="price">Preço <span class="required-field">*</span></label>
                                 <input 
                                 type="number" 
                                 name="price" 
                                 id="price" 
                                 placeholder="Defina o preço"
+                                required>
+                            </div>
+
+                            <div class="box-input">
+                                <label for="mileage">Caução <span class="required-field">*</span></label>
+                                <input 
+                                type="text" 
+                                name="mileage" 
+                                id="mileage" 
+                                placeholder="Defina o preço da caução"
+                                required>
+                            </div>
+
+                            <div class="box-input">
+                                <label for="mileage">Motorista <span class="required-field">*</span></label>
+                                <input 
+                                type="text" 
+                                name="mileage" 
+                                id="mileage" 
+                                placeholder="Defina o preço do motorista"
                                 required>
                             </div>
 
@@ -46,15 +56,15 @@
                                 placeholder="Digite a kilometragem do veiculo"
                                 required>
                             </div>
-                        </div>
 
-                        <div class="select-box">
-                            <label for="mileage">Região <span class="required-field">*</span></label>
-                            <select>
-                                <option>Luanda</option>
-                                <option>Benguela</option>
-                                <option>Malanje</option>
-                            </select>
+                            <div class="select-box">
+                                <label for="mileage">Região <span class="required-field">*</span></label>
+                                <select>
+                                    <option>Luanda</option>
+                                    <option>Benguela</option>
+                                    <option>Malanje</option>
+                                </select>
+                            </div>
                         </div>
 
                         <div class="radio-container">
