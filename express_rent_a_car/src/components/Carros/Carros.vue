@@ -35,14 +35,14 @@
 
             <div class="darros-disponiveis">
                 <div class="carros">
-                    <div class="carro">
+                    <div class="carro" v-for="carro of Carros" :key="carro.id">
                         <div class="img">
                             <img :src="carImg" :alt="alt">
                         </div>
 
                         <div class="detalhes">
                             <div class="title">
-                                <h3>Fiat 500</h3>
+                                <h3>{{ carro.nome }}</h3>
                             </div>
 
                             <div class="reviews">
@@ -90,29 +90,39 @@
 </template>
 
 <script>
-    import Detalhes from '@/components/Carros/Detalhes.vue'
-    export default {
-        name: 'Carros',
+import Detalhes from '@/components/Carros/Detalhes.vue'
+import Api from "@/services/getBy"
+export default {
+    name: 'Carros',
 
-        components: {
-            Detalhes
-        },
 
-        data() {
-            return{
-                carImg: require("@/assets/img/fiat.jpg"),
-                showDetalhes: false
-            }
-        },
 
-        methods: {
-            closeDetalhes() {
-                this.showDetalhes = false;
-            }
+
+    data() {
+        return {
+            carImg: require("@/assets/img/fiat.jpg"),
+            showDetalhes: false,
+            Carros: []
+        }
+    },
+
+    mounted() {
+        Api.ListarCarro().then(res => {
+            this.Carros = res.data
+        }).catch(erro => console.log(erro))
+    },
+
+    components: {
+        Detalhes
+    },
+    methods: {
+        closeDetalhes() {
+            this.showDetalhes = false;
         }
     }
+}
 </script>
 
 <style scoped>
-    @import '@/Styles/Carros/carros.sass';
+@import '@/Styles/Carros/carros.sass';
 </style>

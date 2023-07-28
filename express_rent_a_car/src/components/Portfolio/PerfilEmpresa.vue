@@ -5,17 +5,17 @@
                 <ul class="links">
                     <li :class="{ 'active': currentComponent === 'todos' }">
                         <a href="#" @click="showTodos">
-                        <i class="ri-book-open-line"></i> Todos
+                            <i class="ri-book-open-line"></i> Todos
                         </a>
                     </li>
                     <li :class="{ 'active': currentComponent === 'carros' }">
                         <a href="#" @click="showCarros">
-                        <i class="ri-car-line"></i> Carros
+                            <i class="ri-car-line"></i> Carros
                         </a>
                     </li>
                     <li :class="{ 'active': currentComponent === 'estrelas' }">
                         <a href="#" @click="showEstrelas">
-                        <i class="fas fa-star"></i> Estrelas
+                            <i class="fas fa-star"></i> Estrelas
                         </a>
                     </li>
                 </ul>
@@ -29,13 +29,13 @@
                         </div>
 
                         <div class="profile-name">
-                            <h4>Artur Rent a car</h4>
+                            <h4>{{ nome }}</h4>
                         </div>
 
                         <div class="about-profile">
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum omnis explicabo 
-                                maiores dignissimos doloremque placeat reiciendis officia atque exercitationem 
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum omnis explicabo
+                                maiores dignissimos doloremque placeat reiciendis officia atque exercitationem
                                 possimus aut nesciunt, unde hic quo iste optio, iusto similique iure.
                             </p>
                         </div>
@@ -119,40 +119,48 @@
 </template>
 
 <script>
-    import EstrelasTodos from '@/components/Portfolio/EstrelasTodos.vue'
-    import Carros from '@/components/Portfolio/Carros.vue'
-    import Estrelas from '@/components/Portfolio/Estrelas.vue'
-    export default {
-        name: 'PerfilEmpresa',
+import EstrelasTodos from '@/components/Portfolio/EstrelasTodos.vue'
+import Carros from '@/components/Portfolio/Carros.vue'
+import Estrelas from '@/components/Portfolio/Estrelas.vue'
+import Api from '@/services/getBy'
+export default {
+    name: 'PerfilEmpresa',
 
-        components: {
-            EstrelasTodos,
-            Carros,
-            Estrelas
+    components: {
+        EstrelasTodos,
+        Carros,
+        Estrelas
+    },
+
+    data() {
+        return {
+            profileImg: require("@/assets/img/userPerfil.png"),
+            carImg: require("@/assets/img/fiat.jpg"),
+            currentComponent: 'todos',
+            empresa: [0],
+            nome: "Matuta"
+        }
+    },
+    mounted() {
+        Api.ListarEmpresa().then(res => {
+            this.empresa = res.data
+        })
+    },
+
+    methods: {
+        showTodos() {
+            this.currentComponent = 'todos';
         },
-
-        data() {
-            return {
-                profileImg: require("@/assets/img/userPerfil.png"),
-                carImg: require("@/assets/img/fiat.jpg"),
-                currentComponent: 'todos'
-            }
+        showCarros() {
+            this.currentComponent = 'carros';
         },
-
-        methods: {
-            showTodos() {
-                this.currentComponent = 'todos';
-            },
-            showCarros() {
-                this.currentComponent = 'carros';
-            },
-            showEstrelas() {
-                this.currentComponent = 'estrelas';
-            }
+        showEstrelas() {
+            this.currentComponent = 'estrelas';
         }
     }
+}
 </script>
 
 <style scoped>
-    @import '@/Styles/Portfolio/PerfilEmpresa.sass';
+@import '@/Styles/Portfolio/PerfilEmpresa.sass';
 </style>
