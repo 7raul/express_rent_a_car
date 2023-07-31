@@ -4,10 +4,10 @@
             <header>
                 <div class="header-carros">
                     <div class="buscar-carros">
-                        <form action="#">
+                        <form action="#" @submit.prevent="listarPesquisa">
                             <div class="input-box">
                                 <label for="#">Pesquisar carro</label>
-                                <input type="text" placeholder="Marca ou modelo">
+                                <input type="text" placeholder="Marca ou modelo" v-model="modelo">
                             </div>
 
                             <div class="select-box">
@@ -27,7 +27,7 @@
                                 </select>
                             </div>
 
-                            <button type="submit">Buscar</button>
+                            <button>Buscar</button>
                         </form>
                     </div>
                 </div>
@@ -102,7 +102,8 @@ export default {
         return {
             carImg: require("@/assets/img/fiat.jpg"),
             showDetalhes: false,
-            Carros: []
+            Carros: [],
+            modelo: "",
         }
     },
 
@@ -116,6 +117,11 @@ export default {
         Detalhes
     },
     methods: {
+        listarPesquisa() {
+            Api.ListarCarroPeloNome(this.modelo).then(res => {
+                this.Carros = res.data
+            }).catch(erro => console.log(erro))
+        },
         closeDetalhes() {
             this.showDetalhes = false;
         }

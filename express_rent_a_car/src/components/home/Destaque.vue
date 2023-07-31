@@ -4,13 +4,13 @@
             <h3>Empresas em destaque</h3>
 
             <div class="destaques">
-                <div class="card swiper-slide" v-for="empresa of Empresas" :key="empresa.id">
+                <div class="card swiper-slide">
                     <div class="card_image">
                         <img :src="img">
                     </div>
 
                     <div class="card-content">
-                        <span class="card_title">{{ empresa.nome }}</span>
+                        <span class="card_title">Artur</span>
 
                         <div class="reviews">
                             <i class="fas fa-star"></i>
@@ -21,7 +21,7 @@
                         </div>
 
                         <div class="paragrafo">
-                            <p>{{ empresa.descricao }}</p>
+                            <p>Vendemos Carros</p>
                         </div>
 
                         <div class="empresa-btn">

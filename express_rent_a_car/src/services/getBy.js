@@ -7,6 +7,9 @@ export default {
     ListarCarro: () => {
         return http.get('carro')
     },
+    ListarCarroPeloNome: (modelo) => {
+        return http.get(`carro/${modelo}`)
+    },
 
     ListarEmpresa: () => {
         return http.get('empresa')
