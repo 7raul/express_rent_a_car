@@ -94,7 +94,7 @@
             return{
                 userProfile: require("@/assets/img/userPerfil.png"),
                 showDropdown: false,
-                loggedIn: false,
+                loggedIn: true,
                 menuOpen: false,
                 screenWidth: window.innerWidth
             }

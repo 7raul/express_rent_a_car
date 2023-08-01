@@ -25,7 +25,7 @@
                         </div>
 
                         <div class="empresa-btn">
-                            <a href="/portfolio">Ver mais</a>
+                            <a @click="redirectToPortfolio">Ver mais</a>
                         </div>
                     </div>
                 </div>
@@ -49,6 +49,12 @@ export default {
         Api.ListarEmpresa().then(res => {
             this.Empresas = res.data;
         }).catch(erro => console.log(erro))
+    },
+    methods: {
+        redirectToPortfolio() {
+            // Redirecionar para a view de empresa
+            this.$router.push('/portfolio');
+        }
     }
 }
 </script>
